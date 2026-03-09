@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideAnimation 10s linear infinite;
+}
+
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 6s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 12s;
+}
+
+@keyframes slideAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.content-overlay {
+    font-family: 'Gilda Display', serif;
+    text-align: center;
+    color: white;
+    z-index: 1;
+   
+    max-width: 1200px;
+    line-height: 2rem;
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
+.reservation-rail{
+  position:absolute;
+  left:25px;
+  top:140px;
+  bottom:40px;
+  width:70px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* RESERVATION */
+.reservation-label{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size:11px;
+  letter-spacing:6px;
+  color:white;
+  margin-bottom:20px;
+}
+
+/* NUMBER (just below reservation) */
+.reservation-number{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size:18px;
+  color:#c89d59;
+  text-decoration:none;
+}
+
+/* CALL ICON bottom */
+.reservation-call{
+  margin-top:auto;
+
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:1px solid white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+  font-size:20px;
+  text-decoration:none;
+}
+
+.stars {
+    color: #c4a06d;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.welcome-text {
+    font-size: 1rem;
+    letter-spacing: .3rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.main-heading,
+.sub-heading {
+    font-family: 'Gilda Display', serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.sub-heading {
+    margin-bottom: 40px;
+}
+
+.btn-luxury {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-luxury:hover {
+    background: white;
+    color: black;
+}
+
+.services-section {
+    padding: 100px 80px 70px;
+    background: #f7f5f2;
+    color: #2b2620;
+}
+
+.services-section .section-title,
+.services-grid {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-title {
+    text-align: left;
+}
+
+.section-title h5 {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.55rem;
+    color: #a57c46;
+}
+
+.services-title h2 {
+    color: #27231f;
+    font-size: clamp(2.9rem, 5vw, 4.2rem);
+    font-family: 'Gilda Display', serif;
+    letter-spacing: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.service-card {
+    min-height: 255px;
+    padding: 30px 26px 28px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid #e3ddd5;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 26px;
+    color: #b4874e;
+}
+
+.service-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.service-card h3 {
+    margin-bottom: 18px;
+    color: #2a2723;
+    font-size: 1.85rem;
+    font-weight: 400;
+    font-family: 'Gilda Display', serif;
+}
+
+.service-card p {
+    color: #746e68;
+    font-size: 0.98rem;
+    line-height: 1.75;
+}
+
+@media (max-width: 1200px) {
+    .services-section {
+        padding: 90px 48px 64px;
+    }
+
+    .services-grid {
+        gap: 22px;
+    }
+
+    .service-card {
+        padding: 28px 22px 24px;
+    }
+
+    .service-card h3 {
+        font-size: 1.65rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card {
+        min-height: 230px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reservation-rail {
+        left: 0.8rem;
+        top: 7rem;
+        bottom: 1.2rem;
+        width: 3.2rem;
+    }
+
+    .reservation-label {
+        left: 0.9rem;
+        top: 13rem;
+        font-size: 0.44rem;
+        letter-spacing: 0.12rem;
+    }
+
+    .reservation-number {
+        left: 1.7rem;
+        font-size: 0.82rem;
+    }
+
+    .reservation-call {
+        left: 1.65rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.95rem;
+    }
+
+    .main-heading,
+    .sub-heading {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .welcome-text {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+
+    .services-section {
+        padding: 70px 20px 50px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 18px 12px 16px;
+    }
+
+    .service-icon {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+    }
+
+    .service-card p {
+        font-size: 0.76rem;
+        line-height: 1.5;
+    }
+}
+
+.rooms-section {
+    
+    padding: 100px 80px;
+    background-color: #fff;
+    color: #333;
+}
+
+.section-title {
+    /* text-align: center; */
+    margin-bottom: 60px;
+}
+
+.section-title h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 1rem;
+    color: rgb(80, 76, 76);
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+.section-title h2 {
+font-family: 'Gilda Display', serif;
+    font-size: 3.4rem;
+    font-weight: 300;
+    color: rgb(67, 64, 64);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.room-card-featured {
+    position: relative;
+    min-height: 590px;
+    padding: 32px 28px;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.room-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(30, 20, 10, 0.16) 0%, rgba(27, 18, 10, 0.45) 55%, rgba(12, 9, 7, 0.82) 100%);
+    z-index: -1;
+}
+
+.room-book-tag {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    letter-spacing: 0.22rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+}
+
+.room-card-content {
+    width: 100%;
+    color: #fff;
+    transform: translateY(86px);
+    transition: transform 0.35s ease;
+}
+
+.room-card-featured:hover .room-card-content {
+    transform: translateY(0);
+}
+
+.room-price {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+}
+
+.room-card-content h3 {
+    margin: 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+    font-family: 'Gilda Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.room-card-footer {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.room-card-featured:hover .room-card-footer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.room-amenities {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.amenity-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    color: #f3ede3;
+}
+
+.amenity-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.room-details-link {
+    color: #fff;
+    font-size: 0.95rem;
+    letter-spacing: 0.22rem;
+    text-transform: uppercase;
+}
+
+.room-details-link::after {
+    content: ' ->';
+}
+
+@media (max-width: 1024px) {
+    .rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room-card-featured {
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rooms-section {
+        padding: 60px 20px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card-featured {
+        min-height: 440px;
+        padding: 24px 18px;
+    }
+
+    .room-book-tag {
+        top: 18px;
+        right: 18px;
+    }
+
+    .room-card-content {
+        transform: translateY(0);
+    }
+
+    .room-card-content h3 {
+        font-size: 1.7rem;
+    }
+
+    .room-card-footer {
+        opacity: 1;
+        transform: translateY(0);
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,126 @@
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    z-index: 2000;
+}
+
+.sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar {
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 40px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: 300;
+    cursor: pointer;
+    color: #c4a06d;
+    margin-bottom: 2rem;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.sidebar-links li a:hover {
+    color: #c4a06d;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    color: #c4a06d;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.submenu.show {
+    display: block;
+}
+
+.submenu li {
+    border: none;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+}
+
+.submenu li a {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 250px;
+    }
+}
