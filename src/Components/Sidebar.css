@@ -82,9 +82,10 @@
     border: none;
     padding: 0;
     color: #333;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-family: 'Barlow condensed', sans-serif !important;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
