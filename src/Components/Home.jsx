@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Home.css';
 
 const services = [
@@ -84,23 +84,101 @@ const rooms = [
     id: 'room1',
     title: 'Executive Room',
     price: '₹ 3600 + TAX NIGHT',
-    image: '/standard_room.png',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/1.jpg',
   },
   {
     id: 'room2',
     title: 'Standard Delux',
     price: '₹ 2600 + TAX NIGHT',
-    image: '/deluxe_room.png',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/1.jpg',
   },
   {
     id: 'room3',
     title: 'Standard Room',
     price: '₹ 1800 + TAX NIGHT',
-    image: '/hotel2.png',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/1.jpg ',
+  },
+];
+
+const experiences = [
+  {
+    id: 'experience-restaurant',
+    label: 'Discover',
+    title: 'Multi Cuisine Restaurant',
+    description:
+      'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue artine.',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/4.jpg',
+  },
+  {
+    id: 'experience-conference',
+    label: 'Experiences',
+    title: 'Conference Hall',
+    description:
+      'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue artine.',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/7.jpg',
+  },
+  {
+    id: 'experience-business',
+    label: 'Business Center',
+    title: 'Business Center',
+    description:
+      'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue artine.',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/15.jpg',
   },
 ];
 
 const Home = () => {
+  const progressPathRef = useRef(null);
+  const progressWrapRef = useRef(null);
+
+  useEffect(() => {
+    const rows = document.querySelectorAll('.experience-row');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    rows.forEach((row) => observer.observe(row));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const progressPath = progressPathRef.current;
+    const progressWrap = progressWrapRef.current;
+    if (!progressPath || !progressWrap) return;
+
+    const pathLength = progressPath.getTotalLength();
+    progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+    progressPath.style.strokeDashoffset = `${pathLength}`;
+
+    const updateProgress = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
+      progressPath.style.strokeDashoffset = `${progress}`;
+
+      if (scrollTop > 120) {
+        progressWrap.classList.add('active-progress');
+      } else {
+        progressWrap.classList.remove('active-progress');
+      }
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress);
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="home-wrapper">
       <div className="home">
@@ -150,6 +228,7 @@ const Home = () => {
       </section>
 
       <section className="rooms-section" id="rooms">
+          <div className='room-sec'>
         <div className="rooms-title services-title">
           <h5>The Hotel Sasthapuri</h5>
           <h2>Rooms</h2>
@@ -188,7 +267,48 @@ const Home = () => {
             </article>
           ))}
         </div>
+        </div>
       </section>
+
+      <section className="experience-section" id="experiences">
+        <div className="experience-grid">
+          {experiences.map((item, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div
+                className={`experience-row ${isEven ? 'image-left' : 'image-right'}`}
+                key={item.id}
+              >
+                <div
+                  className={`experience-media ${isEven ? 'slide-from-left' : 'slide-from-right'}`}
+                  style={{ backgroundImage: `url(${item.image})` }}
+                  aria-label={item.title}
+                />
+
+                <div
+                  className={`experience-content ${isEven ? 'slide-from-right' : 'slide-from-left'}`}
+                >
+                  <p className="experience-label">{item.label}</p>
+                  <h3>{item.title}</h3>
+                  <p className="experience-description">{item.description}</p>
+                  <button className="experience-cta" type="button">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <div className="progress-wrap" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
+        <svg className="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path
+            ref={progressPathRef}
+            d="M50 1 a49 49 0 0 1 0 98 a49 49 0 0 1 0 -98"
+          />
+        </svg>
+      </div>
     </div>
   );
 };
