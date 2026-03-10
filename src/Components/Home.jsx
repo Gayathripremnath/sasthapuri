@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
-import img from '../assets/sastha3.jpg';
+
 const services = [
   {
     title: 'Pick Up & Drop',
@@ -184,8 +184,8 @@ const Home = () => {
       <div className="home">
         <div className="slideshow-container">
           <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')" }}></div>
-          <div className="slide" style={{ backgroundImage: `url(${img})` }}></div>
-          <div className="slide" style={{ backgroundImage: "url('/hotel3.png')" }}></div>
+          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')"  }}></div>
+          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')" }}></div>
         </div>
 
         <div className="reservation-rail">
