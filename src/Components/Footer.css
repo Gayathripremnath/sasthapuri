@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+
+
+.site-footer {
+    background: #252524;
+    color: #ffffff;
+    padding: 80px 12vw 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer-links {
+    color: white !important;
+    font-family: 'Barlow ', sans-serif;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-family: 'Gilda Display', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 14px;
+    color: white;
+}
+
+.footer-about p {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    color: white;
+    font-size: 0.95rem;
+ 
+}
+
+.footer-links {
+    color: white;
+       font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #c8a268;
+}
+
+.footer-contact p {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    margin: 0 0 12px;
+    color: white;
+    line-height: 1.6;
+}
+
+.footer-phone {
+    font-family:"Gilda Display", serif;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+.footer-mail {
+    display: inline-block;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.7rem;
+    border-bottom: 1.4px solid #c8a268;
+    width: 160px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    color: #d8cbb8;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 18px;
+    text-align: center;
+    color: #b0a38f;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        padding: 60px 8vw 32px;
+    }
+
+    .footer-links {
+        margin-left: 0;
+    }
+
+    .footer-about h3,
+    .footer-links h3,
+    .footer-contact h3 {
+        font-size: 1.25rem;
+    }
+
+    .footer-links a,
+    .footer-about p,
+    .footer-contact p,
+    .footer-phone,
+    .footer-mail {
+        font-size: 0.9rem;
+    }
+
+    .footer-grid {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 520px) {
+    .site-footer {
+        padding: 40px 6vw 28px;
+        gap: 24px;
+    }
+
+    .footer-about h3,
+    .footer-links h3,
+    .footer-contact h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-links a,
+    .footer-about p,
+    .footer-contact p,
+    .footer-phone,
+    .footer-mail {
+        font-size: 0.85rem;
+        font-weight: 300;
+    }
+
+    .footer-links {
+        gap: 8px;
+    }
+
+    .footer-phone {
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 412px) {
+    .site-footer {
+        padding: 32px 6vw 24px;
+        gap: 20px;
+    }
+
+    .footer-grid {
+        gap: 18px;
+    }
+
+    .footer-about h3,
+    .footer-links h3,
+    .footer-contact h3 {
+        font-size: 1.05rem;
+    }
+
+    .footer-about p,
+    .footer-links a,
+    .footer-contact p,
+    .footer-mail {
+        font-size: 0.82rem;
+    }
+
+    .footer-phone {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .site-footer {
+        padding: 30px 6vw 22px;
+        gap: 18px;
+    }
+
+    .footer-grid {
+        gap: 16px;
+    }
+
+    .footer-about h3,
+    .footer-links h3,
+    .footer-contact h3 {
+        font-size: 1rem;
+    }
+
+    .footer-links {
+        gap: 7px;
+    }
+
+    .footer-about p,
+    .footer-links a,
+    .footer-contact p,
+    .footer-mail {
+        font-size: 0.8rem;
+    }
+
+    .footer-phone {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-footer {
+        padding: 28px 5vw 20px;
+    }
+
+    .footer-grid {
+        gap: 16px;
+    }
+
+    .footer-about h3,
+    .footer-links h3,
+    .footer-contact h3 {
+        font-size: 1rem;
+    }
+
+    .footer-about p,
+    .footer-links a,
+    .footer-contact p,
+    .footer-mail,
+    .footer-phone {
+        font-size: 0.8rem;
+    }
+}

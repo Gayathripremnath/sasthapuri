@@ -8,7 +8,8 @@
     justify-content: space-between;
     gap: 50px;
     align-items: center;
-    padding: 0px 190px;
+    padding: 20px 190px 16px;
+    box-sizing: border-box;
     background: transparent;
     backdrop-filter: none;
     z-index: 1000;
@@ -86,15 +87,30 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 20px;
-        height: 60px;
+        padding: 30px 22px 20px;
+        height: 88px;
     }
 
     .navbar-logo {
-        height: 40px;
+        height: 48px;
     }
 
     .logo-container {
         padding: 12px 0 8px 8px;
+    }
+}
+
+@media (max-width: 390px) {
+    .navbar {
+        padding: 38px 18px 20px;
+        height: 98px;
+    }
+
+    .navbar-logo {
+        height: 52px;
+    }
+
+    .logo-container {
+        padding: 14px 0 8px 4px;
     }
 }

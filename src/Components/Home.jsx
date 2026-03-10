@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
-
+import img from '../assets/sastha3.jpg';
 const services = [
   {
     title: 'Pick Up & Drop',
@@ -184,7 +184,7 @@ const Home = () => {
       <div className="home">
         <div className="slideshow-container">
           <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')" }}></div>
-          <div className="slide" style={{ backgroundImage: "url('/hotel2.png')" }}></div>
+          <div className="slide" style={{ backgroundImage: `url(${img})` }}></div>
           <div className="slide" style={{ backgroundImage: "url('/hotel3.png')" }}></div>
         </div>
 
@@ -301,6 +301,27 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="promo-section" id="promo">
+        <div
+          className="promo-overlay"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 100%), url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')"
+          }}
+        >
+          <div className="promo-stars">★★★</div>
+          <p className="promo-kicker">THE HOTEL SASTHAPURI</p>
+          <h2 className="promo-title">Promotional Video</h2>
+          <a
+            className="promo-play"
+          >
+            <span className="play-icon" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+
+     
+
       <div className="progress-wrap" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
         <svg className="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
           <path
@@ -309,8 +330,13 @@ const Home = () => {
           />
         </svg>
       </div>
+      
     </div>
   );
 };
 
 export default Home;
+
+
+
+
