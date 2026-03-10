@@ -39,9 +39,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-bottom">
-        <span>© Copyright by Genova Technologies Pvt Ltd</span>
-      </div>
+     
     </footer>
   );
 };
