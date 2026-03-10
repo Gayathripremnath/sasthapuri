@@ -179,13 +179,25 @@ const Home = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const images = [
+      "https://sasthapuri.com/web_demo/img/rooms/1.jpg",
+      "https://sasthapuri.com/web_demo/img/rooms/7.jpg",
+      "https://sasthapuri.com/web_demo/img/rooms/4.jpg",
+    ];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <div className="home-wrapper">
       <div className="home">
         <div className="slideshow-container">
           <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')" }}></div>
-          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')"  }}></div>
-          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')" }}></div>
+          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/7.jpg')" }}></div>
+          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/4.jpg')" }}></div>
         </div>
 
         <div className="reservation-rail">
@@ -336,7 +348,6 @@ const Home = () => {
 };
 
 export default Home;
-
 
 
 
