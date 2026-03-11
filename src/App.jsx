@@ -1,39 +1,41 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Home from './Components/Home'
-import Sidebar from './Components/Sidebar'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar";
+import Footer from "./Components/Footer";
+import Gallery from "./Components/Gallery";
+import Restaurant from "./Components/Restaurant";
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
-  }
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
-  const closeSidebar = () => setIsSidebarOpen(false)
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <Router>
+    <BrowserRouter>
+      <Navbar onMenuClick={toggleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+
       <Routes>
-        <Route
-          path="/"
-          element={(
-            <div className="app-container">
-              <Navbar onMenuClick={toggleSidebar} />
-              <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-              <Home />
-              <Footer />
-             
-            </div>
-          )}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/restaurant" element={<Restaurant />} />
       </Routes>
-    </Router>
-    
-  )
+
+      <Footer />
+
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

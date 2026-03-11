@@ -1,0 +1,352 @@
+/* Helper & plugin styles from the static template */
+@import url("../plugins/bootstrap.min.css");
+@import url("../plugins/owl.carousel.min.css");
+@import url("../plugins/owl.theme.default.min.css");
+@import url("../plugins/animate.min.css");
+@import url("../plugins/themify-icons.css");
+@import url("../plugins/flaticon.css");
+@import url("../plugins/magnific-popup.css");
+@import url("../plugins/YouTubePopUp.css");
+@import url("../plugins/select2.css");
+@import url("../plugins/datepicker.css");
+@import url("../plugins/vegas.slider.min.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600&family=Gilda+Display&display=swap');
+
+.about-page {
+  background: #0f0c08;
+  color: #f5f2eb;
+  min-height: 100vh;
+}
+
+.about-banner {
+  position: relative;
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: url('https://sasthapuri.com/web_demo/img/slider/1.jpg') center/cover no-repeat fixed;
+  padding: 120px 20px 80px;
+}
+
+.about-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-banner__content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.banner-kicker {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #d7c4a0;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.about-banner h1 {
+  margin: 10px 0 6px;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  letter-spacing: 10px;
+  font-family: 'Gilda Display', serif;
+  font-weight: 400;
+}
+
+.banner-stars {
+  letter-spacing: 4px;
+  color: #e0a34d;
+  margin-top: 8px;
+}
+
+.about-section {
+  padding: 110px 24px;
+  background: #f8f5f0;
+  color: #2c2620;
+}
+
+.about-grid {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-copy .section-subtitle {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #8f7a52;
+  margin-bottom: 6px;
+}
+
+.about-copy .section-title {
+  font-family: 'Gilda Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 400;
+  margin: 6px 0 18px;
+  color: #1f1a15;
+}
+
+.about-copy p {
+  line-height: 1.8;
+  color: #494239;
+  margin-bottom: 16px;
+}
+
+.about-reservation {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff8ef;
+  border: 1px solid #e6ddcf;
+  padding: 12px 16px;
+  margin-top: 14px;
+}
+
+.about-reservation .icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #c8a268;
+  display: grid;
+  place-items: center;
+  color: #c8a268;
+  font-size: 18px;
+}
+
+.about-reservation .text p {
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #6f6355;
+  font-size: 0.85rem;
+}
+
+.about-reservation .text a {
+  color: #b28145;
+  font-family: 'Gilda Display', serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.about-images {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+.about-images img:first-child {
+  grid-row: span 2;
+}
+
+.testimonials-section {
+  position: relative;
+  color: #fff;
+  background: url('https://sasthapuri.com/web_demo/img/slider/2.jpg') center/cover no-repeat fixed;
+  padding: 110px 24px;
+}
+
+.testimonials-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.testimonials-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-head h6 {
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #e3c38e;
+  margin-bottom: 8px;
+}
+
+.testimonials-head h3 {
+  font-family: 'Gilda Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.testimonials-head .line {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  margin: 0 auto 26px;
+}
+
+.testimonials-cards {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.testimonial-card {
+  background: rgba(12, 10, 8, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 28px 24px 24px;
+  text-align: left;
+  position: relative;
+  backdrop-filter: blur(3px);
+}
+
+.testimonial-card .quote-mark {
+  font-size: 38px;
+  color: #c8a268;
+  position: absolute;
+  top: 10px;
+  right: 18px;
+}
+
+.testimonial-card p {
+  color: #f0ede8;
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-author img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.testimonial-author h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.testimonial-author span {
+  color: #d7c7b5;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-banner {
+    min-height: 50vh;
+    padding-top: 100px;
+  }
+
+  .about-banner h1 {
+    letter-spacing: 6px;
+  }
+
+  .about-section,
+  .testimonials-section {
+    padding: 80px 18px;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+.progress-wrap {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 400ms linear;
+}
+
+.progress-wrap::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #c8a268;
+    border-right: 2px solid #c8a268;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) rotate(-45deg);
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.progress-circle path {
+    stroke: #c8a268;
+    stroke-width: 4;
+    fill: none;
+    transition: stroke-dashoffset 10ms linear;
+}
+
+@keyframes pulseRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-wrap {
+        bottom: 20px;
+        right: 20px;
+        height: 40px;
+        width: 40px;
+    }
+}

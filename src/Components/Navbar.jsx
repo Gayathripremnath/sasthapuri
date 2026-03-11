@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logo from '../assets/logo.png';
 
 const Navbar = ({ onMenuClick }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = ({ onMenuClick }) => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="logo-container">
-                <img src="https://sasthapuri.com/web_demo/img/logo.png" alt="Hotel Sasthapuri" className="navbar-logo" />
+                <img src={logo} alt="Hotel Sasthapuri" className="navbar-logo" />
             </div>
             <button className="menu-toggle" onClick={onMenuClick}>
                 <div className="hamburger">

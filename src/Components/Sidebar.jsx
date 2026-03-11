@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -20,16 +21,13 @@ const Sidebar = ({ isOpen, onClose }) => {
         </button>
 
         <ul className="sidebar-links">
-          <li><a href="#home" onClick={onClose}>HOME</a></li>
-          <li><a href="#restaurant" onClick={onClose}>RESTAURANT</a></li>
+          <li><a href="/" onClick={onClose}>HOME</a></li>
+          <li><a href="/restaurant" onClick={onClose}>RESTAURANT</a></li>
           <li className={`dropdown ${isRoomsOpen ? 'active' : ''}`}>
             <button
               type="button"
               className="dropdown-toggle"
-              onClick={toggleRooms}
-              aria-expanded={isRoomsOpen}
-              aria-controls="rooms-submenu"
-            >
+              onClick={toggleRooms} aria-expanded={isRoomsOpen} aria-controls="rooms-submenu">
               <span>ROOMS</span>
               <span>{isRoomsOpen ? '▴' : '▾'}</span>
             </button>
@@ -39,10 +37,11 @@ const Sidebar = ({ isOpen, onClose }) => {
               <li><a href="#room3" onClick={onClose}>Room Name 03</a></li>
             </ul>
           </li>
-          <li><a href="#reservation" onClick={onClose}>RESERVATION</a></li>
-          <li><a href="#gallery" onClick={onClose}>GALLERY</a></li>
-          <li><a href="#attractions" onClick={onClose}>ATTRACTIONS</a></li>
-          <li><a href="#contact" onClick={onClose}>CONTACT</a></li>
+          <li><a href="/reservation" onClick={onClose}>RESERVATION</a></li>
+          <li><a href="/gallery" onClick={onClose}>GALLERY</a></li>
+          <li><a href="/attractions" onClick={onClose}>ATTRACTIONS</a></li>
+          <li><Link to="/about" onClick={onClose}>ABOUT</Link></li>
+          <li><a href="/contact" onClick={onClose}>CONTACT</a></li>
         </ul>
 
         <div className="sidebar-reservation">

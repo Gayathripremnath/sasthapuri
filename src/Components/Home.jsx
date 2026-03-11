@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
+import imgh1 from '../assets/slider/1.jpg';
+import imgh2 from '../assets/slider/2.jpg';
+import imgh3 from '../assets/slider/3.jpg';
+import room1 from "../assets/rooms/1.jpg";
+import room2 from "../assets/rooms/2.jpg";
+import room12 from "../assets/rooms/12.jpg";
 
 const services = [
   {
@@ -31,12 +37,12 @@ const services = [
     title: '24hrs Room Service',
     description: 'Room tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
     icon: (
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M10 41h44" />
-        <path d="M14 41V20h36v21" />
-        <path d="M18 46v-5M46 46v-5" />
-        <path d="M22 28h8l4 5 8-9 6 7" />
-      </svg>
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M10 41h44" />
+          <path d="M14 41V20h36v21" />
+          <path d="M18 46v-5M46 46v-5"  />
+          <path d="M22 28h8l4 5 8-9 6 7" />
+        </svg>
     ),
   },
   {
@@ -84,19 +90,19 @@ const rooms = [
     id: 'room1',
     title: 'Executive Room',
     price: '₹ 3600 + TAX NIGHT',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/1.jpg',
+    image: room1,
   },
   {
     id: 'room2',
     title: 'Standard Delux',
     price: '₹ 2600 + TAX NIGHT',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/1.jpg',
+    image: room2,
   },
   {
     id: 'room3',
     title: 'Standard Room',
     price: '₹ 1800 + TAX NIGHT',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/1.jpg ',
+    image: room12,
   },
 ];
 
@@ -181,7 +187,7 @@ const Home = () => {
 
   useEffect(() => {
     const images = [
-      "https://sasthapuri.com/web_demo/img/rooms/1.jpg",
+      "..assets/slider/rooms/1.jpg",
       "https://sasthapuri.com/web_demo/img/rooms/7.jpg",
       "https://sasthapuri.com/web_demo/img/rooms/4.jpg",
     ];
@@ -195,12 +201,12 @@ const Home = () => {
     <div className="home-wrapper">
       <div className="home">
         <div className="slideshow-container">
-          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')" }}></div>
-          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/7.jpg')" }}></div>
-          <div className="slide" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/rooms/4.jpg')" }}></div>
+          <div className="slide" style={{ backgroundImage: `url(${imgh1})` }}></div>
+          <div className="slide" style={{ backgroundImage: `url(${imgh2})` }}></div>
+          <div className="slide" style={{ backgroundImage: `url(${imgh3})` }}></div>
         </div>
 
-        <div className="reservation-rail">
+        <div className="reservation-rail" id="reservation">
           <span className="reservation-label">RESERVATION</span>
           <a className="reservation-number" href="tel:+914952723281">
             +91-4952-2723281 (5 LINES)
@@ -250,11 +256,12 @@ const Home = () => {
           {rooms.map((room) => (
             <article
               className="room-card room-card-featured"
+              id={room.id}
               key={room.id}
               style={{ backgroundImage: `url('${room.image}')` }}
             >
               <div className="room-card-overlay"></div>
-              <div className="room-book-tag">BOOK</div>
+              <a className="room-book-tag" href="#reservation">BOOK</a>
               <div className="room-card-content">
                 <p className="room-price">{room.price}</p>
                 <h3>{room.title}</h3>
@@ -273,7 +280,9 @@ const Home = () => {
                       <svg viewBox="0 0 24 24"><path d="M4 12h16M6 12V8h12v4M5 16h14M7 16v2m10-2v2" /></svg>
                     </span>
                   </div>
-                  <a className="room-details-link" href={`#${room.id}`}>DETAILS</a>
+                  <div className="room-actions">
+                    <a className="room-details-link" href={`#${room.id}`}>Details</a>
+                  </div>
                 </div>
               </div>
             </article>

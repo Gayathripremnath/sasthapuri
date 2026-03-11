@@ -17,7 +17,7 @@ const Footer = () => {
 
         <div className="footer-links">
           <h3>Explore</h3>
-          <a href="#home">Home</a>
+          <a href="/">Home</a>
           <a href="#rooms">Rooms &amp; Suites</a>
           <a href="#restaurant">Restaurant</a>
           <a href="#gallery">Gallery</a>
@@ -40,7 +40,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© Copyright by  Technologies Pvt Ltd</span>
+        <p >© Copyright 2025 by  </p>
+        <a href="/">Genova Technology Pvt Ltd</a>
       </div>
     </footer>
   );

@@ -92,7 +92,11 @@
     cursor: pointer;
     transition: color 0.3s;
 }
-
+.dropdown-toggle span {
+        font-family: 'Barlow condensed', sans-serif !important;
+    font-size: 1rem;
+    font-weight: 300;
+}
 .dropdown-toggle:hover {
     color: #c4a06d;
 }
