@@ -35,6 +35,21 @@
   position:fixed; bottom:30px; right:30px; width:45px; height:45px;
   border-radius:50%; cursor:pointer; z-index:100;
   box-shadow:inset 0 0 0 1px rgba(0,0,0,0.15);
+  opacity: 0; visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+.rd-progress-wrap.active-progress {
+  opacity: 1; visibility: visible;
+  transform: translateY(0);
+}
+.rd-progress-wrap::after {
+  position: absolute; content: '';
+  width: 10px; height: 10px;
+  border-top: 2px solid var(--rd-gold);
+  border-right: 2px solid var(--rd-gold);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -40%) rotate(-45deg);
 }
 .rd-progress-wrap .progress-circle path { stroke:var(--rd-gold); stroke-width:4; fill:none; }
 
