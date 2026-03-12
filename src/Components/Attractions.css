@@ -49,6 +49,21 @@
   width: 45px; height: 45px; border-radius: 50%;
   cursor: pointer; z-index: 100;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+  opacity: 0; visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+.at-progress-wrap.active-progress {
+  opacity: 1; visibility: visible;
+  transform: translateY(0);
+}
+.at-progress-wrap::after {
+  position: absolute; content: '';
+  width: 10px; height: 10px;
+  border-top: 2px solid var(--at-gold);
+  border-right: 2px solid var(--at-gold);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -40%) rotate(-45deg);
 }
 .at-progress-wrap .progress-circle path {
   stroke: var(--at-gold); stroke-width: 4; fill: none;
@@ -275,6 +290,10 @@
   text-transform: uppercase; color: var(--at-gold);
   margin-bottom: 10px;
 }
+.at-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
 .at-svc-title {
   font-family: var(--at-serif);
   font-size: 36px; font-weight: 400;
@@ -319,6 +338,13 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.at-booking-form {
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  text-align: left;
 }
 
 .at-acc-block {

@@ -7,7 +7,7 @@
     height: 100vh;
     padding-top: 80px;
     box-sizing: border-box;
-    overflow: hidden;
+        overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
