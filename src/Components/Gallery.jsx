@@ -1,5 +1,6 @@
-import React , { useEffect } from "react";
+import React , { useEffect, useRef } from "react";
 import "./Gallery.css";
+import '../animations.css';
 import img1 from  "../assets/slider/1.jpg";
 import img3 from  "../assets/slider/3.jpg";
 import img7 from  "../assets/slider/7.jpg";
@@ -11,17 +12,61 @@ import imgr5 from  "../assets/rooms/5.jpg";
 import imgr10 from  "../assets/rooms/10.jpg";
 
 const Gallery = () => {
+  const progressPathRef = useRef(null);
+  const progressWrapRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       const preloader = document.getElementById("preloader");
       const preloaderBg = document.querySelector(".preloader-bg");
-
       if (preloader) preloader.style.display = "none";
       if (preloaderBg) preloaderBg.style.display = "none";
     }, 1200);
-
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const progressPath = progressPathRef.current;
+    const progressWrap = progressWrapRef.current;
+    if (!progressPath || !progressWrap) return;
+
+    const pathLength = progressPath.getTotalLength();
+    progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+    progressPath.style.strokeDashoffset = `${pathLength}`;
+
+    const updateProgress = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
+      progressPath.style.strokeDashoffset = `${progress}`;
+
+      if (scrollTop > 120) {
+        progressWrap.classList.add('active-progress');
+      } else {
+        progressWrap.classList.remove('active-progress');
+      }
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress);
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  /* scroll-reveal */
+  useEffect(() => {
+    const els = document.querySelectorAll('.anim');
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('anim-show'); obs.unobserve(e.target); }
+      }),
+      { threshold: 0.10 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
   }, []);
   return (
     <>
@@ -34,15 +79,18 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Progress scroll */}
-      <div className="progress-wrap cursor-pointer">
+      {/* Progress scroll totop */}
+      <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
         <svg
           className="progress-circle svg-content"
           width="100%"
           height="100%"
           viewBox="-1 -1 102 102"
         >
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          <path
+            ref={progressPathRef}
+            d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          />
         </svg>
       </div>
 
@@ -66,69 +114,69 @@ const Gallery = () => {
         <div className="cont-im">
             <div className="row-im">
                 <div className="col-md-12">
-                    <div className="section-subtitle">Images</div>
-                    <div className="section-title">Image Gallery</div>
+                    <div className="section-subtitle anim anim-up">Images</div>
+                    <div className="section-title anim anim-up anim-d1">Image Gallery</div>
                 </div>
                 <div className="first-sec">
-                <div className="col-md-4 gallery-item">
-                    <a href={img7} title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-img">
-                                 <img src={img7} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
-                        </div>
-                    </a>
-                </div>
-                <div className="col-md-4 gallery-item">
-                    <a href={img5} title="" class="img-zoom">
+                <div className="col-md-4 gallery-item anim anim-up anim-d1">
+                    <a href={img7} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-img"> <img src={img5} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-img">
+                                 <img src={img7} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
-                <div className="col-md-4 gallery-item">
-                    <a href={img4} title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-img"> <img src={img4} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                <div className="col-md-4 gallery-item anim anim-up anim-d2">
+                    <a href={img5} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-img"> <img src={img5} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+                <div className="col-md-4 gallery-item anim anim-up anim-d3">
+                    <a href={img4} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-img"> <img src={img4} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                </div>
                <div className="second-sec">
                 <div className="col-md-6 gallery-item">
-                    <a href={img2} title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-imgs"> <img src={img2} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                    <a href={img2} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs"> <img src={img2} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
               
                 <div className="col-md-6 gallery-item">
-                    <a href={img1} title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-imgs"> <img src={img1} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                    <a href={img1} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs"> <img src={img1} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 </div>
                 <div className="third-sec">
                 <div className="col-md-4 gallery-item">
-                    <a href={img8} title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-imgs1"> <img src={img8} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                    <a href={img8} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={img8} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
-                    <a href="img/rooms/5.jpg" title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-imgs1"> <img src={imgr5} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                    <a href={imgr5} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={imgr5} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
-                    <a href={imgr10} title="" class="img-zoom">
-                        <div class="gallery-box">
-                            <div class="gallery-imgs1"> <img src={imgr10} class="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                    <a href={imgr10} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={imgr10} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
@@ -141,15 +189,15 @@ const Gallery = () => {
         <div className="cont-vid">
             <div className="row">
                 <div className="col-md-12">
-                    <div className="section-subtitle">Videos</div>
-                    <div className="section-title">Video Gallery</div>
+                    <div className="section-subtitle anim anim-up">Videos</div>
+                    <div className="section-title anim anim-up anim-d1">Video Gallery</div>
                 </div>
                <div className="video1">
                 <div className="col-md-6">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img2} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
-                                    <i class="ti-control-play"></i>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
+                                    <i className="ti-control-play"></i>
                                 </span> </a>
                         </div>
                     </div>
@@ -157,7 +205,7 @@ const Gallery = () => {
                 <div className="col-md-6">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img3} alt="Vimeo"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
                                     <i className="ti-control-play"></i>
                                 </span> </a>
                         </div>
@@ -167,8 +215,8 @@ const Gallery = () => {
              <div className="video2">
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={img4} class="img-fluid" alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
+                        <div className="vid-icon"> <img src={img4} className="img-fluid" alt="YouTube"/>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
                                     <i className="ti-control-play"></i>
                                 </span> </a>
                         </div>
@@ -177,7 +225,7 @@ const Gallery = () => {
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img7} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
                                     <i className="ti-control-play"></i>
                                 </span> </a>
                         </div>

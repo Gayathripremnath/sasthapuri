@@ -1,0 +1,62 @@
+/* ================================================================
+   animations.css  —  Sasthapuri shared scroll-reveal system
+   Usage:
+     1. Add class "anim" + a direction class to any element:
+        anim-up | anim-left | anim-right | anim-scale | anim-fade
+     2. Optionally add a stagger delay:
+        anim-d1 … anim-d6
+     3. The JS observer (useAnimateOnScroll hook) adds "anim-show"
+        when the element enters the viewport.
+   ================================================================ */
+
+/* ── Base hidden state ── */
+.anim {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity  0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Direction variants (initial hidden positions) ── */
+.anim-up    { transform: translateY(40px); }
+.anim-left  { transform: translateX(-50px); }
+.anim-right { transform: translateX(50px); }
+.anim-scale { transform: scale(0.92); }
+.anim-fade  { transform: none; }
+
+/* ── Revealed state ── */
+.anim.anim-show {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* ── Stagger delays ── */
+.anim-d1 { transition-delay: 0.08s; }
+.anim-d2 { transition-delay: 0.16s; }
+.anim-d3 { transition-delay: 0.25s; }
+.anim-d4 { transition-delay: 0.35s; }
+.anim-d5 { transition-delay: 0.46s; }
+.anim-d6 { transition-delay: 0.58s; }
+
+/* ── Keyframes (for elements that use animation: rather than transition:) ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-44px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(44px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.90); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

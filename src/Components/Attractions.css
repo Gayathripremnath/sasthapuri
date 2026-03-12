@@ -1,0 +1,371 @@
+/* ================================================================
+   Attractions.css — Sasthapuri Spa & Attractions Page
+   Palette: gold #aa8453 | dark #222 | cream #f8f5f0
+   Fonts: Gilda Display (serif) | Barlow Condensed (sans) | Barlow (body)
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Gilda+Display&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --at-gold:   #aa8453;
+  --at-gold2:  #c5a47e;
+  --at-dark:   #222222;
+  --at-cream:  #f8f5f0;
+  --at-white:  #ffffff;
+  --at-serif:  'Gilda Display', serif;
+  --at-sans:   'Barlow Condensed', sans-serif;
+  --at-body:   'Barlow', sans-serif;
+  --at-shadow: 0 10px 40px rgba(0,0,0,0.10);
+  --at-rad:    0px;
+}
+
+/* ================================================================
+   PRELOADER  (matches site-wide pattern)
+   ================================================================ */
+.preloader-bg, #preloader {
+  position: fixed; inset: 0;
+  background: #fff; z-index: 999999;
+}
+#preloader {
+  display: flex; align-items: center; justify-content: center;
+}
+.loader {
+  width: 55px; height: 55px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  animation: atSpin 1s linear infinite;
+  position: relative;
+}
+.loader span {
+  position: absolute; width: 55px; height: 55px;
+  border-radius: 50%; border-top: 2px solid var(--at-gold);
+}
+@keyframes atSpin { to { transform: rotate(360deg); } }
+
+/* ================================================================
+   SCROLL PROGRESS
+   ================================================================ */
+.at-progress-wrap {
+  position: fixed; bottom: 30px; right: 30px;
+  width: 45px; height: 45px; border-radius: 50%;
+  cursor: pointer; z-index: 100;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15);
+}
+.at-progress-wrap .progress-circle path {
+  stroke: var(--at-gold); stroke-width: 4; fill: none;
+}
+
+/* ================================================================
+   SHARED LAYOUT
+   ================================================================ */
+.at-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Titles */
+.at-stars {
+  color: #e4a853; font-size: 18px;
+  letter-spacing: 5px; margin-bottom: 10px;
+}
+.at-subtitle {
+  font-family: var(--at-sans);
+  font-size: 13px; letter-spacing: 6px;
+  text-transform: uppercase; color: #888;
+  margin-bottom: 6px;
+}
+.at-subtitle.light { color: var(--at-gold2); }
+
+.at-section-title {
+  font-family: var(--at-serif);
+  font-size: 46px; font-weight: 400;
+  color: var(--at-dark); line-height: 1.2;
+  margin-bottom: 24px;
+}
+.at-section-title.light { color: var(--at-white); }
+
+/* Animate-in */
+.at-animate { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.at-animate.at-visible { opacity: 1; transform: none; }
+
+/* ================================================================
+   HERO SLIDER
+   ================================================================ */
+.at-hero {
+  position: relative;
+  height: 100vh; min-height: 620px;
+  overflow: hidden;
+}
+.at-hero-slide {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1.2s ease;
+}
+.at-hero-slide.active { opacity: 1; }
+
+.at-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.50) 0%,
+    rgba(0,0,0,0.25) 50%,
+    rgba(0,0,0,0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* hero text */
+.at-hero-content {
+  position: absolute;
+  inset: 0; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 20px;
+}
+.at-hero-sub {
+  font-family: var(--at-sans);
+  font-size: 14px; letter-spacing: 6px;
+  text-transform: uppercase; color: var(--at-gold2);
+  margin-bottom: 16px;
+}
+.at-hero-title {
+  font-family: var(--at-serif);
+  font-size: 72px; font-weight: 400;
+  color: #fff; letter-spacing: 6px;
+  line-height: 1.1; margin-bottom: 28px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* breadcrumb */
+.at-breadcrumb {
+  list-style: none; display: flex;
+  align-items: center; justify-content: center;
+  gap: 10px; padding: 0; margin: 0;
+  z-index: 2;
+}
+.at-breadcrumb li,
+.at-breadcrumb a {
+  font-family: var(--at-sans);
+  font-size: 13px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+.at-breadcrumb a:hover { color: var(--at-gold2); }
+.at-active  { color: var(--at-gold2) !important; }
+.at-sep     { color: rgba(255,255,255,0.35) !important; }
+
+/* dots */
+.at-hero-dots {
+  position: absolute; bottom: 30px; width: 100%;
+  text-align: center; z-index: 2;
+}
+.at-dot {
+  display: inline-block;
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent; margin: 0 4px; cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+.at-dot.active { background: var(--at-gold); border-color: var(--at-gold); }
+
+/* bounce arrow */
+.at-bounce-arrow {
+  position: absolute; bottom: 70px; width: 100%;
+  text-align: center; z-index: 2;
+  animation: atBounce 2s infinite;
+}
+.at-bounce-arrow span {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 50px; height: 50px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; font-size: 20px; cursor: pointer;
+  transition: border-color 0.3s;
+}
+.at-bounce-arrow span:hover { border-color: var(--at-gold); color: var(--at-gold2); }
+@keyframes atBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ================================================================
+   INTRO SECTION
+   ================================================================ */
+.at-intro {
+  padding: 100px 0 80px;
+  background: var(--at-white);
+}
+.at-intro-text {
+  font-family: var(--at-body);
+  font-size: 15px; color: #666; line-height: 1.85;
+  max-width: 820px; margin-bottom: 40px;
+}
+
+/* Reservation bar */
+.at-reservation {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--at-cream);
+  padding: 18px 24px; width: fit-content;
+}
+.at-res-icon { font-size: 30px; }
+.at-res-label {
+  font-family: var(--at-sans);
+  font-size: 12px; letter-spacing: 3px;
+  text-transform: uppercase; color: #888; margin: 0;
+}
+.at-res-num {
+  font-family: var(--at-serif);
+  font-size: 26px; color: var(--at-gold);
+  text-decoration: none;
+}
+.at-res-num:hover { color: var(--at-dark); }
+
+/* ================================================================
+   SERVICES — ALTERNATING ROWS
+   ================================================================ */
+.at-services { background: var(--at-white); }
+
+.at-svc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+
+/* Image column */
+.at-svc-img {
+  position: relative; overflow: hidden;
+}
+.at-svc-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.7s ease;
+}
+.at-svc-row:hover .at-svc-img img { transform: scale(1.05); }
+.at-svc-img-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.18);
+  pointer-events: none;
+}
+
+/* Content column */
+.at-svc-content {
+  background: var(--at-cream);
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 60px 70px;
+}
+.at-svc-label {
+  display: block;
+  font-family: var(--at-sans);
+  font-size: 12px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--at-gold);
+  margin-bottom: 10px;
+}
+.at-svc-title {
+  font-family: var(--at-serif);
+  font-size: 36px; font-weight: 400;
+  color: var(--at-dark); margin-bottom: 20px; line-height: 1.25;
+}
+.at-svc-desc {
+  font-family: var(--at-body);
+  font-size: 15px; color: #666; line-height: 1.8;
+  margin-bottom: 20px;
+}
+.at-svc-hours {
+  font-family: var(--at-sans);
+  font-size: 14px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--at-gold);
+  display: flex; align-items: center; gap: 10px; margin: 0;
+}
+.at-clock-icon { font-size: 18px; }
+
+/* Alternate: image right, content left */
+.at-svc-row.img-right .at-svc-img  { order: 2; }
+.at-svc-row.img-right .at-svc-content { order: 1; }
+
+/* ================================================================
+   FAQ / ACCORDION
+   ================================================================ */
+.at-faq {
+  padding: 100px 0;
+  background: var(--at-cream);
+}
+.at-accordion {
+  margin-top: 50px;
+}
+.at-acc-block {
+  background: var(--at-white);
+  margin-bottom: 4px;
+  border-left: 3px solid transparent;
+  transition: border-color 0.3s;
+}
+.at-acc-block.at-acc-open {
+  border-left-color: var(--at-gold);
+}
+
+/* accordion button */
+.at-acc-btn {
+  width: 100%; text-align: left;
+  display: flex; align-items: center; gap: 16px;
+  padding: 22px 30px;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--at-serif);
+  font-size: 20px; font-weight: 400;
+  color: var(--at-dark);
+  transition: color 0.25s;
+}
+.at-acc-btn:hover, .at-acc-open .at-acc-btn { color: var(--at-gold); }
+
+.at-acc-num {
+  font-family: var(--at-sans);
+  font-size: 12px; letter-spacing: 2px;
+  color: var(--at-gold); min-width: 28px;
+}
+.at-acc-arrow {
+  margin-left: auto;
+  font-size: 22px; color: var(--at-gold);
+  line-height: 1; font-family: var(--at-sans);
+  transition: transform 0.3s;
+}
+.at-acc-open .at-acc-arrow { transform: rotate(0deg); }
+
+/* accordion content */
+.at-acc-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.3s ease;
+  padding: 0 30px 0 74px;
+}
+.at-acc-open .at-acc-content {
+  max-height: 300px;
+  padding: 0 30px 24px 74px;
+}
+.at-acc-content p {
+  font-family: var(--at-body);
+  font-size: 15px; color: #666; line-height: 1.8; margin: 0;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 1024px) {
+  .at-svc-content { padding: 50px 50px; }
+}
+
+@media (max-width: 768px) {
+  .at-hero-title          { font-size: 44px; letter-spacing: 3px; }
+  .at-section-title       { font-size: 32px; }
+  .at-svc-row             { grid-template-columns: 1fr; min-height: auto; }
+  .at-svc-img             { height: 300px; order: 0 !important; }
+  .at-svc-content         { padding: 40px 24px; order: 1 !important; }
+  .at-hero                { min-height: 65vh; }
+  .at-acc-btn             { font-size: 17px; padding: 18px 20px; }
+  .at-acc-content         { padding: 0 20px 0 20px !important; }
+  .at-acc-open .at-acc-content { padding: 0 20px 20px 20px !important; }
+}
+
+@media (max-width: 480px) {
+  .at-hero-title          { font-size: 30px; }
+  .at-svc-content         { padding: 32px 18px; }
+  .at-svc-title           { font-size: 26px; }
+}
