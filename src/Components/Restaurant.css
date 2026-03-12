@@ -504,21 +504,29 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .rest-features-grid        { grid-template-columns: repeat(2, 1fr); }
   .rest-menu-grid            { grid-template-columns: repeat(2, 1fr); }
-  .rest-intro-grid           { grid-template-columns: 1fr; gap: 50px; }
-  .rest-intro-images         { height: 380px; }
+  .rest-intro-grid           { gap: 50px; }
+}
+
+@media (max-width: 991px) {
+  .rest-intro-grid           { grid-template-columns: 1fr; text-align: center; }
+  .rest-reservation-bar      { margin: 30px auto; }
+  .rest-intro-images         { height: 400px; max-width: 600px; margin: 0 auto; }
   .rest-booking-inner        { grid-template-columns: 1fr; }
+  .rest-booking-text         { text-align: center; margin-bottom: 40px; }
+  .rest-reservation-bar.dark-bg { margin: 20px auto; }
 }
 
 @media (max-width: 768px) {
-  .rest-hero-title           { font-size: 44px; }
+  .rest-hero-title           { font-size: 42px; letter-spacing: 4px; }
   .rest-section-title        { font-size: 32px; }
+  .rest-intro, .rest-menu, .rest-booking { padding: 70px 0; }
   .rest-features-grid        { grid-template-columns: 1fr 1fr; gap: 20px; }
   .rest-feature-card         { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 20px; }
   .rest-menu-grid            { grid-template-columns: 1fr; }
-  .rest-booking-form         { padding: 28px 20px; }
+  .rest-booking-form         { padding: 30px 20px; }
   .rest-form-row             { grid-template-columns: 1fr; }
   .rest-intro-images         { display: none; }
 }

@@ -13,14 +13,14 @@ import food4     from '../assets/rooms/4.jpg';
 import food5     from '../assets/rooms/5.jpg';
 import food6     from '../assets/rooms/6.jpg';
 
-const menuItems = [
-  { img: food1, title: 'Grilled Sea Bass',      category: 'Seafood',    price: '₹850',  desc: 'Fresh catch of the day served with herb butter and seasonal greens.' },
-  { img: food2, title: 'Royal Lamb Rack',        category: 'Grill',      price: '₹1,200', desc: 'Tender lamb rack marinated in aromatic spices, slow-roasted to perfection.' },
-  { img: food3, title: 'Forest Mushroom Risotto',category: 'Vegetarian', price: '₹650',  desc: 'Creamy Arborio rice with wild porcini mushrooms and truffle oil.' },
-  { img: food4, title: 'Kerala Prawn Curry',     category: 'Seafood',    price: '₹950',  desc: 'Succulent tiger prawns in a rich coconut and tamarind gravy.' },
-  { img: food5, title: 'Smoked Duck Breast',     category: 'Grill',      price: '₹1,100', desc: 'Hickory-smoked duck with orange reduction and crispy potato cake.' },
-  { img: food6, title: 'Mango Pannacotta',       category: 'Dessert',    price: '₹400',  desc: 'Silky smooth panna cotta with fresh Alphonso mango coulis and mint.' },
-];
+// const menuItems = [
+//   { img: food1, title: 'Grilled Sea Bass',      category: 'Seafood',    price: '₹850',  desc: 'Fresh catch of the day served with herb butter and seasonal greens.' },
+//   { img: food2, title: 'Royal Lamb Rack',        category: 'Grill',      price: '₹1,200', desc: 'Tender lamb rack marinated in aromatic spices, slow-roasted to perfection.' },
+//   { img: food3, title: 'Forest Mushroom Risotto',category: 'Vegetarian', price: '₹650',  desc: 'Creamy Arborio rice with wild porcini mushrooms and truffle oil.' },
+//   { img: food4, title: 'Kerala Prawn Curry',     category: 'Seafood',    price: '₹950',  desc: 'Succulent tiger prawns in a rich coconut and tamarind gravy.' },
+//   { img: food5, title: 'Smoked Duck Breast',     category: 'Grill',      price: '₹1,100', desc: 'Hickory-smoked duck with orange reduction and crispy potato cake.' },
+//   { img: food6, title: 'Mango Pannacotta',       category: 'Dessert',    price: '₹400',  desc: 'Silky smooth panna cotta with fresh Alphonso mango coulis and mint.' },
+// ];
 
 const features = [
   { icon: <FaUtensils />, title: 'Fine Dining',      desc: 'An elegant ambiance curated for a truly memorable dining experience.' },
@@ -171,7 +171,7 @@ const Restaurant = () => {
       </section>
 
       {/* ── Menu Section ── */}
-      <section className="rest-menu">
+      {/* <section className="rest-menu">
         <div className="rest-container">
           <div className="rest-section-header anim anim-up">
             <span className="rest-subtitle">Curated Selection</span>
@@ -195,7 +195,7 @@ const Restaurant = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Reservation Section ── */}
       <section

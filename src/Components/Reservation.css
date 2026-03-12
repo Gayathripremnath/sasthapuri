@@ -1,0 +1,272 @@
+
+.res-page {
+    background-color: #f8f5f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero */
+.res-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    background-image: url('https://sasthapuri.com/web_demo/img/slider/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+}
+
+.res-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.res-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.res-hero-content .stars {
+    color: #aa8453;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.res-hero-content h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.res-hero-content h1 {
+    font-family: 'Gilda Display', serif;
+    font-size: 55px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+}
+
+/* Container */
+.res-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px 150px; /* Generous padding to prevent overlap */
+    flex: 1; /* Allow content to grow and push footer down */
+}
+
+.res-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 50px;
+}
+
+/* Form Styles Override to match Restaurant Theme */
+.rest-booking-form {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    height: 100%; /* Ensure it matches the height of adjacent grid elements if needed */
+}
+
+.res-header {
+    margin-bottom: 20px;
+}
+
+.rest-subtitle {
+    display: block;
+    color: #aa8453;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 6px;
+}
+
+.rest-section-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 24px;
+    color: #222;
+    margin: 0;
+    font-weight: 400;
+}
+
+.res-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.rest-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.rest-form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.rest-form-group input,
+.rest-form-group select,
+.rest-form-group textarea {
+    padding: 9px 12px;
+    border: 1px solid #e8e8e8;
+    background: #fdfdfd;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13.5px;
+    color: #333;
+    transition: 0.3s;
+    outline: none;
+}
+
+.rest-form-group input:focus,
+.rest-form-group select:focus,
+.rest-form-group textarea:focus {
+    border-color: #aa8453;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(170, 132, 83, 0.05);
+}
+
+.rest-btn-submit {
+    width: 100%;
+    padding: 13px;
+    background: #aa8453;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.rest-btn-submit:hover {
+    background: #222;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Sidebar Styling Upgrade */
+.info-box-styled {
+    background: #f4ede3;
+    padding: 35px;
+    margin-bottom: 35px;
+}
+
+.info-item-styled {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item-styled:last-child {
+    margin-bottom: 0;
+}
+
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    background: #aa8453;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.text-content .label {
+    margin: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    color: #aa8453;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+}
+
+.text-content .val {
+    font-family: 'Gilda Display', serif;
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    line-height: 1.1;
+    display: block;
+}
+
+.res-policy-styled {
+    padding: 5px 0;
+}
+
+.res-policy-styled h4 {
+    font-family: 'Gilda Display', serif;
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.res-policy-styled ul {
+    list-style: none;
+    padding: 0;
+}
+
+.res-policy-styled li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.res-policy-styled li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #aa8453;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .res-hero-content h1 { font-size: 50px; }
+}
+
+@media (max-width: 991px) {
+    .res-grid { grid-template-columns: 1fr; gap: 40px; }
+    .res-hero-content h1 { font-size: 42px; letter-spacing: 5px; }
+    .rest-booking-form { padding: 40px 30px; }
+}
+
+@media (max-width: 767px) {
+    .res-form-row { grid-template-columns: 1fr; gap: 0; }
+    .res-container { padding: 70px 20px; }
+    .rest-section-title { font-size: 28px; }
+    .info-box-styled { padding: 35px 25px; }
+}
+
+@media (max-width: 480px) {
+    .res-hero-content h1 { font-size: 30px; letter-spacing: 3px; }
+}

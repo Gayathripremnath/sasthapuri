@@ -1042,11 +1042,26 @@ font-family: 'Gilda Display', serif;
     }
 }
 
+@media (max-width: 1200px) {
+    .promo-content h1 { font-size: 50px; }
+}
+
+@media (max-width: 991px) {
+    .promo-content h1 { font-size: 40px; letter-spacing: 5px; }
+    .promo-content p { font-size: 15px; }
+    .progress-wrap { bottom: 25px; right: 25px; }
+}
+
 @media (max-width: 768px) {
-    .progress-wrap {
-        bottom: 20px;
-        right: 20px;
-        height: 40px;
-        width: 40px;
-    }
+    .promo-content h1 { font-size: 32px; letter-spacing: 3px; }
+    .promo-content h6 { font-size: 13px; letter-spacing: 4px; }
+    .banner-slide__content h1 { font-size: 42px; letter-spacing: 6px; }
+    .banner-slide__content h5 { font-size: 13px; letter-spacing: 4px; }
+    .section-padding { padding: 70px 0; }
+    .progress-wrap { bottom: 20px; right: 20px; height: 40px; width: 40px; }
+}
+
+@media (max-width: 480px) {
+    .banner-slide__content h1 { font-size: 32px; letter-spacing: 3px; }
+    .promo-content h1 { font-size: 28px; }
 }

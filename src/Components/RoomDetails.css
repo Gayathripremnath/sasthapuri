@@ -397,87 +397,98 @@
 /* form */
 .rd-booking-form {
   background: #fff;
-  padding: 40px;
-  border-radius: var(--rd-rad);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  padding: 45px;
+  border-radius: 0;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .rd-form-head {
   border-bottom: 1px solid #eee;
-  padding-bottom: 16px; margin-bottom: 24px;
+  padding-bottom: 20px; margin-bottom: 30px;
 }
 .rd-form-head h6 {
   font-family: var(--rd-sans);
-  font-size: 12px; letter-spacing: 5px;
-  text-transform: uppercase; color: #999;
-  margin: 0 0 6px;
+  font-size: 13px; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--rd-gold);
+  margin: 0 0 8px;
 }
 .rd-form-head h4 {
   font-family: var(--rd-serif);
-  font-size: 26px; font-weight: 400;
+  font-size: 30px; font-weight: 400;
   color: var(--rd-dark); margin: 0;
 }
 .rd-form-group {
-  margin-bottom: 18px;
+  margin-bottom: 25px;
 }
 .rd-form-group label {
   display: block;
   font-family: var(--rd-sans);
   font-size: 11px; letter-spacing: 3px;
-  text-transform: uppercase; color: #888;
-  margin-bottom: 6px;
+  text-transform: uppercase; color: #777;
+  margin-bottom: 10px;
 }
 .rd-form-group input,
 .rd-form-group select {
-  width: 100%; padding: 12px 14px;
+  width: 100%; padding: 14px 18px;
   border: 1px solid #e0e0e0;
-  border-radius: var(--rd-rad);
+  border-radius: 0;
   font-family: var(--rd-body);
   font-size: 15px; color: var(--rd-dark);
   background: #fafafa; outline: none;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 .rd-form-group input:focus,
 .rd-form-group select:focus {
-  border-color: var(--rd-gold); background: #fff;
+  border-color: var(--rd-gold); 
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(170, 132, 83, 0.1);
 }
 .rd-form-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
 }
 .rd-form-submit {
-  width: 100%; padding: 16px;
+  width: 100%; padding: 18px;
   background: var(--rd-gold); color: #fff; border: none;
-  border-radius: var(--rd-rad);
+  border-radius: 0;
   font-family: var(--rd-sans);
   font-size: 14px; letter-spacing: 3px;
   text-transform: uppercase; cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  margin-top: 4px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  margin-top: 10px;
+  font-weight: 500;
 }
-.rd-form-submit:hover { background: var(--rd-dark); transform: translateY(-2px); }
+.rd-form-submit:hover { 
+  background: var(--rd-dark); 
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1024px) {
-  .rd-pricing-grid     { grid-template-columns: 1fr; }
-  .rd-booking-inner    { grid-template-columns: 1fr; }
+@media (max-width: 1200px) {
   .rd-similar-track    { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+  .rd-pricing-grid     { grid-template-columns: 1fr; }
+  .rd-booking-inner    { grid-template-columns: 1fr; }
   .rd-room-grid        { grid-template-columns: 1fr; }
-  .rd-amenities        { position: static; }
-  .rd-checklist-grid   { grid-template-columns: 1fr; }
-  .rd-title            { font-size: 32px; }
+  .rd-checklist-grid   { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .rd-title            { font-size: 32px; letter-spacing: 2px; }
   .rd-similar-track    { grid-template-columns: 1fr; }
   .rd-pricing-cards    { grid-template-columns: 1fr; }
-  .rd-booking-form     { padding: 24px 18px; }
+  .rd-booking-form     { padding: 30px 20px; }
   .rd-form-row         { grid-template-columns: 1fr; }
-  .rd-slider           { min-height: 60vh; }
+  .rd-slider           { min-height: 50vh; }
+  .rd-content-section  { padding: 70px 0; }
 }
 
 @media (max-width: 480px) {
   .rd-title            { font-size: 26px; }
-  .rd-slider           { min-height: 50vh; }
+  .rd-checklist-grid   { grid-template-columns: 1fr; }
 }

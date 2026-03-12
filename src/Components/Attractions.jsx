@@ -72,10 +72,6 @@ const faqs = [
     q: 'Safety',
     a: 'The max depth of the pool is 1.60 m. There is no lifeguard at the pool. Children may only use the pool if accompanied by an adult or parent/guardian.',
   },
-  {
-    q: 'Smoking',
-    a: 'Kindly note that you are not allowed to smoke in The Spa, The Health Club or sauna area.',
-  },
 ];
 
 /* ── Component ── */
@@ -83,7 +79,7 @@ const Attractions = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaqs, setOpenFaqs] = useState([]);
 
   /* preloader */
   useEffect(() => {
@@ -149,7 +145,11 @@ const Attractions = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const toggleFaq = i => setOpenFaq(prev => (prev === i ? null : i));
+  const toggleFaq = i => {
+    setOpenFaqs(prev =>
+      prev.includes(i) ? prev.filter(item => item !== i) : [...prev, i]
+    );
+  };
 
   return (
     <>
@@ -238,25 +238,27 @@ const Attractions = () => {
 
       {/* ── Services — alternating rows ── */}
       <section className="at-services">
-        {services.map((svc, i) => (
-          <div
-            key={i}
-            className={`at-svc-row ${svc.imgLeft ? 'img-left' : 'img-right'} at-animate`}
-          >
-            <div className="at-svc-img">
-              <img src={svc.img} alt={svc.title} />
-              <div className="at-svc-img-overlay" />
+        <div className="at-container">
+          {services.map((svc, i) => (
+            <div
+              key={i}
+              className={`at-svc-row ${svc.imgLeft ? 'img-left' : 'img-right'}`}
+            >
+              <div className="at-svc-img">
+                <img src={svc.img} alt={svc.title} />
+                <div className="at-svc-img-overlay" />
+              </div>
+              <div className="at-svc-content">
+                <span className="at-svc-label">{svc.label}</span>
+                <h3 className="at-svc-title">{svc.title}</h3>
+                <p className="at-svc-desc">{svc.desc}</p>
+                <p className="at-svc-hours">
+                  <span className="at-clock-icon">🕐</span> {svc.hours}
+                </p>
+              </div>
             </div>
-            <div className="at-svc-content">
-              <span className="at-svc-label">{svc.label}</span>
-              <h3 className="at-svc-title">{svc.title}</h3>
-              <p className="at-svc-desc">{svc.desc}</p>
-              <p className="at-svc-hours">
-                <span className="at-clock-icon">🕐</span> {svc.hours}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
       {/* ── FAQ / Spa Etiquette ── */}
@@ -269,19 +271,21 @@ const Attractions = () => {
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`at-acc-block ${openFaq === i ? 'at-acc-open' : ''} anim anim-up anim-d${(i % 4) + 1}`}
+                className={`at-acc-block ${openFaqs.includes(i) ? 'at-acc-open' : ''}`}
               >
                 <button
                   className="at-acc-btn"
                   onClick={() => toggleFaq(i)}
-                  aria-expanded={openFaq === i}
+                  aria-expanded={openFaqs.includes(i)}
                 >
                   <span className="at-acc-num">0{i + 1}</span>
-                  {faq.q}
-                  <span className="at-acc-arrow">{openFaq === i ? '−' : '+'}</span>
+                  <span className="at-acc-title">{faq.q}</span>
+                  <span className="at-acc-arrow">+</span>
                 </button>
                 <div className="at-acc-content">
-                  <p>{faq.a}</p>
+                  <div className="at-acc-inner-p">
+                    <p>{faq.a}</p>
+                  </div>
                 </div>
               </div>
             ))}

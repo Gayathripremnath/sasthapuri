@@ -328,6 +328,7 @@ const Home = () => {
             <h2 className="promo-title">Promotional Video</h2>
             <a
               className="promo-play"
+              href="#"
             >
               <span className="play-icon" aria-hidden="true" />
             </a>

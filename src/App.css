@@ -35,3 +35,14 @@ a {
 ul {
   list-style: none;
 }
+
+/* Global Progress Circle Responsiveness */
+@media screen and (max-width: 768px) {
+  .progress-wrap {
+    right: 15px !important;
+    bottom: 15px !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+

@@ -1,4 +1,5 @@
 import React , { useEffect, useRef } from "react";
+import { FaPhone } from "react-icons/fa";
 import "./Gallery.css";
 import '../animations.css';
 import img1 from  "../assets/slider/1.jpg";
@@ -97,7 +98,7 @@ const Gallery = () => {
       {/* Header Banner */}
       <div
         className="banner-header section-padding valign bg-img bg-fixed"
-        style={{ backgroundImage: `url(${img1})` }}
+        style={{ backgroundImage: `url(${img5})` }}
       >
         <div className="container">
           <div className="row-g">
@@ -196,18 +197,22 @@ const Gallery = () => {
                 <div className="col-md-6">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img2} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
-                                    <i className="ti-control-play"></i>
-                                </span> </a>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
+                              <span className="video-gallery-polygon">
+                                <span className="play-arrow"></span>
+                              </span> 
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-6">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img3} alt="Vimeo"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
-                                    <i className="ti-control-play"></i>
-                                </span> </a>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
+                              <span className="video-gallery-polygon">
+                                <span className="play-arrow"></span>
+                              </span> 
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -216,27 +221,33 @@ const Gallery = () => {
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img4} className="img-fluid" alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
-                                    <i className="ti-control-play"></i>
-                                </span> </a>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
+                              <span className="video-gallery-polygon">
+                                <span className="play-arrow"></span>
+                              </span> 
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img7} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
-                                    <i className="ti-control-play"></i>
-                                </span> </a>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
+                              <span className="video-gallery-polygon">
+                                <span className="play-arrow"></span>
+                              </span> 
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img1} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span className="video-gallery-polygon">
-                                    <i className="ti-control-play"></i>
-                                </span> </a>
+                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
+                              <span className="video-gallery-polygon">
+                                <span className="play-arrow"></span>
+                              </span> 
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -246,88 +257,61 @@ const Gallery = () => {
     </section>
 
       {/* Reservation Section */}
-      <section className="testimonials">
-        <div
-          className="background bg-img bg-fixed section-padding pb-0"
-          style={{ backgroundImage: `url(${img2})` }}
-        >
-          <div className="container">
-            <div className="row">
-
-              <div className="col-md-5 mb-30 mt-30">
-                <h5>
-                  Each of our guest rooms feature a private bath, wi-fi,
-                  cable television and include full breakfast.
-                </h5>
-
-                <div className="reservations mb-30">
-                  <div className="icon color-1">
-                    <span className="flaticon-call"></span>
-                  </div>
-
-                  <div className="text">
-                    <p className="color-1">Reservation</p>
-                    <a className="color-1" href="tel:8551004444">
-                      855 100 4444
-                    </a>
-                  </div>
-                </div>
+      <section
+        className="rest-booking bg-img bg-fixed"
+        style={{ backgroundImage: `url(${img2})` }}
+      >
+        <div className="rest-booking-overlay"></div>
+        <div className="rest-container rest-booking-inner">
+          <div className="rest-booking-text anim anim-left">
+            <span className="rest-subtitle light">Make a Reservation</span>
+            <h2 className="rest-section-title light">Reserve Your<br/>Stay Today</h2>
+            <p className="light-p">
+              Each of our guest rooms feature a private bath, wi-fi,
+              cable television and include full breakfast. Experience luxury
+              in every detail.
+            </p>
+            <div className="rest-reservation-bar dark-bg">
+              <FaPhone className="rest-phone-icon gold" />
+              <div>
+                <span className="rest-res-label gold">Call Us</span>
+                <a href="tel:8551004444" className="rest-res-number gold">855 100 4444</a>
               </div>
-
-              {/* Booking Form */}
-              <div className="col-md-5 offset-md-2">
-                <div className="booking-box">
-                  <div className="head-box">
-                    <h6>Rooms & Suites</h6>
-                    <h4>Hotel Booking Form</h4>
-                  </div>
-
-                  <div className="booking-inner clearfix">
-                    <form className="form1 clearfix">
-                      <div className="row">
-
-                        <div className="col-md-12">
-                          <div className="input1_wrapper">
-                            <label>Check in</label>
-                            <div className="input1_inner">
-                              <input
-                                type="text"
-                                className="form-control input"
-                                placeholder="Check in"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-md-12">
-                          <div className="input1_wrapper">
-                            <label>Check out</label>
-                            <div className="input1_inner">
-                              <input
-                                type="text"
-                                className="form-control input"
-                                placeholder="Check out"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-md-12">
-                          <button
-                            type="submit"
-                            className="btn-form1-submit mt-15"
-                          >
-                            Book Now
-                          </button>
-                        </div>
-
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-
             </div>
+          </div>
+
+          <div className="rest-booking-form anim anim-right">
+            <h4>Hotel Booking Form</h4>
+            <form>
+              <div className="rest-form-group">
+                <label>Check in</label>
+                <input type="text" placeholder="Check in" />
+              </div>
+              <div className="rest-form-group">
+                <label>Check out</label>
+                <input type="text" placeholder="Check out" />
+              </div>
+              <div className="rest-form-row">
+                <div className="rest-form-group">
+                  <label>Adults</label>
+                  <select>
+                    <option value="1">1 Adult</option>
+                    <option value="2">2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                  </select>
+                </div>
+                <div className="rest-form-group">
+                  <label>Children</label>
+                  <select>
+                    <option value="0">0 Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Children</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" className="rest-btn-submit">Check Availability</button>
+            </form>
           </div>
         </div>
       </section>

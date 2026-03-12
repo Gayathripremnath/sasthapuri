@@ -356,34 +356,43 @@
   transform: scale(1.3);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
+  .about-grid { gap: 40px; }
+  .tc-track { max-width: 600px; }
+}
+
+@media (max-width: 991px) {
   .about-grid {
     grid-template-columns: 1fr;
+    text-align: center;
   }
-
+  .about-reservation {
+    justify-content: center;
+  }
   .about-images {
     grid-template-columns: repeat(2, 1fr);
   }
+  .tc-nav { display: none; }
+  .tc-track { max-width: 100%; }
 }
 
-@media (max-width: 640px) {
-  .about-banner {
-    min-height: 50vh;
-    padding-top: 100px;
-  }
-
-  .about-banner h1 {
-    letter-spacing: 6px;
-  }
-
+@media (max-width: 768px) {
+  .about-banner h1 { font-size: 42px; letter-spacing: 5px; }
   .about-section,
   .testimonials-section {
-    padding: 80px 18px;
+    padding: 70px 20px;
   }
-
   .about-images {
     grid-template-columns: 1fr;
   }
+  .about-copy .section-title { font-size: 32px; }
+  .tc-card { padding: 30px 20px; }
+}
+
+@media (max-width: 480px) {
+  .about-banner h1 { font-size: 32px; letter-spacing: 3px; }
+  .banner-stars { font-size: 14px; }
+  .tc-card p { font-size: 14px; }
 }
 
 .progress-wrap {

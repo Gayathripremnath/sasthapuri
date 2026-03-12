@@ -16,6 +16,8 @@ import Room1 from "./Components/Room1";
 import Room2 from "./Components/Room2";
 import Room3 from "./Components/Room3";
 import ScrollToTop from "./Components/ScrollToTop";
+import Services from "./Components/Services";
+import Reservation from "./Components/Reservation";
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar onMenuClick={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
@@ -43,6 +46,8 @@ function App() {
         <Route path="/room-1" element={<Room1 />} />
         <Route path="/room-2" element={<Room2 />} />
         <Route path="/room-3" element={<Room3 />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/reservation" element={<Reservation />} />
       </Routes>
 
       <Footer />
