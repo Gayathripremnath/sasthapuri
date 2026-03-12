@@ -87,6 +87,20 @@ const Restaurant = () => {
     return () => obs.disconnect();
   }, []);
 
+  const handleReservation = (e) => {
+    e.preventDefault();
+    const name = e.target.elements[0].value.trim();
+    const email = e.target.elements[1].value.trim();
+    
+    if (name.length === 0 || email.length === 0) {
+      alert("Please fill out all fields correctly. Inputs cannot be only spaces.");
+      return;
+    }
+    
+    alert("Table reservation submitted successfully! We will contact you soon.");
+    e.target.reset();
+  };
+
   return (
     <>
       {/* ── Preloader ── */}
@@ -222,14 +236,24 @@ const Restaurant = () => {
 
           <div className="rest-booking-form anim anim-right">
             <h4>Book a Table</h4>
-            <form>
+            <form onSubmit={handleReservation}>
               <div className="rest-form-group">
                 <label>Full Name</label>
-                <input type="text" placeholder="Your full name" />
+                <input 
+                  type="text" 
+                  placeholder="Your full name" 
+                  required 
+                  pattern=".*\S+.*"
+                  title="Input cannot be only spaces"
+                />
               </div>
               <div className="rest-form-group">
                 <label>Email Address</label>
-                <input type="email" placeholder="Your email" />
+                <input 
+                  type="email" 
+                  placeholder="Your email" 
+                  required 
+                />
               </div>
               <div className="rest-form-row">
                 <div className="rest-form-group">

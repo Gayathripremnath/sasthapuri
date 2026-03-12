@@ -69,6 +69,11 @@ const Gallery = () => {
     els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Thank you! We have received your availability request. We will get back to you soon.');
+  };
+
   return (
     <>
      <div className="preloader-bg"></div>
@@ -282,7 +287,7 @@ const Gallery = () => {
 
           <div className="rest-booking-form anim anim-right">
             <h4>Hotel Booking Form</h4>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="rest-form-group">
                 <label>Check in</label>
                 <input type="date" />

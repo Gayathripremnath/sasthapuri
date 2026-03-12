@@ -72,11 +72,23 @@ const Reservation = () => {
     };
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        // Final validation check for whitespace-only strings
+        const nameValid = formData.name.trim().length > 0;
+        const emailValid = formData.email.trim().length > 0;
+        const phoneValid = formData.phone.trim().length > 0;
+
+        if (!nameValid || !emailValid || !phoneValid) {
+            alert('Please fill out all fields with valid information (no empty spaces).');
+            return;
+        }
+
         alert('Thank you! Your reservation request has been submitted. Our team will contact you shortly.');
         console.log('Reservation Data:', formData);
     };
@@ -119,7 +131,15 @@ const Reservation = () => {
                                 <div className="res-form-row">
                                     <div className="rest-form-group">
                                         <label>Full Name</label>
-                                        <input type="text" name="name" placeholder="Your Name" required onChange={handleChange} />
+                                        <input 
+                                            type="text" 
+                                            name="name" 
+                                            placeholder="Your Name" 
+                                            required 
+                                            pattern=".*\S+.*"
+                                            title="Input cannot be only spaces"
+                                            onChange={handleChange} 
+                                        />
                                     </div>
                                     <div className="rest-form-group">
                                         <label>Email Address</label>
@@ -129,7 +149,15 @@ const Reservation = () => {
                                 <div className="res-form-row">
                                     <div className="rest-form-group">
                                         <label>Phone Number</label>
-                                        <input type="tel" name="phone" placeholder="Your Phone" required onChange={handleChange} />
+                                        <input 
+                                            type="tel" 
+                                            name="phone" 
+                                            placeholder="Your Phone" 
+                                            required 
+                                            pattern=".*\S+.*"
+                                            title="Input cannot be only spaces"
+                                            onChange={handleChange} 
+                                        />
                                     </div>
                                     <div className="rest-form-group">
                                         <label>Select Room</label>

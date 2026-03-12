@@ -28,11 +28,23 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
   }, [isOpen, initialRoom]);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Final validation check for whitespace-only strings
+    const nameValid = formData.name.trim().length > 0;
+    const emailValid = formData.email.trim().length > 0;
+    const phoneValid = formData.phone.trim().length > 0;
+
+    if (!nameValid || !emailValid || !phoneValid) {
+      alert('Please fill out all fields with valid information (no empty spaces).');
+      return;
+    }
+
     alert('Thank you! Your reservation request has been submitted. Our team will contact you shortly.');
     console.log('Reservation Data:', formData);
     onClose();
@@ -63,6 +75,8 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
                 name="name" 
                 placeholder="Enter your name" 
                 required 
+                pattern=".*\S+.*"
+                title="Input cannot be only spaces"
                 value={formData.name} 
                 onChange={handleChange} 
               />
@@ -87,6 +101,8 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
                 name="phone" 
                 placeholder="Enter phone number" 
                 required 
+                pattern=".*\S+.*"
+                title="Input cannot be only spaces"
                 value={formData.phone} 
                 onChange={handleChange} 
               />
