@@ -98,11 +98,11 @@ const Gallery = () => {
       {/* Header Banner */}
       <div
         className="banner-header section-padding valign bg-img bg-fixed"
-        style={{ backgroundImage: `url(${img5})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img5})` }}
       >
         <div className="container">
           <div className="row-g">
-            <div className="col-md-12 text-left caption mt-90">
+            <div className="col-md-12 text-left caption mt-90 anim anim-up">
               <h5>Images & Videos</h5>
               <h1>Our Gallery</h1>
             </div>

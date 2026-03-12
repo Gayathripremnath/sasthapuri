@@ -110,10 +110,10 @@ const Restaurant = () => {
       {/* ── Hero Banner ── */}
       <div
         className="rest-hero bg-img bg-fixed"
-        style={{ backgroundImage: `url(${heroImg})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${heroImg})` }}
       >
         <div className="rest-hero-overlay"></div>
-        <div className="rest-hero-content">
+        <div className="rest-hero-content anim anim-up">
           <p className="rest-hero-sub">Sasthapuri Hotel</p>
           <h1 className="rest-hero-title">Restaurant &amp; Bar</h1>
           <ul className="rest-breadcrumb">

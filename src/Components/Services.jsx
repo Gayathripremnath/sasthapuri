@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import './Services.css';
 import '../animations.css';
 
+import client1 from '../assets/clients/1.png';
+import client2 from '../assets/clients/2.png';
+import client3 from '../assets/clients/3.png';
+import client4 from '../assets/clients/4.png';
+import client5 from '../assets/clients/5.png';
+import client6 from '../assets/clients/6.png';
+
 const servicesData = [
   {
     subtitle: 'Discover',
@@ -168,6 +175,28 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Clients Section ── */}
+      <section className="srv-clients">
+        <div className="srv-container">
+          <div className="clients-track-container">
+            <div className="clients-track">
+              {/* Duplicate the logos a few times for an infinite scroll effect */}
+              {[...Array(3)].map((_, i) => (
+                <React.Fragment key={i}>
+                  <div className="clients-logo"><a href="#0"><img src={client1} alt="Client 1" /></a></div>
+                  <div className="clients-logo"><a href="#0"><img src={client2} alt="Client 2" /></a></div>
+                  <div className="clients-logo"><a href="#0"><img src={client3} alt="Client 3" /></a></div>
+                  <div className="clients-logo"><a href="#0"><img src={client4} alt="Client 4" /></a></div>
+                  <div className="clients-logo"><a href="#0"><img src={client5} alt="Client 5" /></a></div>
+                  <div className="clients-logo"><a href="#0"><img src={client6} alt="Client 6" /></a></div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

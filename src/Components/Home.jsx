@@ -140,6 +140,7 @@ const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
+    // Original experience-row observer
     const rows = document.querySelectorAll('.experience-row');
     const observer = new IntersectionObserver(
       (entries) => {
@@ -155,6 +156,20 @@ const Home = () => {
     rows.forEach((row) => observer.observe(row));
     return () => observer.disconnect();
   }, []);
+
+  // Generic anim observer
+  useEffect(() => {
+    const els = document.querySelectorAll('.anim');
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('anim-show'); obs.unobserve(e.target); }
+      }),
+      { threshold: 0.10 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
 
   useEffect(() => {
     const progressPath = progressPathRef.current;
@@ -209,7 +224,7 @@ const Home = () => {
             </a>
           </div>
 
-          <div className="content-overlay">
+          <div className="content-overlay anim anim-up">
             <div className="stars">★★★</div>
             <h5 className="welcome-text">WELCOME TO SASTHAPURI</h5>
             <h1 className="main-heading" style={{ padding: '10px', letterSpacing: '.9rem' }}>STAY WITH COMFORT</h1>
@@ -222,14 +237,14 @@ const Home = () => {
         </div>
 
         <section className="services-section" id="services">
-          <div className="section-title services-title">
+          <div className="section-title services-title anim anim-up">
             <h5>OUR SERVICES</h5>
             <h2>Hotel Facilities</h2>
           </div>
 
           <div className="services-grid">
-            {services.map((service) => (
-              <article className="service-card" key={service.title}>
+            {services.map((service, idx) => (
+              <article className={`service-card anim anim-up anim-d${(idx % 6) + 1}`} key={service.title}>
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
@@ -246,9 +261,9 @@ const Home = () => {
           </div>
 
           <div className="rooms-grid">
-            {rooms.map((room) => (
+            {rooms.map((room, idx) => (
               <article
-                className="room-card room-card-featured"
+                className={`room-card room-card-featured anim anim-up anim-d${(idx % 6) + 1}`}
                 id={room.id}
                 key={room.id}
                 style={{ backgroundImage: `url('${room.image}')` }}
@@ -315,7 +330,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="promo-section" id="promo">
+        <section className="promo-section anim anim-up" id="promo">
           <div
             className="promo-overlay"
             style={{
@@ -327,7 +342,7 @@ const Home = () => {
             <p className="promo-kicker">THE HOTEL SASTHAPURI</p>
             <h2 className="promo-title">Promotional Video</h2>
             <a
-              className="promo-play"
+              className="promo-play anim anim-scale"
               href="#"
             >
               <span className="play-icon" aria-hidden="true" />

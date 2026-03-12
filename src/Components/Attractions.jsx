@@ -98,52 +98,49 @@ const Attractions = () => {
     return () => clearInterval(id);
   }, []);
 
-  /* animate-in on scroll — covers both .at-animate and .anim classes */
+  /* scroll-reveal observer */
   useEffect(() => {
-    const els = document.querySelectorAll('.at-animate, .anim');
+    const els = document.querySelectorAll('.anim');
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('at-visible', 'anim-show');
-          obs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('anim-show'); obs.unobserve(e.target); }
       }),
-      { threshold: 0.12 }
+      { threshold: 0.10 }
     );
     els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
-    const progressPath = progressPathRef.current;
-    const progressWrap = progressWrapRef.current;
-    if (!progressPath || !progressWrap) return;
-
-    const pathLength = progressPath.getTotalLength();
-    progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-    progressPath.style.strokeDashoffset = `${pathLength}`;
-
-    const updateProgress = () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
-      progressPath.style.strokeDashoffset = `${progress}`;
-
-      if (scrollTop > 120) {
-        progressWrap.classList.add('active-progress');
-      } else {
-        progressWrap.classList.remove('active-progress');
-      }
+      const progressPath = progressPathRef.current;
+      const progressWrap = progressWrapRef.current;
+      if (!progressPath || !progressWrap) return;
+  
+      const pathLength = progressPath.getTotalLength();
+      progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      progressPath.style.strokeDashoffset = `${pathLength}`;
+  
+      const updateProgress = () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
+        progressPath.style.strokeDashoffset = `${progress}`;
+  
+        if (scrollTop > 120) {
+          progressWrap.classList.add('active-progress');
+        } else {
+          progressWrap.classList.remove('active-progress');
+        }
+      };
+  
+      updateProgress();
+      window.addEventListener('scroll', updateProgress);
+      return () => window.removeEventListener('scroll', updateProgress);
+    }, []);
+  
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-    updateProgress();
-    window.addEventListener('scroll', updateProgress);
-    return () => window.removeEventListener('scroll', updateProgress);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const toggleFaq = i => {
     setOpenFaqs(prev =>
@@ -155,13 +152,19 @@ const Attractions = () => {
     <>
       {/* Progress scroll totop */}
       <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
-        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <svg
+          className="progress-circle svg-content"
+          width="100%"
+          height="100%"
+          viewBox="-1 -1 102 102"
+        >
           <path
             ref={progressPathRef}
             d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
           />
         </svg>
       </div>
+
 
       {/* ── Preloader ── */}
       <div className="preloader-bg"></div>
@@ -172,19 +175,14 @@ const Attractions = () => {
       </div>
 
       {/* ── Scroll Progress ── */}
-      <div className="at-progress-wrap">
-        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-      </div>
-
+      
       {/* ── Hero Slider ── */}
       <div className="at-hero">
         {slides.map((src, i) => (
           <div
             key={i}
             className={`at-hero-slide ${i === activeSlide ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${src})` }}
+            style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${src})` }}
           />
         ))}
         <div className="at-hero-overlay" />
@@ -214,7 +212,7 @@ const Attractions = () => {
       </div>
 
       {/* ── Intro Section ── */}
-      <section className="at-intro">
+      <section className="at-intro anim anim-up">
         <div className="at-container">
           <div className="at-stars anim anim-fade">★★★★★</div>
           <div className="at-subtitle anim anim-up anim-d1">So Many Ways to Unwind</div>
@@ -242,7 +240,7 @@ const Attractions = () => {
           {services.map((svc, i) => (
             <div
               key={i}
-              className={`at-svc-row ${svc.imgLeft ? 'img-left' : 'img-right'}`}
+              className={`at-svc-row ${svc.imgLeft ? 'img-left' : 'img-right'} anim ${svc.imgLeft ? 'anim-left' : 'anim-right'}`}
             >
               <div className="at-svc-img">
                 <img src={svc.img} alt={svc.title} />
@@ -262,10 +260,12 @@ const Attractions = () => {
       </section>
 
       {/* ── FAQ / Spa Etiquette ── */}
-      <section className="at-faq">
+      <section className="at-faq anim anim-up">
         <div className="at-container">
-          <div className="at-subtitle anim anim-up">F.A.Qs</div>
-          <h2 className="at-section-title anim anim-up anim-d1">Spa Etiquette</h2>
+          <div className="at-faq-head" style={{ marginBottom: '50px', textAlign: 'center' }}>
+            <span className="at-subtitle" style={{ justifyContent: 'center' }}>Guidelines</span>
+            <h2 className="at-section-title">Spa Etiquette & FAQ</h2>
+          </div>
 
           <div className="at-accordion">
             {faqs.map((faq, i) => (

@@ -39,6 +39,23 @@
 .anim-d5 { transition-delay: 0.46s; }
 .anim-d6 { transition-delay: 0.58s; }
 
+/* ── Media Queries for Animations ── */
+@media (max-width: 991px) {
+  .anim-up    { transform: translateY(20px); }
+  .anim-left  { transform: translateX(-25px); }
+  .anim-right { transform: translateX(25px); }
+}
+
+@media (max-width: 767px) {
+  .anim-up    { transform: translateY(15px); }
+  .anim-left  { transform: translateX(-15px); }
+  .anim-right { transform: translateX(15px); }
+  
+  .anim {
+    transition-duration: 0.5s;
+  }
+}
+
 /* ── Keyframes (for elements that use animation: rather than transition:) ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(36px); }
@@ -60,3 +77,4 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+

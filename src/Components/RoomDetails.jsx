@@ -91,6 +91,19 @@ const RoomDetails = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  /* scroll-reveal */
+  useEffect(() => {
+    const els = document.querySelectorAll('.anim');
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('anim-show'); obs.unobserve(e.target); }
+      }),
+      { threshold: 0.10 }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
   const prevSim = () => setSimStart(s => Math.max(0, s - 1));
   const nextSim = () => setSimStart(s => Math.min(similarRooms.length - visibleSim, s + 1));
 
@@ -113,12 +126,6 @@ const RoomDetails = () => {
         </div>
       </div>
 
-      {/* ── Scroll progress ── */}
-      <div className="rd-progress-wrap">
-        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-      </div>
 
       {/* ── Hero Slider ── */}
       <div className="rd-slider">
@@ -148,7 +155,12 @@ const RoomDetails = () => {
           <div className="rd-room-grid">
 
             {/* Left — main content */}
-            <div className="rd-room-main">
+            <div className="rd-hero-content anim anim-up">
+              <div className="rd-hero-stars">★★★★★</div>
+              <p className="rd-hero-kicker">Superior Suite</p>
+              <h1 className="rd-hero-title">Room Details</h1>
+            </div>
+            <div className="rd-room-main anim anim-up">
               <div className="rd-stars">★★★★★</div>
               <div className="rd-subtitle">Luxury Hotel</div>
               <h2 className="rd-title">Junior Suite</h2>
@@ -204,7 +216,7 @@ const RoomDetails = () => {
             </div>
 
             {/* Right — amenities sidebar */}
-            <aside className="rd-amenities">
+            <aside className="rd-amenities anim anim-right">
               <h6 className="rd-list-heading">Amenities</h6>
               <ul className="rd-amenity-list">
                 <li>
@@ -246,10 +258,11 @@ const RoomDetails = () => {
       </section>
 
       {/* ── Similar Rooms ── */}
-      <section className="rd-similar bg-blck">
+      <section className="rd-similar-section anim anim-up">
         <div className="rd-container">
-          <div className="rd-subtitle light">Luxury Hotel</div>
-          <h2 className="rd-title light">Similar Rooms</h2>
+          <div className="rd-similar-head">
+            <h2 className="rd-section-title">Similar Rooms</h2>
+          </div>
 
           <div className="rd-similar-viewport">
             <button className="rd-nav-btn rd-nav-prev" onClick={prevSim} disabled={simStart === 0}>‹</button>
@@ -286,9 +299,9 @@ const RoomDetails = () => {
       </section>
 
       {/* ── Pricing / Extra Services ── */}
-      <section className="rd-pricing">
-        <div className="rd-container">
-          <div className="rd-pricing-grid">
+      <section className="rd-pricing section-padding anim anim-up">
+        <div className="rd-container rd-pricing-inner">
+          <div className="rd-pricing-info">
             <div className="rd-pricing-intro">
               <div className="rd-subtitle">Best Prices</div>
               <h2 className="rd-title">Extra Services</h2>
@@ -301,25 +314,25 @@ const RoomDetails = () => {
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="rd-pricing-cards">
-              {pricingCards.map((card, i) => (
-                <div className="rd-pricing-card" key={i}>
-                  <img src={card.img} alt={card.name} />
-                  <div className="rd-card-body">
-                    <div className="rd-card-name" dangerouslySetInnerHTML={{ __html: card.name }} />
-                    <div className="rd-card-amount">{card.amount}<span>{card.per}</span></div>
-                    <ul className="rd-card-list">
-                      {card.items.map((it, j) => (
-                        <li key={j} className={j === 2 ? 'unavail' : ''}>
-                          {j < 2 ? '✓' : '✕'} {it}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+          <div className="rd-pricing-cards">
+            {pricingCards.map((card, i) => (
+              <div className="rd-pricing-card" key={i}>
+                <img src={card.img} alt={card.name} />
+                <div className="rd-card-body">
+                  <div className="rd-card-name" dangerouslySetInnerHTML={{ __html: card.name }} />
+                  <div className="rd-card-amount">{card.amount}<span>{card.per}</span></div>
+                  <ul className="rd-card-list">
+                    {card.items.map((it, j) => (
+                      <li key={j} className={j === 2 ? 'unavail' : ''}>
+                        {j < 2 ? '✓' : '✕'} {it}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -346,9 +359,9 @@ const RoomDetails = () => {
           </div>
 
           {/* Right — Booking form */}
-          <div className="rd-booking-form">
-            <div className="rd-form-head">
-              <h6>Rooms &amp; Suites</h6>
+          <aside className="rd-sidebar anim anim-right">
+            <div className="rd-booking-card">
+              <h3>Check Availability</h3>
               <h4>Hotel Booking Form</h4>
             </div>
             <form>
@@ -378,7 +391,7 @@ const RoomDetails = () => {
               </div>
               <button type="submit" className="rd-form-submit">Check Availability</button>
             </form>
-          </div>
+          </aside>
         </div>
       </section>
     </>

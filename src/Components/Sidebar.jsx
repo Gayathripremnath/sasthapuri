@@ -33,9 +33,9 @@ const Sidebar = ({ isOpen, onClose }) => {
               <span>{isRoomsOpen ? '▴' : '▾'}</span>
             </button>
             <ul id="rooms-submenu" className={`submenu ${isRoomsOpen ? 'show' : ''}`}>
-              <li><Link to="/room-1" onClick={onClose}>Room Name 01</Link></li>
-              <li><Link to="/room-2" onClick={onClose}>Room Name 02</Link></li>
-              <li><Link to="/room-3" onClick={onClose}>Room Name 03</Link></li>
+              <li><Link to="/room-1" onClick={onClose}>Room 01</Link></li>
+              <li><Link to="/room-2" onClick={onClose}>Room 02</Link></li>
+              <li><Link to="/room-3" onClick={onClose}>Room 03</Link></li>
             </ul>
           </li>
           <li><Link to="/reservation" onClick={onClose}>RESERVATION</Link></li>
