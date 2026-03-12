@@ -110,7 +110,7 @@ const RoomDetails = () => {
   return (
     <>
       {/* Progress scroll totop */}
-      <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
+      <div className="rd-progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
         <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
           <path
             ref={progressPathRef}
@@ -147,6 +147,13 @@ const RoomDetails = () => {
             />
           ))}
         </div>
+        <div className="rd-hero-container">
+          <div className="rd-hero-content anim anim-up">
+            <div className="rd-hero-stars">★★★★★</div>
+            <p className="rd-hero-kicker">Superior Suite</p>
+            <h1 className="rd-hero-title">Room Details</h1>
+          </div>
+        </div>
       </div>
 
       {/* ── Room Content ── */}
@@ -154,12 +161,6 @@ const RoomDetails = () => {
         <div className="rd-container">
           <div className="rd-room-grid">
 
-            {/* Left — main content */}
-            <div className="rd-hero-content anim anim-up">
-              <div className="rd-hero-stars">★★★★★</div>
-              <p className="rd-hero-kicker">Superior Suite</p>
-              <h1 className="rd-hero-title">Room Details</h1>
-            </div>
             <div className="rd-room-main anim anim-up">
               <div className="rd-stars">★★★★★</div>
               <div className="rd-subtitle">Luxury Hotel</div>
@@ -258,10 +259,11 @@ const RoomDetails = () => {
       </section>
 
       {/* ── Similar Rooms ── */}
-      <section className="rd-similar-section anim anim-up">
+      <section className="rd-similar bg-blck anim anim-up">
         <div className="rd-container">
           <div className="rd-similar-head">
-            <h2 className="rd-section-title">Similar Rooms</h2>
+            <span className="rd-subtitle light">Luxury Hotel</span>
+            <h2 className="rd-title light">Similar Rooms</h2>
           </div>
 
           <div className="rd-similar-viewport">
@@ -299,13 +301,13 @@ const RoomDetails = () => {
       </section>
 
       {/* ── Pricing / Extra Services ── */}
-      <section className="rd-pricing section-padding anim anim-up">
-        <div className="rd-container rd-pricing-inner">
+      <section className="rd-pricing anim anim-up">
+        <div className="rd-container rd-pricing-grid">
           <div className="rd-pricing-info">
             <div className="rd-pricing-intro">
               <div className="rd-subtitle">Best Prices</div>
               <h2 className="rd-title">Extra Services</h2>
-              <p>The best prices for your relaxing vacation. Premium amenities and personalised services crafted to make your stay unforgettable.</p>
+              <p className="rd-desc">The best prices for your relaxing vacation. Premium amenities and personalised services crafted to make your stay unforgettable.</p>
               <div className="rd-reservation-bar">
                 <span className="rd-res-icon">📞</span>
                 <div>
@@ -359,9 +361,9 @@ const RoomDetails = () => {
           </div>
 
           {/* Right — Booking form */}
-          <aside className="rd-sidebar anim anim-right">
-            <div className="rd-booking-card">
-              <h3>Check Availability</h3>
+          <div className="rd-booking-form anim anim-right">
+            <div className="rd-form-head">
+              <h6>Online Booking</h6>
               <h4>Hotel Booking Form</h4>
             </div>
             <form>
@@ -391,7 +393,7 @@ const RoomDetails = () => {
               </div>
               <button type="submit" className="rd-form-submit">Check Availability</button>
             </form>
-          </aside>
+          </div>
         </div>
       </section>
     </>

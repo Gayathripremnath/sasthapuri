@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Rooms.css';
+import BookingModal from './BookingModal';
 import '../animations.css';
 
 import slide1 from '../assets/slider/1.jpg';
@@ -84,6 +85,13 @@ const Rooms = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
   const [activePricing, setActivePricing] = useState(0);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState('');
+
+  const openBooking = (roomName = '') => {
+    setSelectedRoom(roomName);
+    setIsBookingOpen(true);
+  };
 
   /* preloader */
   useEffect(() => {
@@ -155,6 +163,12 @@ const Rooms = () => {
           />
         </svg>
       </div>
+
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+        initialRoom={selectedRoom} 
+      />
       {/* Preloader */}
       <div className="preloader-bg"></div>
       <div id="preloader">
@@ -214,7 +228,13 @@ const Rooms = () => {
 
                 <div className="rm-room-footer">
                   <Link className="rm-link-btn" to="/room-details">Details →</Link>
-                  <Link className="rm-book-btn" to="/room-details"><span>Book Now</span></Link>
+                  <button 
+                    className="rm-book-btn" 
+                    onClick={() => openBooking(room.name)}
+                    style={{ border: 'none', cursor: 'pointer', background: 'none', padding: 0 }}
+                  >
+                    <span>Book Now</span>
+                  </button>
                 </div>
               </div>
             </div>

@@ -285,11 +285,11 @@ const Gallery = () => {
             <form>
               <div className="rest-form-group">
                 <label>Check in</label>
-                <input type="text" placeholder="Check in" />
+                <input type="date" />
               </div>
               <div className="rest-form-group">
                 <label>Check out</label>
-                <input type="text" placeholder="Check out" />
+                <input type="date" />
               </div>
               <div className="rest-form-row">
                 <div className="rest-form-group">

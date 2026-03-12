@@ -7,6 +7,7 @@ import imgh3 from '../assets/slider/3.jpg';
 import room1 from "../assets/rooms/1.jpg";
 import room2 from "../assets/rooms/2.jpg";
 import room12 from "../assets/rooms/12.jpg";
+import BookingModal from './BookingModal';
 
 const services = [
   {
@@ -138,6 +139,13 @@ const Home = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState('');
+
+  const openBooking = (roomTitle = '') => {
+    setSelectedRoom(roomTitle);
+    setIsBookingOpen(true);
+  };
 
   useEffect(() => {
     // Original experience-row observer
@@ -231,7 +239,7 @@ const Home = () => {
             <h1 className="sub-heading" style={{ padding: '10px', letterSpacing: '.9rem' }}>LEAVE WITH MEMORIES</h1>
 
             <div className="action-button">
-              <button className="btn-luxury">EXPLORE OUR WORLD</button>
+              <button className="btn-luxury" onClick={() => openBooking('')}>EXPLORE OUR WORLD</button>
             </div>
           </div>
         </div>
@@ -269,7 +277,13 @@ const Home = () => {
                 style={{ backgroundImage: `url('${room.image}')` }}
               >
                 <div className="room-card-overlay"></div>
-                <a className="room-book-tag" href="#reservation">BOOK</a>
+                <button 
+                  className="room-book-tag" 
+                  onClick={() => openBooking(room.title)}
+                  style={{ border: 'none', cursor: 'pointer' }}
+                >
+                  BOOK
+                </button>
                 <div className="room-card-content">
                   <p className="room-price">{room.price}</p>
                   <h3>{room.title}</h3>
@@ -360,6 +374,13 @@ const Home = () => {
               />
           </svg>
       </div>
+
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+        initialRoom={selectedRoom} 
+      />
+
     </>
   );
 };

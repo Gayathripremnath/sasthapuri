@@ -511,12 +511,12 @@
 }
 
 @media (max-width: 991px) {
-  .rest-intro-grid           { grid-template-columns: 1fr; text-align: center; }
-  .rest-reservation-bar      { margin: 30px auto; }
-  .rest-intro-images         { height: 400px; max-width: 600px; margin: 0 auto; }
+  .rest-intro-grid           { grid-template-columns: 1fr; text-align: left; }
+  .rest-reservation-bar      { margin: 30px 0; }
+  .rest-intro-images         { height: 400px; max-width: 600px; margin: 0; }
   .rest-booking-inner        { grid-template-columns: 1fr; }
-  .rest-booking-text         { text-align: center; margin-bottom: 40px; }
-  .rest-reservation-bar.dark-bg { margin: 20px auto; }
+  .rest-booking-text         { text-align: left; margin-bottom: 40px; }
+  .rest-reservation-bar.dark-bg { margin: 20px 0; }
 }
 
 @media (max-width: 768px) {
