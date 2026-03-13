@@ -217,10 +217,12 @@ const Home = () => {
     };
 
     window.addEventListener('pointerdown', unmuteOnInteract, { once: true });
+    window.addEventListener('touchstart', unmuteOnInteract, { once: true });
     window.addEventListener('keydown', unmuteOnInteract, { once: true });
 
     return () => {
       window.removeEventListener('pointerdown', unmuteOnInteract);
+      window.removeEventListener('touchstart', unmuteOnInteract);
       window.removeEventListener('keydown', unmuteOnInteract);
     };
   }, []);
