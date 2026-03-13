@@ -10,6 +10,7 @@ import room12 from "../assets/rooms/12.jpg";
 import worldIcon from '../assets/world.png';
 import bedIcon from '../assets/bed.png';
 import foodIcon from '../assets/food-serving.png';
+import bgMusic from '../assets/music.mp3';
 import BookingModal from './BookingModal';
 
 const services = [
@@ -130,6 +131,7 @@ const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState('');
+  const audioRef = useRef(null);
 
   const openBooking = (roomTitle = '') => {
     setSelectedRoom(roomTitle);
@@ -195,6 +197,34 @@ const Home = () => {
     return () => window.removeEventListener('scroll', updateProgress);
   }, []);
 
+  // Light background music on load
+  useEffect(() => {
+    const audioEl = audioRef.current;
+    if (!audioEl) return;
+    audioEl.muted = true;      // allow autoplay without gesture
+    audioEl.volume = 0.18;     // target volume
+
+    const tryPlay = () => audioEl.play().catch(() => {});
+    tryPlay();
+
+    // On first user interaction: unmute and replay at target volume
+    const unmuteOnInteract = () => {
+      audioEl.muted = false;
+      audioEl.volume = 0.18;
+      tryPlay();
+      window.removeEventListener('pointerdown', unmuteOnInteract);
+      window.removeEventListener('keydown', unmuteOnInteract);
+    };
+
+    window.addEventListener('pointerdown', unmuteOnInteract, { once: true });
+    window.addEventListener('keydown', unmuteOnInteract, { once: true });
+
+    return () => {
+      window.removeEventListener('pointerdown', unmuteOnInteract);
+      window.removeEventListener('keydown', unmuteOnInteract);
+    };
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -204,6 +234,7 @@ const Home = () => {
   return (
     <>
       <div className="home-wrapper">
+        <audio ref={audioRef} src={bgMusic} autoPlay loop preload="auto" playsInline />
         <div className="home">
           <div className="slideshow-container">
             <div className="slide" style={{ backgroundImage: `url(${imgh1})` }}></div>
