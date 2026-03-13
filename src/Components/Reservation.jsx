@@ -183,6 +183,7 @@ const Reservation = () => {
                                     <div className="rest-form-group">
                                         <label>Adults</label>
                                         <select name="adults" onChange={handleChange}>
+                                            <option>Adults</option>
                                             <option>1 Adult</option>
                                             <option>2 Adults</option>
                                             <option>3 Adults</option>

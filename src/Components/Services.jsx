@@ -145,57 +145,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Booking Form Section */}
-      <section className="srv-booking bg-img bg-fixed" style={{ backgroundImage: "url('https://sasthapuri.com/web_demo/img/slider/2.jpg')" }}>
-        <div className="srv-booking-overlay" />
-        <div className="srv-container">
-          <div className="srv-booking-grid">
-            <div className="srv-booking-info anim anim-left">
-              <div className="stars">★★★★★</div>
-              <h5>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h5>
-              <div className="srv-res-strip">
-                <div className="icon">📞</div>
-                <div className="text">
-                  <p>Reservation</p>
-                  <a href="tel:+914952723281">+91-4952-2723281</a>
-                </div>
-              </div>
-            </div>
-            <div className="srv-booking-box anim anim-right">
-              <div className="head-box">
-                <h6>Rooms & Suites</h6>
-                <h4>Hotel Booking Form</h4>
-              </div>
-              <form>
-                <div className="form-group"><label>Check In</label><input type="date" /></div>
-                <div className="form-group"><label>Check Out</label><input type="date" /></div>
-                <button type="submit" className="srv-submit-btn">Check Availability</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── Clients Section ── */}
-      <section className="srv-clients">
-        <div className="srv-container">
-          <div className="clients-track-container">
-            <div className="clients-track">
-              {/* Duplicate the logos a few times for an infinite scroll effect */}
-              {[...Array(3)].map((_, i) => (
-                <React.Fragment key={i}>
-                  <div className="clients-logo"><a href="#0"><img src={client1} alt="Client 1" /></a></div>
-                  <div className="clients-logo"><a href="#0"><img src={client2} alt="Client 2" /></a></div>
-                  <div className="clients-logo"><a href="#0"><img src={client3} alt="Client 3" /></a></div>
-                  <div className="clients-logo"><a href="#0"><img src={client4} alt="Client 4" /></a></div>
-                  <div className="clients-logo"><a href="#0"><img src={client5} alt="Client 5" /></a></div>
-                  <div className="clients-logo"><a href="#0"><img src={client6} alt="Client 6" /></a></div>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
     </div>
   );

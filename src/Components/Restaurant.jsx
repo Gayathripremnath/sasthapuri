@@ -268,6 +268,7 @@ const Restaurant = () => {
               <div className="rest-form-group">
                 <label>Number of Guests</label>
                 <select>
+                  <option>Person</option>
                   <option>1 Person</option>
                   <option>2 Persons</option>
                   <option>3 Persons</option>

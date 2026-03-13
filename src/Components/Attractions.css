@@ -110,7 +110,7 @@
    ================================================================ */
 .at-hero {
   position: relative;
-  height: 100vh; min-height: 620px;
+  height: 460px; 
   overflow: hidden;
 }
 .at-hero-slide {

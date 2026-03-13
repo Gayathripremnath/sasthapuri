@@ -262,7 +262,7 @@ const Gallery = () => {
     </section>
 
       {/* Reservation Section */}
-      <section
+      {/* <section
         className="rest-booking bg-img bg-fixed"
         style={{ backgroundImage: `url(${img2})` }}
       >
@@ -300,6 +300,7 @@ const Gallery = () => {
                 <div className="rest-form-group">
                   <label>Adults</label>
                   <select>
+                    <option value="0">Adults</option>
                     <option value="1">1 Adult</option>
                     <option value="2">2 Adults</option>
                     <option value="3">3 Adults</option>
@@ -319,7 +320,7 @@ const Gallery = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

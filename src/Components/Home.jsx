@@ -7,6 +7,9 @@ import imgh3 from '../assets/slider/3.jpg';
 import room1 from "../assets/rooms/1.jpg";
 import room2 from "../assets/rooms/2.jpg";
 import room12 from "../assets/rooms/12.jpg";
+import worldIcon from '../assets/world.png';
+import bedIcon from '../assets/bed.png';
+import foodIcon from '../assets/food-serving.png';
 import BookingModal from './BookingModal';
 
 const services = [
@@ -14,12 +17,7 @@ const services = [
     title: 'Pick Up & Drop',
     description: "We'll pick up from airport while you comfy on your ride, mus nellentesque habitant.",
     icon: (
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M21 17a21 21 0 1 0 18 4" />
-        <path d="M42 7h12v12" />
-        <path d="M54 7 36 25" />
-        <path d="M23 24c2 5 6 9 11 11l-6 8c-10-3-17-10-20-20Z" />
-      </svg>
+          <img src={worldIcon} alt="Pick up and drop world icon" className="service-image" />
     ),
   },
   {
@@ -39,24 +37,15 @@ const services = [
     title: '24hrs Room Service',
     description: 'Room tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
     icon: (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M10 41h44" />
-          <path d="M14 41V20h36v21" />
-          <path d="M18 46v-5M46 46v-5"  />
-          <path d="M22 28h8l4 5 8-9 6 7" />
-        </svg>
+        <img src={bedIcon} alt="24 hour room service bed icon" className="service-image" />
     ),
   },
   {
     title: 'Multi Cuisine Restaurant',
     description: 'Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
     icon: (
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M17 12v12M23 12v12M20 24v28" />
-        <path d="M36 12c0 8 8 8 8 16v24" />
-        <path d="M12 34h20l-4 10H16Z" />
-        <circle cx="45" cy="18" r="5" />
-      </svg>
+            <img src={foodIcon} alt="Multi cuisine restaurant food icon" className="service-image" />
+
     ),
   },
   {
@@ -239,7 +228,7 @@ const Home = () => {
             <h1 className="sub-heading" style={{ padding: '10px', letterSpacing: '.9rem' }}>LEAVE WITH MEMORIES</h1>
 
             <div className="action-button">
-              <button className="btn-luxury" onClick={() => openBooking('')}>EXPLORE OUR WORLD</button>
+              <button className="btn-luxury" onClick={() => openBooking('')}>Rooms & Restaurant</button>
             </div>
           </div>
         </div>
@@ -280,7 +269,7 @@ const Home = () => {
                 <button 
                   className="room-book-tag" 
                   onClick={() => openBooking(room.title)}
-                  style={{ border: 'none', cursor: 'pointer' }}
+                  style={{ cursor: 'pointer' }}
                 >
                   BOOK
                 </button>

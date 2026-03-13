@@ -91,7 +91,7 @@
 /* ── Hero Banner ── */
 .rest-hero {
   position: relative;
-  min-height: 88vh;
+  min-height: 58vh;
   display: flex;
   align-items: center;
   justify-content: center;
