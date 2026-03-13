@@ -90,8 +90,7 @@
    ============================================================ */
 .rd-slider {
   position: relative;
-  height: 100vh;
-  min-height: 580px;
+  height: 450px;
   overflow: hidden;
 }
 .rd-slide {

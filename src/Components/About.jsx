@@ -114,9 +114,6 @@ const progressWrapRef = useRef(null);
         <div className="about-banner__content anim anim-up">
           <p className="banner-kicker">Luxury Hotel</p>
           <h1>About Us</h1>
-          <div className="banner-stars" aria-hidden="true">
-            ★★★★☆
-          </div>
         </div>
       </header>
 
@@ -124,7 +121,7 @@ const progressWrapRef = useRef(null);
         <section className="about-section" id="about">
           <div className="about-grid">
             <div className="about-copy anim anim-left">
-             <div className="stars">★★★★★</div>
+             <div className="stars">★★★</div>
 
               <span className="section-subtitle">Hotel Sasthapuri</span>
               <h2 className="section-title">Enjoy a Luxury Experience</h2>

@@ -149,7 +149,7 @@ const RoomDetails = () => {
         </div>
         <div className="rd-hero-container">
           <div className="rd-hero-content anim anim-up">
-            <div className="rd-hero-stars">★★★★★</div>
+            <div className="rd-hero-stars">★★★</div>
             <p className="rd-hero-kicker">Superior Suite</p>
             <h1 className="rd-hero-title">Room Details</h1>
           </div>
@@ -162,7 +162,7 @@ const RoomDetails = () => {
           <div className="rd-room-grid">
 
             <div className="rd-room-main anim anim-up">
-              <div className="rd-stars">★★★★★</div>
+              <div className="rd-stars">★★★</div>
               <div className="rd-subtitle">Luxury Hotel</div>
               <h2 className="rd-title">Junior Suite</h2>
 
@@ -340,15 +340,14 @@ const RoomDetails = () => {
       </section>
 
       {/* ── Reservation & Booking Form ── */}
-      <section
+      {/* <section
         className="rd-booking-section"
         style={{ backgroundImage: `url(${slide2})` }}
       >
         <div className="rd-booking-overlay" />
         <div className="rd-container rd-booking-inner">
-          {/* Left */}
           <div className="rd-booking-info">
-            <div className="rd-stars">★★★★★</div>
+            <div className="rd-stars">★★★</div>
             <h5>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h5>
             <div className="rd-res-strip">
               <span className="rd-res-icon large">📞</span>
@@ -360,7 +359,6 @@ const RoomDetails = () => {
             <p className="rd-toll-free">✓ <small>Call us, it's toll-free.</small></p>
           </div>
 
-          {/* Right — Booking form */}
           <div className="rd-booking-form anim anim-right">
             <div className="rd-form-head">
               <h6>Online Booking</h6>
@@ -395,7 +393,7 @@ const RoomDetails = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

@@ -7,7 +7,7 @@
     position: relative;
     height: 60vh;
     min-height: 400px;
-    background-image: url('https://sasthapuri.com/web_demo/img/slider/3.jpg');
+    background-image: url('../assets/slider/6.jpg');
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
@@ -20,7 +20,7 @@
 .srv-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.533);
 }
 
 .srv-hero-content {
@@ -30,8 +30,10 @@
 }
 
 .srv-hero-content h5 {
+margin-top:60px;
     font-family: 'Barlow Condensed', sans-serif;
     text-transform: uppercase;
+    font-weight: 400;
     letter-spacing: 6px;
     font-size: 15px;
     margin-bottom: 10px;
@@ -41,7 +43,8 @@
 .srv-hero-content h1 {
     font-family: 'Gilda Display', serif;
     font-size: 60px;
-    text-transform: uppercase;
+    font-weight: 400;
+    /* text-transform: uppercase; */
     letter-spacing: 4px;
     margin: 0;
 }

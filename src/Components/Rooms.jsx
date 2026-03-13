@@ -296,13 +296,12 @@ const Rooms = () => {
       </section>
 
       {/* Booking / Reservation Section */}
-      <section
+      {/* <section
         className="rm-booking"
         style={{ backgroundImage: `url(${slide2})` }}
       >
         <div className="rm-booking-overlay" />
         <div className="rm-container rm-booking-inner">
-          {/* Left info */}
           <div className="rm-booking-info anim anim-left">
             <div className="rm-booking-stars">★★★★★</div>
             <h5>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h5>
@@ -314,10 +313,10 @@ const Rooms = () => {
               </div>
             </div>
             <p className="rm-toll">✓ <small>Call us, it's toll-free.</small></p>
-          </div>
+          </div> */}
 
           {/* Booking form */}
-          <div className="rm-booking-form anim anim-right">
+          {/* <div className="rm-booking-form anim anim-right">
             <div className="rm-form-head">
               <h6>Rooms &amp; Suites</h6>
               <h4>Hotel Booking Form</h4>
@@ -349,9 +348,9 @@ const Rooms = () => {
               </div>
               <button type="submit" className="rm-form-submit">Check Availability</button>
             </form>
-          </div>
-        </div>
-      </section>
+          </div> */}
+        {/* </div>
+      </section> */}
     </>
   );
 };

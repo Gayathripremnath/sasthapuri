@@ -23,9 +23,9 @@
   position: relative;
   min-height: 60vh;
   display: grid;
-  place-items: center;
-  text-align: center;
-  background: url('https://sasthapuri.com/web_demo/img/news/5.jpg') center/cover no-repeat fixed;
+  /* place-items: center; */
+  /* text-align: center; */
+  background: url('../assets/slider/1.jpg') center/cover no-repeat fixed;
   padding: 120px 20px 80px;
 }
 
@@ -42,16 +42,19 @@
 }
 
 .banner-kicker {
+  margin-top: 40px;
+  margin-left: 70px;
   letter-spacing: 6px;
   text-transform: uppercase;
+  /* text-align: start !important; */
   color: #d7c4a0;
   font-family: 'Barlow Condensed', sans-serif;
 }
 
 .about-banner h1 {
-  margin: 10px 0 6px;
-  font-size: clamp(2.4rem, 6vw, 3.8rem);
-  letter-spacing: 10px;
+  margin: 20px 70px 6px;
+  font-size: 2.5rem;
+  letter-spacing: 4px;
   font-family: 'Gilda Display', serif;
   font-weight: 400;
 }
