@@ -132,6 +132,7 @@ const Home = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState('');
   const audioRef = useRef(null);
+  const [isAudioMuted, setIsAudioMuted] = useState(true);
 
   const openBooking = (roomTitle = '') => {
     setSelectedRoom(roomTitle);
@@ -211,19 +212,24 @@ const Home = () => {
     const unmuteOnInteract = () => {
       audioEl.muted = false;
       audioEl.volume = 0.18;
+      setIsAudioMuted(false);
       tryPlay();
       window.removeEventListener('pointerdown', unmuteOnInteract);
+      window.removeEventListener('touchstart', unmuteOnInteract);
       window.removeEventListener('keydown', unmuteOnInteract);
+      window.removeEventListener('click', unmuteOnInteract);
     };
 
     window.addEventListener('pointerdown', unmuteOnInteract, { once: true });
     window.addEventListener('touchstart', unmuteOnInteract, { once: true });
     window.addEventListener('keydown', unmuteOnInteract, { once: true });
+    window.addEventListener('click', unmuteOnInteract, { once: true });
 
     return () => {
-     window.addEventListener('click', unmuteOnInteract, { once: true });
-window.addEventListener('touchstart', unmuteOnInteract, { once: true });
-window.addEventListener('keydown', unmuteOnInteract, { once: true });
+      window.removeEventListener('pointerdown', unmuteOnInteract);
+      window.removeEventListener('touchstart', unmuteOnInteract);
+      window.removeEventListener('keydown', unmuteOnInteract);
+      window.removeEventListener('click', unmuteOnInteract);
     };
   }, []);
 
@@ -236,7 +242,15 @@ window.addEventListener('keydown', unmuteOnInteract, { once: true });
   return (
     <>
       <div className="home-wrapper">
-        <audio ref={audioRef} src={bgMusic} autoPlay muted loop preload="auto" playsInline />
+        <audio
+          ref={audioRef}
+          src={bgMusic}
+          autoPlay
+          loop
+          preload="auto"
+          playsInline
+          muted={isAudioMuted}
+        />
         <div className="home">
           <div className="slideshow-container">
             <div className="slide" style={{ backgroundImage: `url(${imgh1})` }}></div>

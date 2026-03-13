@@ -212,7 +212,7 @@ const Restaurant = () => {
       </section> */}
 
       {/* ── Reservation Section ── */}
-      <section
+      {/* <section
         className="rest-booking bg-img bg-fixed"
         style={{ backgroundImage: `url(${ambiImg1})` }}
       >
@@ -284,7 +284,7 @@ const Restaurant = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
