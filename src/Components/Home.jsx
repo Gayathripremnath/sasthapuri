@@ -10,7 +10,7 @@ import room12 from "../assets/rooms/12.jpg";
 import worldIcon from '../assets/world.png';
 import bedIcon from '../assets/bed.png';
 import foodIcon from '../assets/food-serving.png';
-import bgMusic from '../assets/music.mp3';
+// import bgMusic from '../assets/music.mp3';
 import BookingModal from './BookingModal';
 
 const services = [
@@ -132,7 +132,7 @@ const Home = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState('');
   const audioRef = useRef(null);
-  const [isAudioMuted, setIsAudioMuted] = useState(true);
+  // const [isAudioMuted, setIsAudioMuted] = useState(true);
 
   const openBooking = (roomTitle = '') => {
     setSelectedRoom(roomTitle);
@@ -198,40 +198,40 @@ const Home = () => {
     return () => window.removeEventListener('scroll', updateProgress);
   }, []);
 
-  // Light background music on load
-  useEffect(() => {
-    const audioEl = audioRef.current;
-    if (!audioEl) return;
-    audioEl.muted = true;      // allow autoplay without gesture
-    audioEl.volume = 0.18;     // target volume
+  // // Light background music on load
+  // useEffect(() => {
+  //   const audioEl = audioRef.current;
+  //   if (!audioEl) return;
+  //   audioEl.muted = true;      // allow autoplay without gesture
+  //   audioEl.volume = 0.18;     // target volume
 
-    const tryPlay = () => audioEl.play().catch(() => {});
-    tryPlay();
+  //   const tryPlay = () => audioEl.play().catch(() => {});
+  //   tryPlay();
 
-    // On first user interaction: unmute and replay at target volume
-    const unmuteOnInteract = () => {
-      audioEl.muted = false;
-      audioEl.volume = 0.18;
-      setIsAudioMuted(false);
-      tryPlay();
-      window.removeEventListener('pointerdown', unmuteOnInteract);
-      window.removeEventListener('touchstart', unmuteOnInteract);
-      window.removeEventListener('keydown', unmuteOnInteract);
-      window.removeEventListener('click', unmuteOnInteract);
-    };
+  //   // On first user interaction: unmute and replay at target volume
+  //   const unmuteOnInteract = () => {
+  //     audioEl.muted = false;
+  //     audioEl.volume = 0.18;
+  //     setIsAudioMuted(false);
+  //     tryPlay();
+  //     window.removeEventListener('pointerdown', unmuteOnInteract);
+  //     window.removeEventListener('touchstart', unmuteOnInteract);
+  //     window.removeEventListener('keydown', unmuteOnInteract);
+  //     window.removeEventListener('click', unmuteOnInteract);
+  //   };
 
-    window.addEventListener('pointerdown', unmuteOnInteract, { once: true });
-    window.addEventListener('touchstart', unmuteOnInteract, { once: true });
-    window.addEventListener('keydown', unmuteOnInteract, { once: true });
-    window.addEventListener('click', unmuteOnInteract, { once: true });
+  //   window.addEventListener('pointerdown', unmuteOnInteract, { once: true });
+  //   window.addEventListener('touchstart', unmuteOnInteract, { once: true });
+  //   window.addEventListener('keydown', unmuteOnInteract, { once: true });
+  //   window.addEventListener('click', unmuteOnInteract, { once: true });
 
-    return () => {
-      window.removeEventListener('pointerdown', unmuteOnInteract);
-      window.removeEventListener('touchstart', unmuteOnInteract);
-      window.removeEventListener('keydown', unmuteOnInteract);
-      window.removeEventListener('click', unmuteOnInteract);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('pointerdown', unmuteOnInteract);
+  //     window.removeEventListener('touchstart', unmuteOnInteract);
+  //     window.removeEventListener('keydown', unmuteOnInteract);
+  //     window.removeEventListener('click', unmuteOnInteract);
+  //   };
+  // }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -242,7 +242,7 @@ const Home = () => {
   return (
     <>
       <div className="home-wrapper">
-        <audio
+        {/* <audio
           ref={audioRef}
           src={bgMusic}
           autoPlay
@@ -250,7 +250,7 @@ const Home = () => {
           preload="auto"
           playsInline
           muted={isAudioMuted}
-        />
+        /> */}
         <div className="home">
           <div className="slideshow-container">
             <div className="slide" style={{ backgroundImage: `url(${imgh1})` }}></div>
