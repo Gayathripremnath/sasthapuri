@@ -21,8 +21,9 @@ const Sidebar = ({ isOpen, onClose }) => {
         </button>
 
         <ul className="sidebar-links">
-          <li><a href="/" onClick={onClose}>HOME</a></li>
-          <li><a href="/restaurant" onClick={onClose}>RESTAURANT</a></li>
+          <li><Link to="/" onClick={onClose}>HOME</Link></li>
+          <li><Link to="/about" onClick={onClose}>ABOUT US</Link></li>
+          <li><Link to="/restaurant" onClick={onClose}>RESTAURANT</Link></li>
           <li><Link to="/services" onClick={onClose}>SERVICES</Link></li>
           <li className={`dropdown ${isRoomsOpen ? 'active' : ''}`}>
             <button
@@ -39,10 +40,9 @@ const Sidebar = ({ isOpen, onClose }) => {
             </ul>
           </li>
           <li><Link to="/reservation" onClick={onClose}>RESERVATION</Link></li>
-          <li><a href="/gallery" onClick={onClose}>GALLERY</a></li>
-          <li><a href="/attractions" onClick={onClose}>ATTRACTIONS</a></li>
-          <li><Link to="/about" onClick={onClose}>ABOUT US</Link></li>
-          <li><a href="/contact" onClick={onClose}>CONTACT</a></li>
+          <li><Link to="/gallery" onClick={onClose}>GALLERY</Link></li>
+          <li><Link to="/attractions" onClick={onClose}>ATTRACTIONS</Link></li>
+          <li><Link to="/contact" onClick={onClose}>CONTACT</Link></li>
         </ul>
 
         <div className="sidebar-reservation">

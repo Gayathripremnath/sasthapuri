@@ -1,10 +1,7 @@
-/* ================================================================
-   Rooms.css — Sasthapuri Hotel Rooms & Suites Page
-   Palette: gold #aa8453 | dark #222 | cream #f8f5f0
-   ================================================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400;600;700&family=Gilda+Display&display=swap');
 
-:root {
+:root { 
   --rm-gold:   #aa8453;
   --rm-gold2:  #c5a47e;
   --rm-dark:   #222;

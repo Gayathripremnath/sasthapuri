@@ -131,7 +131,7 @@ const progressWrapRef = useRef(null);
                 everything with you in mind.
               </p>
               <p>
-                Welcome to the best five-star deluxe hotel experience. From curated cuisine to refined
+                Welcome to the best three-star deluxe hotel experience. From curated cuisine to refined
                 rooms and thoughtful service, we create stays filled with comfort and lasting memories.
               </p>
               <div className="about-reservation" id="reservation">

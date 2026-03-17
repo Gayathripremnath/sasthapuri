@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
 
@@ -17,12 +17,12 @@ const Footer = () => {
 
         <div className="footer-links">
           <h3>Explore</h3>
-          <a href="/">Home</a>
-          <a href="/rooms">Rooms &amp; Suites</a>
-          <a href="/restaurant">Restaurant</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/about">About Hotel</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/rooms">Rooms &amp; Suites</Link>
+          <Link to="/restaurant">Restaurant</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/about">About Hotel</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
         <div className="footer-contact">

@@ -18,6 +18,7 @@ import Room3 from "./Components/Room3";
 import ScrollToTop from "./Components/ScrollToTop";
 import Services from "./Components/Services";
 import Reservation from "./Components/Reservation";
+import Contact from "./Components/Contact";
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/room-3" element={<Room3 />} />
         <Route path="/services" element={<Services />} />
         <Route path="/reservation" element={<Reservation />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />

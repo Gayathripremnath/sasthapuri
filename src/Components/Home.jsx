@@ -16,14 +16,14 @@ import BookingModal from './BookingModal';
 const services = [
   {
     title: 'Pick Up & Drop',
-    description: "We'll pick up from airport while you comfy on your ride, mus nellentesque habitant.",
+    description: "Comfortable pick-up and drop services for a smooth and pleasant journey.",
     icon: (
           <img src={worldIcon} alt="Pick up and drop world icon" className="service-image" />
     ),
   },
   {
     title: 'Parking Space',
-    description: 'Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
+    description: 'Spacious and secure parking space available for all our guests.',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <rect x="11" y="24" width="42" height="18" rx="4" />
@@ -36,14 +36,14 @@ const services = [
   },
   {
     title: '24hrs Room Service',
-    description: 'Room tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
+    description: 'Enjoy prompt and reliable room service anytime during your stay..',
     icon: (
         <img src={bedIcon} alt="24 hour room service bed icon" className="service-image" />
     ),
   },
   {
     title: 'Multi Cuisine Restaurant',
-    description: 'Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
+    description: 'Experience a variety of delicious cuisines at our restaurant.',
     icon: (
             <img src={foodIcon} alt="Multi cuisine restaurant food icon" className="service-image" />
 
@@ -51,7 +51,7 @@ const services = [
   },
   {
     title: 'Conference Hall',
-    description: 'Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.',
+    description: 'A well-equipped conference hall designed for meetings and special events.',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <rect x="12" y="16" width="40" height="36" />
@@ -67,7 +67,7 @@ const services = [
   },
   {
     title: 'Doctor on Call',
-    description: 'Eat tincidunt nisa ace park norttito sit amet space, mus nellentesque habitant.',
+    description: 'Medical assistance available anytime with our doctor on call service.',
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <circle cx="32" cy="18" r="10" />
@@ -104,7 +104,7 @@ const experiences = [
     label: 'Discover',
     title: 'Multi Cuisine Restaurant',
     description:
-      'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue artine.',
+      'Our multi-cuisine restaurant offers a delightful selection of dishes from different cuisines. Enjoy freshly prepared meals in a warm and welcoming atmosphere.',
     image: 'https://sasthapuri.com/web_demo/img/rooms/4.jpg',
   },
   {
@@ -112,7 +112,7 @@ const experiences = [
     label: 'Experiences',
     title: 'Conference Hall',
     description:
-      'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue artine.',
+      'Our spacious conference hall is ideal for meetings, seminars, and special events. Equipped with modern facilities, it provides a comfortable and professional environment for all your business gatherings.',
     image: 'https://sasthapuri.com/web_demo/img/rooms/7.jpg',
   },
   {
@@ -120,7 +120,7 @@ const experiences = [
     label: 'Business Center',
     title: 'Business Center',
     description:
-      'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue artine.',
+      'Our business center offers essential facilities for meetings, work, and communication. Guests can enjoy a comfortable space designed to support their professional needs.',
     image: 'https://sasthapuri.com/web_demo/img/rooms/15.jpg',
   },
 ];

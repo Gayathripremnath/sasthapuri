@@ -12,11 +12,10 @@
 }
 .row-g h1{
   color: #dec5a8;
-  margin: 0 auto;
+  margin-left: 30px;
 }
 .row-g h5{
   text-align: center;
-  margin: 0 auto 6px;
 }
 /* ================= BANNER HEADER ================= */
 .banner-header {
@@ -38,8 +37,8 @@
 
 .banner-header h5 {
   font-family: 'Barlow Condensed', sans-serif;
-  text-transform: uppercase;
   letter-spacing: 6px;
+  font-weight: 300px;
   font-size: 15px;
   margin-bottom: 10px;
 }
@@ -47,9 +46,8 @@
 .banner-header h1 {
   font-family: 'Gilda Display', serif;
   font-size: 60px;
-  text-transform: uppercase;
   letter-spacing: 12px;
-  margin: 0;
+  margin-left: 2 0px;
 }
 
 /* ================= IMAGES SECTION ================= */
