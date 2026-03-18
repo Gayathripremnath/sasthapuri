@@ -9,17 +9,23 @@
 }
 .row-g {
   margin-left: 150px;
+  color: #aa8453;
 }
-.row-g h1{
-  color: #dec5a8;
-  /* margin-left: 30px; */
+.row-g h5{
+  color: #aa8453;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400px;
+  text-transform: uppercase ;
 }
+
+
 
 /* ================= BANNER HEADER ================= */
 .banner-header {
   position: relative;
   height: 60vh;
   min-height: 400px;
+  font-weight: 400;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -34,7 +40,7 @@
 }
 
 .banner-header h5 {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Gilda Display', serif;
   letter-spacing: 6px;
   font-weight: 300px;
   font-size: 15px;
@@ -44,6 +50,7 @@
 .banner-header h1 {
   font-family: 'Gilda Display', serif;
   font-size: 60px;
+  font-weight: 400 !important;
   letter-spacing: 12px;
   /* margin-left: 20px; */
 }
