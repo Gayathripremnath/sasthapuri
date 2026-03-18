@@ -516,15 +516,16 @@ font-family: 'Gilda Display', serif;
     padding: 32px 28px;
     display: flex;
     align-items: flex-end;
-    background-size: 102%;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
     isolation: isolate;
-    transition: background-size 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .room-card-featured:hover {
-    background-size: 108%;
+    transform: scale(1.02);
 }
 
 .room-card-overlay {

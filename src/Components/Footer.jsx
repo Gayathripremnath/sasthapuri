@@ -29,6 +29,7 @@ const Footer = () => {
           <h3>Contact</h3>
           <p>M.M.Ali Road, Palayam, Calicut - 673002,<br />Kerala, South India</p>
           <a className="footer-phone" href="tel:+914952723281">+91 - 495-2723281 (5 LINES)</a>
+          <a className="footer-phone" href="tel:+914952723281">+91 855 100 4444</a>
           <a className="footer-mail" href="mailto:sasthapuri@gmail.com">sasthapuri@gmail.com</a>
           <div className="footer-social" aria-label="Social links">
             
@@ -40,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p >© Copyright 2025 by  </p>
+        <p >© Copyright 2026 by  </p>
         <a href="/">Genova Technology Pvt Ltd</a>
       </div>
     </footer>

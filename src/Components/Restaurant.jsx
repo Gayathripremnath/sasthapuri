@@ -3,7 +3,8 @@ import { FaPhone, FaUtensils, FaLeaf, FaWineGlassAlt, FaClock } from "react-icon
 import './Restaurant.css';
 import '../animations.css';
 
-import heroImg   from '../assets/restaurant/1.jpg';
+
+
 import ambiImg1  from '../assets/restaurant/2.jpg';
 import ambiImg2  from '../assets/restaurant/3.jpg';
 import food1     from '../assets/rooms/1.jpg';
@@ -123,10 +124,9 @@ const Restaurant = () => {
 
       {/* ── Hero Banner ── */}
       <div
-        className="rest-hero bg-img bg-fixed"
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${heroImg})` }}
+        className="rest-hero bg-img bg-scroll"
+        style={{ backgroundImage: `url(https://sasthapuri.com/images/gallery/thumb_11.jpg)` }}
       >
-        <div className="rest-hero-overlay"></div>
         <div className="rest-hero-content anim anim-up">
           <p className="rest-hero-sub">Sasthapuri Hotel</p>
           <h1 className="rest-hero-title">Restaurant &amp; Bar</h1>

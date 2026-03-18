@@ -5,7 +5,6 @@ import imgh1 from '../assets/slider/1.jpg';
 import imgh2 from '../assets/slider/2.jpg';
 import imgh3 from '../assets/slider/3.jpg';
 import room1 from "../assets/rooms/1.jpg";
-import room2 from "../assets/rooms/2.jpg";
 import room12 from "../assets/rooms/12.jpg";
 import worldIcon from '../assets/world.png';
 import bedIcon from '../assets/bed.png';
@@ -88,13 +87,13 @@ const rooms = [
     id: 'room2',
     title: 'Standard Delux',
     price: '₹ 2600 + TAX NIGHT',
-    image: room2,
+    image: 'https://sasthapuri.com/images/delux.jpg',
   },
   {
     id: 'room3',
     title: 'Standard Room',
     price: '₹ 1800 + TAX NIGHT',
-    image: room12,
+    image: 'https://sasthapuri.com/images/delux-room.jpg',
   },
 ];
 

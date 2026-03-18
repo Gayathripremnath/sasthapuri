@@ -206,7 +206,7 @@
 
 .map-container iframe {
     width: 100%;
-    /* max-width: 1200px; */
+    max-width: 1160px;
     height: 600px;
     border: 0;
 }

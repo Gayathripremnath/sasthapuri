@@ -20,7 +20,6 @@ const slides = [slide1, slide2, slide3];
 
 const similarRooms = [
   { img: room1, price: '₹3,600', title: 'Executive Room' },
-  { img: room2, price: '₹2,600', title: 'Family Room' },
   { img: room5, price: '₹3,200', title: 'Double Room' },
   { img: room6, price: '₹4,500', title: 'Deluxe Room' },
   { img: room8, price: '₹2,800', title: 'Superior Room' },

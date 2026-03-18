@@ -57,7 +57,7 @@ const Contact = () => {
       >
         <div className="container">
           <h5>Get in touch</h5>
-          <h1>Contact Us</h1>
+          <h1 style={{color:"#aa8453"}}>Contact Us</h1>
         </div>
       </div>
 

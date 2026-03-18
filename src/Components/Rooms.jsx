@@ -18,7 +18,7 @@ import price4 from '../assets/pricing/4.jpg';
 const rooms = [
   {
     id: 'room1',
-    img: slide4,
+    img: 'https://sasthapuri.com/images/delux-room.jpg',
     price: '₹3,200',
     name: 'Junior Suite',
     desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
@@ -32,13 +32,13 @@ const rooms = [
   },
   {
     id: 'room2',
-    img: slide3,
+    img: "https://sasthapuri.com/images/ac-suit.jpg",
     price: '₹4,500',
-    name: 'Family Room',
+    name: 'Executive/Suite Room',
     desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
-    persons: '1–2 Persons',
-    bed: 'Twin Bed',
-    size: '200 sqft Room',
+    persons: '2–4 Persons',
+    bed: 'King Bed',
+    size: '300 sqft Room',
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
@@ -46,13 +46,13 @@ const rooms = [
   },
   {
     id: 'room3',
-    img: slide5,
+    img: 'https://sasthapuri.com/images/delux.jpg',
     price: '₹5,200',
-    name: 'Double Room',
+    name: 'Standard Deluxe',
     desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
     persons: '2–3 Persons',
-    bed: 'Twin Bed',
-    size: '200 sqft Room',
+    bed: 'Queen Bed',
+    size: '250 sqft Room',
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
@@ -296,7 +296,7 @@ const Rooms = () => {
       </section>
 
       {/* Booking / Reservation Section */}
-      {/* <section
+      <section
         className="rm-booking"
         style={{ backgroundImage: `url(${slide2})` }}
       >
@@ -313,10 +313,10 @@ const Rooms = () => {
               </div>
             </div>
             <p className="rm-toll">✓ <small>Call us, it's toll-free.</small></p>
-          </div> */}
+          </div>
 
           {/* Booking form */}
-          {/* <div className="rm-booking-form anim anim-right">
+          <div className="rm-booking-form anim anim-right">
             <div className="rm-form-head">
               <h6>Rooms &amp; Suites</h6>
               <h4>Hotel Booking Form</h4>
@@ -348,9 +348,9 @@ const Rooms = () => {
               </div>
               <button type="submit" className="rm-form-submit">Check Availability</button>
             </form>
-          </div> */}
-        {/* </div>
-      </section> */}
+          </div>
+        </div>
+      </section>
     </>
   );
 };
