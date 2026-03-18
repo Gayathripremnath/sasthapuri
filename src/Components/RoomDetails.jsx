@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './RoomDetails.css';
+import BookingModal from './BookingModal';
+
 
 import slide1 from '../assets/slider/3.jpg';
 import slide2 from '../assets/slider/2.jpg';
@@ -14,6 +16,13 @@ import price1 from '../assets/pricing/1.jpg';
 import price2 from '../assets/pricing/2.jpg';
 import price3 from '../assets/pricing/3.jpg';
 import price4 from '../assets/pricing/4.jpg';
+const gallerySlides = [
+  'https://sasthapuri.com/images/gallery/b-1.jpg',
+  'https://sasthapuri.com/images/gallery/b-3.jpg',
+  'https://sasthapuri.com/images/gallery/b-6.jpg',
+  'https://sasthapuri.com/images/gallery/b-7.jpg',
+  'https://sasthapuri.com/images/gallery/b-8.jpg'
+];
 
 /* ── data ── */
 const slides = [slide1, slide2, slide3];
@@ -43,19 +52,27 @@ const RoomDetails = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [simStart, setSimStart]       = useState(0);
   const [visibleSim]                  = useState(3);
+  const [roomSlideIndex, setRoomSlideIndex] = useState(0);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState('Junior Suite');
 
-  /* preloader */
-  useEffect(() => {
-    const t = setTimeout(() => {
-      document.getElementById('preloader')?.style && (document.getElementById('preloader').style.display = 'none');
-      document.querySelector('.preloader-bg')?.style && (document.querySelector('.preloader-bg').style.display = 'none');
-    }, 1000);
-    return () => clearTimeout(t);
-  }, []);
+
+
+  const openBooking = (roomTitle = 'Junior Suite') => {
+    setSelectedRoom(roomTitle);
+    setIsBookingOpen(true);
+  };
+
 
   /* hero auto-slide */
   useEffect(() => {
     const id = setInterval(() => setActiveSlide(s => (s + 1) % slides.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+
+  /* gallery auto-slide */
+  useEffect(() => {
+    const id = setInterval(() => setRoomSlideIndex(s => (s + 1) % gallerySlides.length), 5000);
     return () => clearInterval(id);
   }, []);
 
@@ -117,13 +134,12 @@ const RoomDetails = () => {
           />
         </svg>
       </div>
-      {/* ── Preloader ── */}
-      <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader"><span></span></div>
-        </div>
-      </div>
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+        initialRoom={selectedRoom} 
+      />
+
 
 
       {/* ── Hero Slider ── */}
@@ -176,6 +192,29 @@ const RoomDetails = () => {
                 vulla facilisi nedeuter nunc.
               </p>
 
+              {/* In-page Gallery Slider */}
+              <div className="rd-room-slider-wrap">
+                <div className="rd-room-slider">
+                  {gallerySlides.map((img, i) => (
+                    <div 
+                      key={i} 
+                      className={`rd-room-slide ${i === roomSlideIndex ? 'active' : ''}`}
+                      style={{ backgroundImage: `url(${img})` }}
+                    />
+                  ))}
+                  <div className="rd-room-slider-dots">
+                    {gallerySlides.map((_, i) => (
+                      <button 
+                        key={i} 
+                        className={`rd-room-dot ${i === roomSlideIndex ? 'active' : ''}`}
+                        onClick={() => setRoomSlideIndex(i)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+
               {/* Check-in / Check-out */}
               <div className="rd-checklist-grid">
                 <div>
@@ -210,9 +249,14 @@ const RoomDetails = () => {
                 Rollaway/extra beds are available for ₹800 per day.
               </p>
 
-              <Link to="/rooms" className="rd-btn-dark">
-                <span>Check Availability</span>
-              </Link>
+              <button 
+                onClick={() => openBooking('Junior Suite')} 
+                className="rd-btn-dark"
+                style={{ border: 'none', cursor: 'pointer' }}
+              >
+                <span>Book now</span>
+              </button>
+
             </div>
 
             {/* Right — amenities sidebar */}

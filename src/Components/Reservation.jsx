@@ -18,15 +18,7 @@ const Reservation = () => {
         specialRequests: ''
     });
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            const preloader = document.getElementById('preloader');
-            const preloaderBg = document.querySelector('.preloader-bg');
-            if (preloader) preloader.style.display = 'none';
-            if (preloaderBg) preloaderBg.style.display = 'none';
-        }, 1000);
-        return () => clearTimeout(timer);
-    }, []);
+
 
     useEffect(() => {
         const progressPath = progressPathRef.current;
@@ -105,8 +97,7 @@ const Reservation = () => {
                 </svg>
             </div>
 
-            <div className="preloader-bg"></div>
-            <div id="preloader"><div className="loader"><span></span></div></div>
+
 
             {/* Hero Section */}
             <header className="res-hero">

@@ -49,13 +49,7 @@ const Services = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
 
-  useEffect(() => {
-    const t = setTimeout(() => {
-      document.getElementById('preloader')?.style && (document.getElementById('preloader').style.display = 'none');
-      document.querySelector('.preloader-bg')?.style && (document.querySelector('.preloader-bg').style.display = 'none');
-    }, 1000);
-    return () => clearTimeout(t);
-  }, []);
+
 
   useEffect(() => {
     const progressPath = progressPathRef.current;
@@ -112,8 +106,7 @@ const Services = () => {
         </svg>
       </div>
 
-      <div className="preloader-bg"></div>
-      <div id="preloader"><div className="loader"><span></span></div></div>
+
 
       <header className="srv-hero">
         <div className="srv-hero-overlay" />

@@ -16,15 +16,7 @@ const Gallery = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const preloader = document.getElementById("preloader");
-      const preloaderBg = document.querySelector(".preloader-bg");
-      if (preloader) preloader.style.display = "none";
-      if (preloaderBg) preloaderBg.style.display = "none";
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
+
 
   useEffect(() => {
     const progressPath = progressPathRef.current;
@@ -76,14 +68,7 @@ const Gallery = () => {
 
   return (
     <>
-     <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader">
-            <span></span>
-          </div>
-        </div>
-      </div>
+
 
       {/* Progress scroll totop */}
       <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
@@ -103,13 +88,13 @@ const Gallery = () => {
       {/* Header Banner */}
       <div
         className="banner-header section-padding valign bg-img bg-fixed"
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img5})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${img1})` }}
       >
         <div className="container">
           <div className="row-g">
             <div className="col-md-12 text-left caption mt-90 anim anim-up">
               <h5>Images & Videos</h5>
-              <h1>Our Gallery</h1>
+              <h1 >Our Gallery</h1>
             </div>
           </div>
         </div>
@@ -125,24 +110,24 @@ const Gallery = () => {
                 </div>
                 <div className="first-sec">
                 <div className="col-md-4 gallery-item anim anim-up anim-d1">
-                    <a href={img7} title="" className="img-zoom">
+                    <a href={'https://sasthapuri.com/images/gallery/b-1.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
                             <div className="gallery-img">
-                                 <img src={img7} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                                 <img src={'https://sasthapuri.com/images/gallery/b-1.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item anim anim-up anim-d2">
-                    <a href={img5} title="" className="img-zoom">
+                    <a href={'https://sasthapuri.com/images/gallery/b-6.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-img"> <img src={img5} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-img"> <img src={'https://sasthapuri.com/images/gallery/b-6.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item anim anim-up anim-d3">
-                    <a href={img4} title="" className="img-zoom">
+                    <a href={'https://sasthapuri.com/images/gallery/b-3.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-img"> <img src={img4} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-img"> <img src={'https://sasthapuri.com/images/gallery/b-3.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
@@ -166,23 +151,23 @@ const Gallery = () => {
                 </div>
                 <div className="third-sec">
                 <div className="col-md-4 gallery-item">
-                    <a href={img8} title="" className="img-zoom">
+                    <a href={'https://sasthapuri.com/images/gallery/b-7.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={img8} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-7.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
-                    <a href={imgr5} title="" className="img-zoom">
+                    <a href={'https://sasthapuri.com/images/gallery/b-8.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={imgr5} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-8.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
-                    <a href={imgr10} title="" className="img-zoom">
+                    <a href={'https://sasthapuri.com/images/gallery/b-10.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={imgr10} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-10.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
@@ -225,7 +210,7 @@ const Gallery = () => {
              <div className="video2">
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={img4} className="img-fluid" alt="YouTube"/>
+                        <div className="vid-icon"> <img src={'https://sasthapuri.com/images/gallery/b-11.jpg'} className="img-fluid" alt="YouTube"/>
                             <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
                               <span className="video-gallery-polygon">
                                 <span className="play-arrow"></span>
@@ -236,7 +221,7 @@ const Gallery = () => {
                 </div>
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={img7} alt="YouTube"/>
+                        <div className="vid-icon"> <img src={'https://sasthapuri.com/images/delux.jpg'} alt="YouTube"/>
                             <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
                               <span className="video-gallery-polygon">
                                 <span className="play-arrow"></span>

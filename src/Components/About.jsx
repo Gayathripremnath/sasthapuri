@@ -144,8 +144,8 @@ const progressWrapRef = useRef(null);
             </div>
 
             <div className="about-images anim anim-right">
-              <img src="https://sasthapuri.com/web_demo/img/rooms/8.jpg" alt="Lobby" />
-              <img src="https://sasthapuri.com/web_demo/img/rooms/2.jpg" alt="Premium room" />
+              <img src="https://sasthapuri.com/images/gallery/b-2.jpg" alt="Lobby"  style={{width:"100%",height:"330px"}}/>
+              <img src="https://sasthapuri.com/images/gallery/b-1.jpg" alt="Premium room" style={{width:"100%",height:"290px"}}/>
             </div>
           </div>
         </section>

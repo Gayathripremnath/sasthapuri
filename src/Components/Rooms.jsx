@@ -16,20 +16,7 @@ import price4 from '../assets/pricing/4.jpg';
 
 /* ── Room data ── */
 const rooms = [
-  {
-    id: 'room1',
-    img: 'https://sasthapuri.com/images/delux-room.jpg',
-    price: '₹3,200',
-    name: 'Junior Suite',
-    desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
-    persons: '1–2 Persons',
-    bed: 'Twin Bed',
-    size: '200 sqft Room',
-    wifi: 'Free Wifi',
-    breakfast: 'Breakfast',
-    pool: 'Swimming Pool',
-    imgLeft: false,
-  },
+
   {
     id: 'room2',
     img: "https://sasthapuri.com/images/ac-suit.jpg",
@@ -93,14 +80,7 @@ const Rooms = () => {
     setIsBookingOpen(true);
   };
 
-  /* preloader */
-  useEffect(() => {
-    const t = setTimeout(() => {
-      document.getElementById('preloader')?.style && (document.getElementById('preloader').style.display = 'none');
-      document.querySelector('.preloader-bg')?.style && (document.querySelector('.preloader-bg').style.display = 'none');
-    }, 1000);
-    return () => clearTimeout(t);
-  }, []);
+
 
   /* scroll-reveal */
   useEffect(() => {
@@ -169,13 +149,7 @@ const Rooms = () => {
         onClose={() => setIsBookingOpen(false)} 
         initialRoom={selectedRoom} 
       />
-      {/* Preloader */}
-      <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader"><span></span></div>
-        </div>
-      </div>
+
 
       {/* Hero Banner */}
       <div

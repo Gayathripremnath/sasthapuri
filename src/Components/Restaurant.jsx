@@ -34,15 +34,7 @@ const Restaurant = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const preloader = document.getElementById('preloader');
-      const preloaderBg = document.querySelector('.preloader-bg');
-      if (preloader)   preloader.style.display   = 'none';
-      if (preloaderBg) preloaderBg.style.display = 'none';
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
+
 
   useEffect(() => {
     const progressPath = progressPathRef.current;
@@ -104,13 +96,7 @@ const Restaurant = () => {
 
   return (
     <>
-      {/* ── Preloader ── */}
-      <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader"><span></span></div>
-        </div>
-      </div>
+
 
       {/* Progress scroll totop */}
       <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
@@ -125,8 +111,9 @@ const Restaurant = () => {
       {/* ── Hero Banner ── */}
       <div
         className="rest-hero bg-img bg-scroll"
-        style={{ backgroundImage: `url(https://sasthapuri.com/images/gallery/thumb_11.jpg)` }}
+        style={{ backgroundImage: `url(https://sasthapuri.com/images/gallery/b-8.jpg)` }}
       >
+        <div className="rest-hero-overlay"></div>
         <div className="rest-hero-content anim anim-up">
           <p className="rest-hero-sub">Sasthapuri Hotel</p>
           <h1 className="rest-hero-title">Restaurant &amp; Bar</h1>
@@ -178,8 +165,8 @@ const Restaurant = () => {
             </div>
           </div>
           <div className="rest-intro-images anim anim-right">
-            <img src={ambiImg1} alt="Restaurant ambiance" className="rest-intro-img rest-intro-img-top" />
-            <img src={ambiImg2} alt="Restaurant interior"  className="rest-intro-img rest-intro-img-bot" />
+            <img src="https://sasthapuri.com/images/gallery/b-10.jpg" alt="Restaurant ambiance" className="rest-intro-img rest-intro-img-top" />
+            <img src="https://sasthapuri.com/images/gallery/b-8.jpg" alt="Restaurant interior"  className="rest-intro-img rest-intro-img-bot" />
           </div>
         </div>
       </section>
