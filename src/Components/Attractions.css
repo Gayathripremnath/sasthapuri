@@ -250,8 +250,9 @@
 .at-svc-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 480px;
-  margin-bottom: 0; /* Removed the gap between rows */
+  height: 400px;
+ 
+  margin-bottom: 0; 
   background: var(--at-white);
   border: 1px solid #f2eee8;
 }

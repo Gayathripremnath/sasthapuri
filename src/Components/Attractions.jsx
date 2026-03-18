@@ -8,39 +8,39 @@ import spa3 from '../assets/spa/3.jpg';
 import spa4 from '../assets/spa/4.jpg';
 
 /* ── Slider images ── */
-const slides = [spa3, spa1, spa2];
+const slides = [
+  'https://www.dtpckozhikode.com/uploads/picture_gallery/gallery_images/kappad-beach-park-kozhikodu-20230602163015499265.webp',
+  'https://images.unsplash.com/photo-1693744440108-9a0767f1c3f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+];
+
 
 /* ── Services data ── */
 const services = [
   {
-    img: spa3,
-    label: 'Experiences',
-    title: 'Spa Center',
-    desc: 'Spa center inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit non sagie the fermen. Viverra tristique jusio the ivite dianne onen nivami acsestion augue artine.',
-    hours: 'Daily: 7:00 AM – 9:00 PM',
+    img: 'https://images.unsplash.com/photo-1693744440108-9a0767f1c3f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Calicut Beach',
+    desc: 'The city nestles on the coast of the Arabian Sea. It is about 1.2 m above sea level. The coastline extends to a length of 15 km. Two piers which are crumbling and the old lighthouse still stand recalling the times when foreign vessels used to anchor near Calicut. The Beach Hospital was built by the British. The Beach Hotel is one of the oldest in Calicut, it was mainly for the British planters to spend weekends away from the plantations..',
+    hours: '24 hours',
     imgLeft: true,
   },
   {
-    img: spa2,
-    label: 'Modern',
-    title: 'Fitness Center',
-    desc: 'Fitness center duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit non sagie the fermen. Viverra tristique jusio the ivite dianne onen nivami acsestion augue artine.',
-    hours: 'Daily: 6:00 AM – 9:00 PM',
+    img: 'https://flycnn.com/wp-content/uploads/2024/05/mananchira-square-1024x683.webp',
+    title: 'Mananchira Square',
+    desc: 'This forms the heart of the city. The name comes from the large pool of clear water bound by laterite stone steps built by Manavedan Raja one of the earlier Zamorins. The park around it is tastefully kept with types of palms, trees and shrubs. Recently there is a move to adorn the city with sculptures and a number of them has come up here. There is an open air theater and a musical fountain.',
+    hours: 'Daily: 3:30 PM – 11:00 PM',
     imgLeft: false,
   },
   {
-    img: spa1,
-    label: 'Experiences',
-    title: 'The Health Club & Pool',
-    desc: 'Spa center inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit non sagie the fermen. Viverra tristique jusio the ivite dianne onen nivami acsestion augue artine.',
-    hours: 'Daily: 10:00 AM – 7:00 PM',
+    img: 'https://talimahakshethram.in/images/temple/uploads/imga20230921awa0000ajpg1700454151145.jpg',
+    title: 'Taliyil Sree Mahaganapathi Temple',
+    desc: 'The Tali Temple was built in the 14th century by Swami Thirumulpad. This temple is one of the greatest attractions of Calicut. It is made with a remarkable combination of laterite along with wood. Also, the rich evidence of the Keralean architecture makes this temple more amazing.This temple is famous not only because of its architecture but due to its annual festival as well. Each year the festival celebrated here consists of various intellectual as well as cultural events.',
+    hours: '4:30 AM to 11:00 AM and 5:00 PM to 8:30 PM',
     imgLeft: true,
   },
   {
-    img: spa4,
-    label: 'Relaxation',
-    title: 'Sauna & Steam Room',
-    desc: 'Sauna inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit non sagie the fermen. Viverra tristique jusio the ivite dianne onen nivami acsestion augue artine.',
+    img: 'https://www.dtpckozhikode.com/uploads/picture_gallery/gallery_images/kappad-beach-park-kozhikodu-20230602163015499265.webp',
+    title: 'Kappad Beach',
+    desc: 'Definitely a beautiful beach about 20 km from Calicut. Its historical importance stems from the fact that Vasco da Gama with his sailors landed here in 1498 in 3 ships. This was the start of economic relationship between Europeans and this part of India now called Kerala. Quench your thirst with the nature-flavored tender coconut water which is healthful.',
     hours: 'Daily: 8:00 AM – 10:00 PM',
     imgLeft: false,
   },
@@ -81,16 +81,7 @@ const Attractions = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [openFaqs, setOpenFaqs] = useState([]);
 
-  /* preloader */
-  useEffect(() => {
-    const t = setTimeout(() => {
-      const pl = document.getElementById('preloader');
-      const bg = document.querySelector('.preloader-bg');
-      if (pl) pl.style.display = 'none';
-      if (bg) bg.style.display = 'none';
-    }, 1000);
-    return () => clearTimeout(t);
-  }, []);
+
 
   /* hero auto-slide */
   useEffect(() => {
@@ -166,13 +157,7 @@ const Attractions = () => {
       </div>
 
 
-      {/* ── Preloader ── */}
-      <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader"><span></span></div>
-        </div>
-      </div>
+
 
       {/* ── Scroll Progress ── */}
       
@@ -188,7 +173,7 @@ const Attractions = () => {
         <div className="at-hero-overlay" />
         <div className="at-hero-content anim anim-up">
           <p className="at-hero-sub">Sasthapuri Hotel</p>
-          <h1 className="at-hero-title">Spa &amp; Attractions</h1>
+          <h1 className="at-hero-title"> Attractions</h1>
           <ul className="at-breadcrumb">
             <li><a href="/">Home</a></li>
             <li className="at-sep">/</li>
@@ -216,7 +201,7 @@ const Attractions = () => {
         <div className="at-container">
           <div className="at-stars anim anim-fade">★★★★★</div>
           <div className="at-subtitle anim anim-up anim-d1">So Many Ways to Unwind</div>
-          <h2 className="at-section-title anim anim-up anim-d2">Spa &amp; Wellness</h2>
+          <h2 className="at-section-title anim anim-up anim-d2"> Attractions</h2>
           <p className="at-intro-text anim anim-up anim-d3">
             Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent volutpat nibh ac sodales
             sodales. Nunc tincidunt erat sed nisi faucibus, eget sagittis libero imperdiet. Nunc risus magna,
@@ -264,7 +249,7 @@ const Attractions = () => {
         <div className="at-container">
           <div className="at-faq-head" style={{ marginBottom: '50px', textAlign: 'center' }}>
             <span className="at-subtitle" style={{ justifyContent: 'center' }}>Guidelines</span>
-            <h2 className="at-section-title">Spa Etiquette & FAQ</h2>
+            <h2 className="at-section-title">FAQ</h2>
           </div>
 
           <div className="at-accordion">

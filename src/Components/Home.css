@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 
+/* Preloader */
+.preloader-bg, #preloader {
+  position: fixed; inset: 0; background: #fff; z-index: 999999;
+}
+#preloader { display: flex; align-items: center; justify-content: center; }
+.loader {
+  width: 55px; height: 55px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  animation: homeSpin 1s linear infinite; position: relative;
+}
+.loader span {
+  position: absolute; width: 55px; height: 55px;
+  border-radius: 50%; border-top: 2px solid #aa8453;
+}
+@keyframes homeSpin { to { transform: rotate(360deg); } }
+
+
 .home {
     position: relative;
     width: 100%;

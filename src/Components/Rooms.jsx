@@ -270,7 +270,7 @@ const Rooms = () => {
       </section>
 
       {/* Booking / Reservation Section */}
-      <section
+      {/* <section
         className="rm-booking"
         style={{ backgroundImage: `url(${slide2})` }}
       >
@@ -289,7 +289,7 @@ const Rooms = () => {
             <p className="rm-toll">✓ <small>Call us, it's toll-free.</small></p>
           </div>
 
-          {/* Booking form */}
+        
           <div className="rm-booking-form anim anim-right">
             <div className="rm-form-head">
               <h6>Rooms &amp; Suites</h6>
@@ -324,7 +324,7 @@ const Rooms = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
