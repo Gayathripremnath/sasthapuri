@@ -53,11 +53,11 @@ const Contact = () => {
       {/* Header Banner */}
       <div 
         className="contact-banner" 
-        style={{ backgroundImage: `url(${bannerImg})` }}
+        style={{ backgroundImage: `url(https://sasthapuri.com/images/gallery/b-1.jpg)` }}
       >
         <div className="container">
-          <h5>Get in touch</h5>
-          <h1 style={{color:"#aa8453"}}>Contact Us</h1>
+          <h5 style={{color:"#aa8453"}}>Get in touch</h5>
+          <h1 >Contact Us</h1>
         </div>
       </div>
 

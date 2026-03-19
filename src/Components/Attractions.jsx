@@ -49,28 +49,28 @@ const services = [
 /* ── FAQ data ── */
 const faqs = [
   {
-    q: 'Arriving at The Spa',
-    a: 'Please arrive at The Spa 15 minutes prior to your scheduled treatment and enjoy the calm and serenity of The Spa atmosphere. Arriving late makes it necessary to curtail the time for your treatment.',
+    q: 'How far is Calicut Beach from the hotel?',
+    a: 'Calicut Beach is located just a short drive from the hotel and is one of the most visited coastal spots.',
   },
   {
-    q: 'Mobile Phones',
-    a: 'Kindly refrain from using your mobile phone in The Spa premises. Please keep your mobile phone on silent mode at all times.',
+    q: 'Which attractions are ideal for family visits near the hotel?',
+    a: 'Mananchira Square and the Regional Science Centre and Planetarium are great for families and kids.',
   },
   {
-    q: 'Valuables',
-    a: 'We provide a secure place for your personal items inside The Spa complex. However, we do not accept liability for loss or damage. We recommend valuable items are stored inside the safe located in your hotel room/suite.',
+    q: 'Are there any historical sites close to the hotel?',
+    a: 'Yes, Kappad Beach is historically important as Vasco da Gama landed there in 1498.',
   },
   {
-    q: 'Health Matters',
-    a: 'Please communicate health conditions such as high blood pressure and allergies, as well as pregnancy or any health-related concerns you may have when making your appointment. We do not recommend the consumption of alcohol before or directly after spa treatments.',
+    q: 'Can guests visit temples near the hotel?',
+    a: 'Yes, Tali Temple is a famous nearby temple known for its traditional Kerala architecture.',
   },
   {
-    q: 'Children',
-    a: 'The minimum age for entry to The Spa, The Health Club and the hydrothermal facilities is 16 years of age. Children under the age of 16 may use the hotel pool if they are accompanied by a parent/adult.',
+    q: 'Is shopping available near the hotel?',
+    a: 'Yes, SM Street is a popular shopping destination known for sweets, snacks, and local items.',
   },
   {
-    q: 'Safety',
-    a: 'The max depth of the pool is 1.60 m. There is no lifeguard at the pool. Children may only use the pool if accompanied by an adult or parent/guardian.',
+    q: 'Why should I choose Hotel Sasthapuri for my stay?',
+    a: 'Hotel Sasthapuri is centrally located, offering easy access to major attractions, shopping areas, and cultural landmarks in Kozhikode.',
   },
 ];
 
