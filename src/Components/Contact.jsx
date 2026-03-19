@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 import bannerImg from '../assets/slider/5.jpg';
 
 const Contact = () => {
+  const progressPathRef = useRef(null);
+  const progressWrapRef = useRef(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,8 +50,49 @@ const Contact = () => {
     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
   };
 
+  useEffect(() => {
+    const progressPath = progressPathRef.current;
+    const progressWrap = progressWrapRef.current;
+    if (!progressPath || !progressWrap) return;
+
+    const pathLength = progressPath.getTotalLength();
+    progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+    progressPath.style.strokeDashoffset = `${pathLength}`;
+
+    const updateProgress = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
+      progressPath.style.strokeDashoffset = `${progress}`;
+
+      if (scrollTop > 120) {
+        progressWrap.classList.add('active-progress');
+      } else {
+        progressWrap.classList.remove('active-progress');
+      }
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress);
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="contact-page">
+      {/* Progress scroll to top */}
+      <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
+        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path
+            ref={progressPathRef}
+            d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          />
+        </svg>
+      </div>
+
       {/* Header Banner */}
       <div 
         className="contact-banner" 

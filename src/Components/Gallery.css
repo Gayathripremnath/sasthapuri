@@ -436,6 +436,19 @@
     font-size: 42px;
     letter-spacing: 6px;
   }
+  .banner-header .row-g {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner-header .caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
   .sec-padding-imge, .sec-padding-vid {
     padding: 60px 0;
   }
