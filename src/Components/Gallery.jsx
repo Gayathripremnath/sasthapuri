@@ -187,7 +187,7 @@ const Gallery = () => {
                 <div className="col-md-6">
                     <div className="vid-area mb-30">
                         <div className="vid-icon"> <img src={img2} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
+                            <a className="video-gallery-button vid" href="https://youtu.be/iuKUzm2YVqc?si=-UlINrmtMcmmfOkW"> 
                               <span className="video-gallery-polygon">
                                 <span className="play-arrow"></span>
                               </span> 

@@ -42,6 +42,7 @@
 
 .res-hero-content h5 {
     font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 6px;
     font-size: 14px;
@@ -51,7 +52,7 @@
 .res-hero-content h1 {
     font-family: 'Gilda Display', serif;
     font-size: 55px;
-    text-transform: uppercase;
+    font-weight: 400;
     letter-spacing: 12px;
 }
 

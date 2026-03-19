@@ -416,12 +416,12 @@
     font-size: 48px;
     letter-spacing: 8px;
   }
-  .row-g h1 {
-    margin-left: 0 !important;
-    text-align: left;
-  }
-  .row-g h5 {
+  .row-g {
     margin-left: 0;
+  }
+  .row-g h1,
+  .row-g h5 {
+    text-align: center;
   }
   .cont-im,
   .cont-vid {
@@ -450,14 +450,19 @@
   .banner-header .caption {
     text-align: center;
   }
-  .row-g h1 {
-    margin-left: 0 !important;
+  .row-g {
+    margin-left: 0;
   }
   .section-title {
     font-size: 34px;
+    text-align: center;
   }
   .section-subtitle {
     letter-spacing: 3px;
+    text-align: center;
+  }
+  .cont-im .col-md-12, .cont-vid .col-md-12 {
+    text-align: center;
   }
   .rest-booking {
     padding: 80px 0;

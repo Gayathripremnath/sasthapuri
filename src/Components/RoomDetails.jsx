@@ -25,13 +25,13 @@ const gallerySlides = [
 ];
 
 /* ── data ── */
-const slides = [slide1, slide2, slide3];
+const slides = ['https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/954b8dc6.jpg?impolicy=resizecrop&rw=1200&ra=fit', slide2,"https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/10478e28.jpg?impolicy=resizecrop&rw=1200&ra=fit"];
 
 const similarRooms = [
   { img: room1, price: '₹3,600', title: 'Executive Room' },
-  { img: room5, price: '₹3,200', title: 'Double Room' },
-  { img: room6, price: '₹4,500', title: 'Deluxe Room' },
-  { img: room8, price: '₹2,800', title: 'Superior Room' },
+  { img: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/10478e28.jpg?impolicy=resizecrop&rw=1200&ra=fit', price: '₹3,200', title: 'Double Room' },
+  { img: 'https://sasthapuri.com/images/gallery/b-6.jpg', price: '₹4,500', title: 'Deluxe Room' },
+  { img: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/954b8dc6.jpg?impolicy=resizecrop&rw=1200&ra=fit', price: '₹2,800', title: 'Superior Room' },
 ];
 
 const pricingCards = [

@@ -87,7 +87,7 @@ const rooms = [
     id: 'room2',
     title: 'Standard Delux',
     price: '₹ 2600 + TAX NIGHT',
-    image: 'https://sasthapuri.com/images/delux.jpg',
+    image: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/10478e28.jpg?impolicy=resizecrop&rw=1200&ra=fit',
   },
   {
     id: 'room3',
@@ -104,7 +104,7 @@ const experiences = [
     title: 'Multi Cuisine Restaurant',
     description:
       'Our multi-cuisine restaurant offers a delightful selection of dishes from different cuisines. Enjoy freshly prepared meals in a warm and welcoming atmosphere.',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/4.jpg',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/7.jpg',
   },
   {
     id: 'experience-conference',
@@ -112,7 +112,7 @@ const experiences = [
     title: 'Conference Hall',
     description:
       'Our spacious conference hall is ideal for meetings, seminars, and special events. Equipped with modern facilities, it provides a comfortable and professional environment for all your business gatherings.',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/7.jpg',
+    image: 'https://sasthapuri.com/web_demo/img/rooms/4.jpg',
   },
   {
     id: 'experience-business',

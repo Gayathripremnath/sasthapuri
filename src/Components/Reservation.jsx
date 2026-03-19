@@ -103,7 +103,7 @@ const Reservation = () => {
             <header className="res-hero">
                 <div className="res-hero-overlay" />
                 <div className="res-hero-content anim anim-up">
-                    <div className="stars">★★★★★</div>
+                    <div className="stars">★★★</div>
                     <h5>Booking Form</h5>
                     <h1>Reservation</h1>
                 </div>

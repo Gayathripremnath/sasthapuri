@@ -598,11 +598,15 @@
     transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.room-card-featured:hover .room-card-bg {
+.room-card-featured:hover .room-card-bg,
+.room-card-featured:active .room-card-bg,
+.room-card-featured:focus-within .room-card-bg {
     transform: scale(1.12);
 }
 
-.room-card-featured:hover {
+.room-card-featured:hover,
+.room-card-featured:active,
+.room-card-featured:focus-within {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
@@ -648,7 +652,9 @@
     transition: transform 0.35s ease;
 }
 
-.room-card-featured:hover .room-card-content {
+.room-card-featured:hover .room-card-content,
+.room-card-featured:active .room-card-content,
+.room-card-featured:focus-within .room-card-content {
     transform: translateY(0);
 }
 
@@ -685,7 +691,9 @@
     transition: transform 0.35s ease;
 }
 
-.room-card-content:hover h3::before {
+.room-card-content:hover h3::before,
+.room-card-featured:active .room-card-content h3::before,
+.room-card-featured:focus-within .room-card-content h3::before {
     transform: scaleX(1);
 }
 
@@ -700,7 +708,9 @@
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.room-card-featured:hover .room-card-footer {
+.room-card-featured:hover .room-card-footer,
+.room-card-featured:active .room-card-footer,
+.room-card-featured:focus-within .room-card-footer {
     opacity: 1;
     transform: translateY(0);
 }
@@ -794,18 +804,8 @@
         right: 18px;
     }
 
-    .room-card-content {
-        transform: translateY(0);
-    }
-
     .room-card-content h3 {
         font-size: 1.7rem;
-    }
-
-    .room-card-footer {
-        opacity: 1;
-        transform: translateY(0);
-        flex-wrap: wrap;
     }
 }
 

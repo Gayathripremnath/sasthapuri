@@ -111,7 +111,7 @@ const Restaurant = () => {
       {/* ── Hero Banner ── */}
       <div
         className="rest-hero bg-img bg-scroll"
-        style={{ backgroundImage: `url(https://sasthapuri.com/images/gallery/b-8.jpg)` }}
+        style={{ backgroundImage: `url(https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/2301335a.jpg?impolicy=resizecrop&rw=1200&ra=fit)` }}
       >
         <div className="rest-hero-overlay"></div>
         <div className="rest-hero-content anim anim-up">

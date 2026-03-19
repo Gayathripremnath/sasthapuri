@@ -7,35 +7,43 @@ import '../animations.css';
 const complimentaryServices = [
   {
     subtitle: 'Complimentary',
-    title: 'Dining & Refreshments',
-    description: 'Guests lodging with us can avail Indian & Continental breakfast and bottled mineral water (1000ml). Along with it, high quality guest amenities and multi-channel TV entertainment can be enjoyed.',
-    image: 'https://sasthapuri.com/images/gallery/b-1.jpg',
+    title: 'Breakfast & Refreshments',
+    description: 'Guests lodging with us can avail Indian & Continental breakfast, bottled mineral water (1000ml), and access to a mini fridge.',
+    image: 'https://sasthapuri.com/images/gallery/b-10.jpg',
     link: '/restaurant',
     align: 'left'
   },
   {
     subtitle: 'Complimentary',
-    title: 'Personal Care Amenities',
-    description: 'We provide premium soap, dental kit, comb, shampoo, moisturizer, shoeshine strip, all-purpose kit, shaving kit, and shower cap — everything you need for a fresh and comfortable stay.',
-    image: 'https://sasthapuri.com/images/gallery/b-8.jpg',
+    title: 'Essential Toiletries',
+    description: 'We provide premium soap, dental kit, comb, shampoo, moisturizer, shoeshine strip, and an all-purpose kit for a fresh and comfortable stay.',
+    image: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/08ba5b1e.jpg?impolicy=resizecrop&rw=1200&ra=fit',
     link: '#',
     align: 'right'
   },
   {
     subtitle: 'Complimentary',
     title: 'Connectivity & Convenience',
-    description: 'Stay connected with free internet access and daily newspaper. We also provide hair dryer, mini fridge, left luggage facility, guest stationary, valet parking, and foreign exchange services.',
+    description: 'Stay connected with free internet access and a daily newspaper. We also offer a hair dryer, left luggage facility, guest stationary, and valet parking.',
     image: 'https://sasthapuri.com/images/gallery/b-11.jpg',
     link: '#',
     align: 'left'
   },
   {
-    subtitle: 'On Request',
-    title: 'Special Guest Services',
-    description: 'Guests can request a wheelchair, wake-up call service, first aid kit, iron & iron board, and safe deposit locker — all available on a complimentary basis to ensure a seamless stay.',
-    image: 'https://sasthapuri.com/images/gallery/b-4.jpg',
+    subtitle: 'Complimentary',
+    title: 'Grooming & Entertainment',
+    description: 'We provide a shaving kit, shower cap, and foreign exchange services. Along with this, high-quality guest amenities and multi-channel TV entertainment can be enjoyed.',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/18/68/ed/executive-suite.jpg?w=900&h=500&s=1',
     link: '#',
     align: 'right'
+  },
+  {
+    subtitle: 'On Request',
+    title: 'Special Guest Services',
+    description: 'Guests can request a wheelchair, wake-up call service, and first aid kit. An iron & iron board and safe deposit locker are also available on a complimentary basis.',
+    image: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/954b8dc6.jpg?impolicy=resizecrop&rw=1200&ra=fit',
+    link: '#',
+    align: 'left'
   },
 ];
 
@@ -44,7 +52,7 @@ const chargeableServices = [
     subtitle: 'Chargeable',
     title: 'Travel Desk & Business Center',
     description: 'Our travel desk assists with bookings, tours, and itineraries. The business center offers laser printing and professional secretarial support for all your business needs.',
-    image: 'https://sasthapuri.com/images/gallery/b-5.jpg',
+    image: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/94f465d0.jpg?impolicy=resizecrop&rw=1200&ra=fit',
     link: '#',
     align: 'left'
   },
@@ -68,7 +76,7 @@ const chargeableServices = [
     subtitle: 'Chargeable',
     title: 'Board Room, Conference Hall & STD/ISD',
     description: 'Our fully equipped board room and conference hall are ideal for corporate meetings and seminars. STD/ISD communication facilities are also available for business and international calls.',
-    image: 'https://sasthapuri.com/images/gallery/b-7.jpg',
+    image: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/7b2aaabe.jpg?impolicy=resizecrop&rw=1200&ra=fit',
     link: '#',
     align: 'right'
   },
