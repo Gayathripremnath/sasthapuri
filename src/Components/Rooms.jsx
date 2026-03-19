@@ -20,43 +20,46 @@ const rooms = [
   {
     id: 'room2',
     img: "https://sasthapuri.com/images/ac-suit.jpg",
-    price: '₹4,500',
+    price: '3,400/- INR + Tax',
     name: 'Executive/Suite Room',
-    desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
+    desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
     persons: '2–4 Persons',
     bed: 'King Bed',
-    size: '300 sqft Room',
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
+    tv: 'Cable TV',            
+    ac: 'Air Conditioning',
     imgLeft: true,
   },
   {
     id: 'room3',
     img: 'https://sasthapuri.com/images/delux.jpg',
-    price: '₹5,200',
+    price: '2,500/- + Tax',
     name: 'Standard Deluxe',
-    desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
+    desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
     persons: '2–3 Persons',
     bed: 'Queen Bed',
-    size: '250 sqft Room',
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
+    tv: 'Cable TV',            
+    ac: 'Air Conditioning',
     imgLeft: false,
   },
   {
     id: 'room4',
     img: slide2,
-    price: '₹6,800',
+    price: '1,800/- INR + Tax',
     name: 'Deluxe Room',
-    desc: 'Spacious, bright guestrooms with tasteful furnishing, wooden floor and panoramic windows from the ceiling to the floor.',
+    desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
     persons: '2–4 Persons',
     bed: 'King Bed',
-    size: '200 sqft Room',
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
+    tv: 'Cable TV',            
+    ac: 'Air Conditioning',
     imgLeft: true,
   },
 ];
@@ -185,7 +188,7 @@ const Rooms = () => {
 
                 <div className="rm-facilities">
                   <ul>
-                    <li>👥 {room.persons}</li>
+                    <li>📺 {room.tv}</li>
                     <li>📶 {room.wifi}</li>
                   </ul>
                   <ul>
@@ -193,9 +196,12 @@ const Rooms = () => {
                     <li>🍳 {room.breakfast}</li>
                   </ul>
                   <ul>
-                    <li>📐 {room.size}</li>
+                      <li>🪟 {room.ac}</li>
                     <li>🏊 {room.pool}</li>
                   </ul>
+               
+                    
+                  
                 </div>
 
                 <hr className="rm-divider" />
