@@ -3,46 +3,75 @@ import { Link } from 'react-router-dom';
 import './Services.css';
 import '../animations.css';
 
-import client1 from '../assets/clients/1.png';
-import client2 from '../assets/clients/2.png';
-import client3 from '../assets/clients/3.png';
-import client4 from '../assets/clients/4.png';
-import client5 from '../assets/clients/5.png';
-import client6 from '../assets/clients/6.png';
 
-const servicesData = [
+const complimentaryServices = [
   {
-    subtitle: 'Discover',
-    title: 'The Restaurant',
-    description: 'Restaurant inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.',
-    image: 'https://sasthapuri.com/web_demo/img/restaurant/1.jpg',
+    subtitle: 'Complimentary',
+    title: 'Dining & Refreshments',
+    description: 'Guests lodging with us can avail Indian & Continental breakfast and bottled mineral water (1000ml). Along with it, high quality guest amenities and multi-channel TV entertainment can be enjoyed.',
+    image: 'https://sasthapuri.com/images/gallery/b-1.jpg',
     link: '/restaurant',
     align: 'left'
   },
   {
-    subtitle: 'Experiences',
-    title: 'Spa Center',
-    description: 'Spa center inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.',
-    image: 'https://sasthapuri.com/web_demo/img/spa/3.jpg',
+    subtitle: 'Complimentary',
+    title: 'Personal Care Amenities',
+    description: 'We provide premium soap, dental kit, comb, shampoo, moisturizer, shoeshine strip, all-purpose kit, shaving kit, and shower cap — everything you need for a fresh and comfortable stay.',
+    image: 'https://sasthapuri.com/images/gallery/b-8.jpg',
     link: '#',
     align: 'right'
   },
   {
-    subtitle: 'Modern',
-    title: 'Fitness Center',
-    description: 'Restaurant inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.',
-    image: 'https://sasthapuri.com/web_demo/img/spa/2.jpg',
+    subtitle: 'Complimentary',
+    title: 'Connectivity & Convenience',
+    description: 'Stay connected with free internet access and daily newspaper. We also provide hair dryer, mini fridge, left luggage facility, guest stationary, valet parking, and foreign exchange services.',
+    image: 'https://sasthapuri.com/images/gallery/b-11.jpg',
     link: '#',
     align: 'left'
   },
   {
-    subtitle: 'Experiences',
-    title: 'The Health Club & Pool',
-    description: 'The health club & pool at elit finibus viverra nec a lacus themo the nesudea seneoice misuscipit non sagie the fermen ziverra tristiue duru the ivite dianne onen nivami acsestion augue artine.',
-    image: 'https://sasthapuri.com/web_demo/img/spa/1.jpg',
+    subtitle: 'On Request',
+    title: 'Special Guest Services',
+    description: 'Guests can request a wheelchair, wake-up call service, first aid kit, iron & iron board, and safe deposit locker — all available on a complimentary basis to ensure a seamless stay.',
+    image: 'https://sasthapuri.com/images/gallery/b-4.jpg',
     link: '#',
     align: 'right'
-  }
+  },
+];
+
+const chargeableServices = [
+  {
+    subtitle: 'Chargeable',
+    title: 'Travel Desk & Business Center',
+    description: 'Our travel desk assists with bookings, tours, and itineraries. The business center offers laser printing and professional secretarial support for all your business needs.',
+    image: 'https://sasthapuri.com/images/gallery/b-5.jpg',
+    link: '#',
+    align: 'left'
+  },
+  {
+    subtitle: 'Chargeable',
+    title: 'Laundry & Car Wash',
+    description: 'Avail our professional in-house laundry service for careful garment care. Our car wash facility is also available to keep your vehicle clean and presentable throughout your stay.',
+    image: 'https://sasthapuri.com/images/gallery/b-6.jpg',
+    link: '#',
+    align: 'right'
+  },
+  {
+    subtitle: 'Chargeable',
+    title: 'Doctor on Call & Multi Cuisine Restaurant',
+    description: 'A doctor on call is available for any medical emergencies. Our multi-cuisine restaurant serves a wide variety of Indian, Continental, and international dishes with 24-hour room service.',
+    image: 'https://sasthapuri.com/images/gallery/b-8.jpg',
+    link: '/restaurant',
+    align: 'left'
+  },
+  {
+    subtitle: 'Chargeable',
+    title: 'Board Room, Conference Hall & STD/ISD',
+    description: 'Our fully equipped board room and conference hall are ideal for corporate meetings and seminars. STD/ISD communication facilities are also available for business and international calls.',
+    image: 'https://sasthapuri.com/images/gallery/b-7.jpg',
+    link: '#',
+    align: 'right'
+  },
 ];
 
 const Services = () => {
@@ -94,6 +123,25 @@ const Services = () => {
     return () => obs.disconnect();
   }, []);
 
+  const renderRows = (services) =>
+    services.map((srv, idx) => (
+      <div key={idx} className={`srv-row ${srv.align === 'right' ? 'srv-reverse' : ''}`}>
+        <div className="srv-col-img anim anim-left">
+          <div className="srv-img-box">
+            <img src={srv.image} alt={srv.title} />
+          </div>
+        </div>
+        <div className="srv-col-text bg-cream anim anim-right">
+          <div className="srv-content">
+            <h6>{srv.subtitle}</h6>
+            <h4>{srv.title}</h4>
+            <p>{srv.description}</p>
+            <Link to={srv.link} className="srv-btn"><span>Learn More</span></Link>
+          </div>
+        </div>
+      </div>
+    ));
+
   return (
     <div className="services-page">
       {/* Progress scroll totop */}
@@ -116,25 +164,25 @@ const Services = () => {
         </div>
       </header>
 
-      <section className="srv-list section-padding">
+      {/* ── Complimentary Section ── */}
+      <section className="srv-list section-padding" style={{ paddingBottom: '60px' }}>
         <div className="srv-container">
-          {servicesData.map((srv, idx) => (
-            <div key={idx} className={`srv-row ${srv.align === 'right' ? 'srv-reverse' : ''}`}>
-              <div className="srv-col-img anim anim-left">
-                <div className="srv-img-box">
-                  <img src={srv.image} alt={srv.title} />
-                </div>
-              </div>
-              <div className="srv-col-text bg-cream anim anim-right">
-                <div className="srv-content">
-                  <h6>{srv.subtitle}</h6>
-                  <h4>{srv.title}</h4>
-                  <p>{srv.description}</p>
-                  <Link to={srv.link} className="srv-btn"><span>Learn More</span></Link>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div className="srv-category-heading anim anim-up">
+            <h5>Included With Your Stay</h5>
+            <h2>On Complimentary Basis</h2>
+          </div>
+          {renderRows(complimentaryServices)}
+        </div>
+      </section>
+
+      {/* ── Chargeable Section ── */}
+      <section className="srv-list section-padding" style={{ paddingTop: '0' }}>
+        <div className="srv-container">
+          <div className="srv-category-heading anim anim-up">
+            <h5>Additional Services</h5>
+            <h2>On Chargeable Basis</h2>
+          </div>
+          {renderRows(chargeableServices)}
         </div>
       </section>
 

@@ -2,20 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 
 /* Preloader */
-.preloader-bg, #preloader {
-  position: fixed; inset: 0; background: #fff; z-index: 999999;
+.preloader-bg,
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 999999;
 }
-#preloader { display: flex; align-items: center; justify-content: center; }
+
+#preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .loader {
-  width: 55px; height: 55px; border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.08);
-  animation: homeSpin 1s linear infinite; position: relative;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    animation: homeSpin 1s linear infinite;
+    position: relative;
 }
+
 .loader span {
-  position: absolute; width: 55px; height: 55px;
-  border-radius: 50%; border-top: 2px solid #aa8453;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border-top: 2px solid #aa8453;
 }
-@keyframes homeSpin { to { transform: rotate(360deg); } }
+
+@keyframes homeSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 
 .home {
@@ -47,7 +69,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45); 
+    background: rgba(0, 0, 0, 0.45);
     pointer-events: none;
 }
 
@@ -78,11 +100,30 @@
 }
 
 @keyframes slideAnimation {
-    0%   { opacity: 0; transform: scale(1); }
-    4%   { opacity: 1; transform: scale(1.005); }
-    25%  { opacity: 1; transform: scale(1.045); }
-    33%  { opacity: 0; transform: scale(1.06); }
-    100% { opacity: 0; transform: scale(1.06); }
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    4% {
+        opacity: 1;
+        transform: scale(1.005);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1.045);
+    }
+
+    33% {
+        opacity: 0;
+        transform: scale(1.06);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.06);
+    }
 }
 
 .content-overlay {
@@ -90,59 +131,60 @@
     text-align: center;
     color: white;
     z-index: 1;
-   
+
     max-width: 1200px;
     line-height: 2rem;
     padding: 30px;
     border-radius: 10px;
 }
-.reservation-rail{
-  position:absolute;
-  left:25px;
-  top:140px;
-  gap: 10px;
-  width:70px;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.reservation-rail {
+    position: absolute;
+    left: 25px;
+    top: 140px;
+    gap: 10px;
+    width: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* RESERVATION */
-.reservation-label{
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size:11px;
-  letter-spacing:6px;
-  color:white;
-  margin-bottom:20px;
+.reservation-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: white;
+    margin-bottom: 20px;
 }
 
 /* NUMBER (just below reservation) */
-.reservation-number{
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size:18px;
-  color:#c89d59;
-  text-decoration:none;
+.reservation-number {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 18px;
+    color: #c89d59;
+    text-decoration: none;
 }
 
 
-.reservation-call{
-  margin-top:auto;
+.reservation-call {
+    margin-top: auto;
 
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  border:1px solid white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid white;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  color:white;
-  font-size:20px;
-  text-decoration:none;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .stars {
@@ -192,25 +234,25 @@
 }
 
 /* white sliding layer */
-.btn-luxury::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100%;
-    background:white;
-    transition:left .4s ease;
-    z-index:-1;
+.btn-luxury::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: left .4s ease;
+    z-index: -1;
 }
 
 /* hover animation */
-.btn-luxury:hover::before{
-    left:0;
+.btn-luxury:hover::before {
+    left: 0;
 }
 
-.btn-luxury:hover{
-    color:black;
+.btn-luxury:hover {
+    color: black;
 }
 
 .action-buttons {
@@ -295,8 +337,8 @@
 }
 
 .service-icon .service-image {
-    width:40px;
-  filter: brightness(0) saturate(100%) invert(73%) sepia(16%) saturate(604%) hue-rotate(343deg) brightness(95%) contrast(90%);
+    width: 40px;
+    filter: brightness(0) saturate(100%) invert(73%) sepia(16%) saturate(604%) hue-rotate(343deg) brightness(95%) contrast(90%);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -328,7 +370,7 @@
 }
 
 @media (max-width: 1200px) {
-    
+
     .services-section {
         padding: 90px 48px 64px;
     }
@@ -439,14 +481,17 @@
         grid-template-columns: 1fr;
         gap: 14px;
     }
+
     .section-title h5 {
         font-size: 0.8rem !important;
         letter-spacing: 0.35rem !important;
     }
+
     .section-title h2 {
         font-size: 2.4rem !important;
         gap: 66px !important;
     }
+
     .service-card {
         padding: 30px 19px;
     }
@@ -470,13 +515,14 @@
 }
 
 .rooms-section {
-    
+
     padding: 100px 80px;
     background-color: #f8f5f0;
     color: #333;
 }
+
 .rooms-title h5 {
-     font-size: 15px;
+    font-size: 15px;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 400;
     color: #666;
@@ -494,16 +540,19 @@
     font-family: 'Gilda Display', serif;
     /* letter-spacing: 0;. */
 }
+
 .rooms-title {
-    
+
     margin-bottom: 20px;
 }
-.room-sec{
+
+.room-sec {
     max-width: 1100px;
     margin: 0 auto;
 }
+
 .section-title h5 {
-     font-size: 15px;
+    font-size: 15px;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 400;
     color: #666;
@@ -512,8 +561,9 @@
     letter-spacing: 6px;
     margin-bottom: 5px;
 }
+
 .section-title h2 {
-font-family: 'Gilda Display', serif;
+    font-family: 'Gilda Display', serif;
     font-size: 3.4rem;
     font-weight: 300;
     color: rgb(67, 64, 64);
@@ -554,7 +604,7 @@ font-family: 'Gilda Display', serif;
 
 .room-card-featured:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .room-card-overlay {
@@ -612,14 +662,15 @@ font-family: 'Gilda Display', serif;
 
 .room-card-content h3 {
     margin: 0 0 16px;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
     font-family: 'Gilda Display', serif;
     font-size: 2rem;
     font-weight: 400;
     position: relative;
 }
 
-.room-card-content h3::before { /* single animated line */
+.room-card-content h3::before {
+    /* single animated line */
     content: "";
     position: absolute;
     left: 0;
@@ -627,8 +678,10 @@ font-family: 'Gilda Display', serif;
     bottom: 35px;
     height: 1px;
     background: rgba(255, 255, 255, 0.75);
-    transform-origin: left center; /* left -> right */
-    transform: scaleX(0.25);       /* small width before hover */
+    transform-origin: left center;
+    /* left -> right */
+    transform: scaleX(0.25);
+    /* small width before hover */
     transition: transform 0.35s ease;
 }
 
@@ -637,11 +690,11 @@ font-family: 'Gilda Display', serif;
 }
 
 .room-card-footer {
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;       
+    gap: 10px;
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -1001,7 +1054,7 @@ font-family: 'Gilda Display', serif;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
+
 }
 
 .promo-stars {
@@ -1058,6 +1111,7 @@ font-family: 'Gilda Display', serif;
     from {
         transform: scale(1) translateY(0);
     }
+
     to {
         transform: scale(1.08) translateY(-4%);
     }
@@ -1116,34 +1170,78 @@ font-family: 'Gilda Display', serif;
     0% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
     }
+
     70% {
         box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
 }
 
 @media (max-width: 1200px) {
-    .promo-content h1 { font-size: 50px; }
+    .promo-content h1 {
+        font-size: 50px;
+    }
 }
 
 @media (max-width: 991px) {
-    .promo-content h1 { font-size: 40px; letter-spacing: 5px; }
-    .promo-content p { font-size: 15px; }
-    .progress-wrap { bottom: 25px; right: 25px; }
+    .promo-content h1 {
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+
+    .promo-content p {
+        font-size: 15px;
+    }
+
+    .progress-wrap {
+        bottom: 25px;
+        right: 25px;
+    }
 }
 
 @media (max-width: 768px) {
-    .promo-content h1 { font-size: 32px; letter-spacing: 3px; }
-    .promo-content h6 { font-size: 13px; letter-spacing: 4px; }
-    .banner-slide__content h1 { font-size: 42px; letter-spacing: 6px; }
-    .banner-slide__content h5 { font-size: 13px; letter-spacing: 4px; }
-    .section-padding { padding: 70px 0; }
-    .progress-wrap { bottom: 20px; right: 20px; height: 40px; width: 40px; }
+    .promo-content h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    .promo-content h6 {
+        font-size: 13px;
+        letter-spacing: 4px;
+    }
+
+    .banner-slide__content h1 {
+        font-size: 42px;
+        letter-spacing: 6px;
+    }
+
+    .banner-slide__content h5 {
+        font-size: 13px;
+        letter-spacing: 4px;
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .progress-wrap {
+        bottom: 20px;
+        right: 20px;
+        height: 40px;
+        width: 40px;
+    }
 }
 
 @media (max-width: 480px) {
-    .banner-slide__content h1 { font-size: 32px; letter-spacing: 3px; }
-    .promo-content h1 { font-size: 28px; }
+    .banner-slide__content h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    .promo-content h1 {
+        font-size: 28px;
+    }
 }
