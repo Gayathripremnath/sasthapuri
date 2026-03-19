@@ -110,7 +110,7 @@
    ================================================================ */
 .at-hero {
   position: relative;
-  height: 460px; 
+  height: 400px; 
   overflow: hidden;
 }
 .at-hero-slide {
@@ -478,30 +478,95 @@
 /* ================================================================
    RESPONSIVE
    ================================================================ */
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
 @media (max-width: 1200px) {
-  .at-svc-content { padding: 50px 40px; }
+  .at-container { max-width: 1000px; }
+  .at-svc-content { padding: 40px; }
 }
 
 @media (max-width: 991px) {
-  .at-svc-row { grid-template-columns: 1fr; }
-  .at-svc-img { height: 350px; order: 0 !important; }
-  .at-svc-content { order: 1 !important; text-align: center; padding: 50px 30px; }
-  .at-reservation { margin: 20px auto; }
+  .at-hero { height: 350px; }
+  .at-hero-title { font-size: 52px; letter-spacing: 4px; }
+  
+  .at-svc-row { 
+    grid-template-columns: 1fr; 
+    height: auto; /* Allow row to grow with stacked content */
+    margin-bottom: 30px;
+    border: none;
+  }
+  
+  .at-svc-img { 
+    height: 320px; 
+    order: 0 !important; 
+  }
+  
+  .at-svc-content { 
+    order: 1 !important; 
+    text-align: center; 
+    padding: 50px 30px; 
+    align-items: center; /* Center-align flex items */
+    background: var(--at-white);
+    border: 1px solid #f2eee8;
+  }
+  
+  .at-svc-desc { 
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  
+  .at-intro { 
+    padding: 60px 0; 
+    text-align: center; 
+  }
+  
+  .at-intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .at-reservation { 
+    margin: 40px auto 0; 
+    justify-content: center;
+  }
+  
+  .at-section-title { font-size: 38px; }
 }
 
 @media (max-width: 768px) {
-  .at-hero-title    { font-size: 42px; letter-spacing: 4px; }
+  .at-hero { height: 320px; }
+  .at-hero-title { font-size: 42px; letter-spacing: 3px; }
+  .at-hero-sub { font-size: 12px; letter-spacing: 4px; }
+  
+  .at-svc-img { height: 280px; }
+  .at-svc-content { padding: 40px 20px; }
+  .at-svc-title { font-size: 28px; }
+  
   .at-section-title { font-size: 32px; }
-  .at-intro, .at-faq { padding: 70px 0; }
-  .at-accordion     { border-radius: 0; box-shadow: none; border-left: none; border-right: none; }
-  .at-acc-btn       { padding: 18px 20px; gap: 12px; }
-  .at-acc-title     { font-size: 18px; }
-  .at-acc-inner-p   { padding: 0 20px 25px 55px; font-size: 14px; }
-  .at-acc-content, .at-acc-open .at-acc-content { padding: 0 !important; }
+  .at-intro-text { font-size: 14px; }
+  
+  .at-accordion { border-radius: 0; box-shadow: none; border-left: none; border-right: none; margin-top: 40px; }
+  .at-acc-btn { padding: 20px; gap: 15px; }
+  .at-acc-num { width: 30px; }
+  .at-acc-title { font-size: 18px; }
+  .at-acc-inner-p { padding: 0 20px 25px 50px; font-size: 14px; }
+  .at-acc-inner-p::before { left: 35px; }
 }
 
 @media (max-width: 480px) {
-  .at-hero-title    { font-size: 30px; letter-spacing: 2px; }
-  .at-svc-title     { font-size: 26px; }
-  .at-svc-img       { height: 260px; }
+  .at-hero { height: 280px; }
+  .at-hero-title { font-size: 32px; letter-spacing: 2px; }
+  .at-hero-dots { bottom: 20px; }
+  .at-bounce-arrow { display: none; }
+  
+  .at-svc-img { height: 240px; }
+  .at-svc-title { font-size: 24px; }
+  .at-svc-label { letter-spacing: 3px; }
+  
+  .at-res-num { font-size: 24px; }
+  .at-res-icon { font-size: 24px; }
+  
+  .at-breadcrumb { display: none; }
 }

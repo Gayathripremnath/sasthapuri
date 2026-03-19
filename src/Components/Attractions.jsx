@@ -142,7 +142,7 @@ const Attractions = () => {
   return (
     <>
       {/* Progress scroll totop */}
-      <div className="progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
+      <div className="at-progress-wrap cursor-pointer" ref={progressWrapRef} onClick={scrollToTop} role="button" aria-label="Back to top">
         <svg
           className="progress-circle svg-content"
           width="100%"
