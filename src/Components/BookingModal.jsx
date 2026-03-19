@@ -34,7 +34,7 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Final validation check for whitespace-only strings
     const nameValid = formData.name.trim().length > 0;
     const emailValid = formData.email.trim().length > 0;
@@ -58,9 +58,9 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
         <button className="bm-close" onClick={onClose} aria-label="Close modal">
           <FaTimes />
         </button>
-        
+
         <div className="bm-header">
-          <div className="bm-stars">★★★★★</div>
+          <div className="bm-stars">★★★</div>
           <span className="bm-subtitle">Luxury Stay</span>
           <h2 className="bm-title">Book Your Room</h2>
         </div>
@@ -70,73 +70,71 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
             {/* Guest Info */}
             <div className="bm-group full">
               <label>Full Name</label>
-              <input 
-                type="text" 
-                name="name" 
-                placeholder="Enter your name" 
-                required 
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
                 pattern=".*\S+.*"
                 title="Input cannot be only spaces"
-                value={formData.name} 
-                onChange={handleChange} 
+                value={formData.name}
+                onChange={handleChange}
               />
             </div>
 
             <div className="bm-group">
               <label>Email Address</label>
-              <input 
-                type="email" 
-                name="email" 
-                placeholder="Enter your email" 
-                required 
-                value={formData.email} 
-                onChange={handleChange} 
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
 
             <div className="bm-group">
               <label>Phone Number</label>
-              <input 
-                type="tel" 
-                name="phone" 
-                placeholder="Enter phone number" 
-                required 
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter phone number"
+                required
                 pattern=".*\S+.*"
                 title="Input cannot be only spaces"
-                value={formData.phone} 
-                onChange={handleChange} 
+                value={formData.phone}
+                onChange={handleChange}
               />
             </div>
 
             {/* Stay Details */}
             <div className="bm-group">
               <label><FaCalendarAlt /> Check-In</label>
-              <input 
-                type="date" 
-                name="checkIn" 
-                required 
-                value={formData.checkIn} 
-                onChange={handleChange} 
+              <input
+                type="date"
+                name="checkIn"
+                required
+                value={formData.checkIn}
+                onChange={handleChange}
               />
             </div>
 
             <div className="bm-group">
               <label><FaCalendarAlt /> Check-Out</label>
-              <input 
-                type="date" 
-                name="checkOut" 
-                required 
-                value={formData.checkOut} 
-                onChange={handleChange} 
+              <input
+                type="date"
+                name="checkOut"
+                required
+                value={formData.checkOut}
+                onChange={handleChange}
               />
             </div>
 
             <div className="bm-group">
               <label><FaBed /> Room Type</label>
               <select name="roomType" value={formData.roomType} onChange={handleChange}>
-                <option value="Junior Suite">Junior Suite</option>
                 <option value="Family Room">Family Room</option>
-                <option value="Double Room">Double Room</option>
                 <option value="Executive Room">Executive Room</option>
                 <option value="Standard Deluxe">Standard Deluxe</option>
                 <option value="Standard Room">Standard Room</option>
@@ -147,10 +145,11 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
               <label><FaUserFriends /> Guests</label>
               <div className="bm-select-row">
                 <select name="adults" value={formData.adults} onChange={handleChange}>
-                  <option value="1">1 Adult</option>
-                  <option value="2">2 Adults</option>
-                  <option value="3">3 Adults</option>
-                  <option value="4">4 Adults</option>
+                  <option value="1">Select</option>
+                  <option value="2">1 Adult</option>
+                  <option value="3">2 Adults</option>
+                  <option value="4">3 Adults</option>
+                  <option value="5">4 Adults</option>
                 </select>
                 <select name="children" value={formData.children} onChange={handleChange}>
                   <option value="0">0 Children</option>
@@ -162,11 +161,11 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
 
             <div className="bm-group full">
               <label>Special Requests</label>
-              <textarea 
-                name="specialRequests" 
-                rows="2" 
-                placeholder="Any special requirements?" 
-                value={formData.specialRequests} 
+              <textarea
+                name="specialRequests"
+                rows="2"
+                placeholder="Any special requirements?"
+                value={formData.specialRequests}
                 onChange={handleChange}
               ></textarea>
             </div>

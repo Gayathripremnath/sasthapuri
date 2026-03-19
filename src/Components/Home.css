@@ -533,16 +533,28 @@ font-family: 'Gilda Display', serif;
     padding: 32px 28px;
     display: flex;
     align-items: flex-end;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     overflow: hidden;
     isolation: isolate;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.room-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.room-card-featured:hover .room-card-bg {
+    transform: scale(1.12);
 }
 
 .room-card-featured:hover {
-    transform: scale(1.02);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .room-card-overlay {

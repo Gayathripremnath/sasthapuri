@@ -325,8 +325,8 @@ const Home = () => {
                 className={`room-card room-card-featured anim anim-up anim-d${(idx % 6) + 1}`}
                 id={room.id}
                 key={room.id}
-                style={{ backgroundImage: `url('${room.image}')` }}
               >
+                <div className="room-card-bg" style={{ backgroundImage: `url('${room.image}')` }}></div>
                 <div className="room-card-overlay"></div>
                 <button 
                   className="room-book-tag" 

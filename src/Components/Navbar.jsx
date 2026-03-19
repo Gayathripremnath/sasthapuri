@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
@@ -23,7 +24,9 @@ const Navbar = ({ onMenuClick }) => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="logo-container">
-                <img src={logo} alt="Hotel Sasthapuri" className="navbar-logo" />
+                <Link to="/">
+                    <img src={logo} alt="Hotel Sasthapuri" className="navbar-logo" />
+                </Link>
             </div>
             <button className="menu-toggle" onClick={onMenuClick}>
                 <div className="hamburger">
