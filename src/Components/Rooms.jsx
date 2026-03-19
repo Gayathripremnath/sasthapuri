@@ -161,7 +161,7 @@ const Rooms = () => {
       >
         <div className="rm-hero-overlay" />
         <div className="rm-hero-content anim anim-up">
-          <div className="rm-hero-stars">★★★★★</div>
+          <div className="rm-hero-stars">★★★</div>
           <p className="rm-hero-kicker">Sasthapuri Hotel</p>
           <h1 className="rm-hero-title">Rooms &amp; Suites</h1>
         </div>
