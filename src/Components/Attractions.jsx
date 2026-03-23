@@ -41,7 +41,7 @@ const services = [
     img: 'https://www.dtpckozhikode.com/uploads/picture_gallery/gallery_images/kappad-beach-park-kozhikodu-20230602163015499265.webp',
     title: 'Kappad Beach',
     desc: 'Definitely a beautiful beach about 20 km from Calicut. Its historical importance stems from the fact that Vasco da Gama with his sailors landed here in 1498 in 3 ships. This was the start of economic relationship between Europeans and this part of India now called Kerala. Quench your thirst with the nature-flavored tender coconut water which is healthful.',
-    hours: 'Daily: 8:00 AM – 10:00 PM',
+    hours: '24 hours',
     imgLeft: false,
   },
 ];
@@ -89,7 +89,7 @@ const Attractions = () => {
     return () => clearInterval(id);
   }, []);
 
-  /* scroll-reveal observer */
+ 
   useEffect(() => {
     const els = document.querySelectorAll('.anim');
     const obs = new IntersectionObserver(
