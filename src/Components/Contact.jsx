@@ -23,7 +23,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validation: Trim all values and check if any are empty
+    x
     const trimmedData = {
       name: formData.name.trim(),
       email: formData.email.trim(),
