@@ -138,7 +138,7 @@ const progressWrapRef = useRef(null);
                 <div className="icon" aria-hidden="true">☎</div>
                 <div className="text">
                   <p>Reservation</p>
-                  <a href="tel:+914952723281">855 100 4444</a>
+                  <a href="tel:+91 - 495-2723281 ">+91 - 495-2723281 (5 LINES)</a>
                 </div>
               </div>
             </div>

@@ -33,10 +33,10 @@ const Footer = () => {
           <a className="footer-mail" href="mailto:sasthapuri@gmail.com">sasthapuri@gmail.com</a>
           <div className="footer-social" aria-label="Social links">
             
-<a href="#"><Instagram size={20} /></a>
-<a href="#"><Twitter size={20} /></a>
-<a href="#"><Youtube size={20} /></a>
-<a href="#"><Facebook size={20} /></a>
+          <a href="#"><Instagram size={20} /></a>  
+          <a href="#"><Twitter size={20} /></a>
+          <a href="#"><Youtube size={20} /></a>
+          <a href="#"><Facebook size={20} /></a>
           </div>
         </div>
       </div>
