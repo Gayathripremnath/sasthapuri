@@ -262,7 +262,7 @@ const Home = () => {
           src={bgMusic}
           autoPlay
           loop
-          preload="auto"
+          preload="auto"a
           playsInline
           muted={isAudioMuted}
         /> */}
@@ -339,20 +339,7 @@ const Home = () => {
                   <p className="room-price">{room.price}</p>
                   <h3>{room.title}</h3>
                   <div className="room-card-footer">
-                    <div className="room-amenities" aria-hidden="true">
-                      <span className="amenity-icon">
-                        <svg viewBox="0 0 24 24"><path d="M3 11h18M5 11V7h14v4M4 17v-6m16 6v-6M7 17v-3m10 3v-3" /></svg>
-                      </span>
-                      <span className="amenity-icon">
-                        <svg viewBox="0 0 24 24"><path d="M6 18V8a3 3 0 0 1 3-3h6M8 18h8M14 5a4 4 0 0 1 0 8H8" /></svg>
-                      </span>
-                      <span className="amenity-icon">
-                        <svg viewBox="0 0 24 24"><path d="M5 10h14l2 4H3l2-4Zm1 4v4m12-4v4M9 10V7a3 3 0 1 1 6 0v3" /></svg>
-                      </span>
-                      <span className="amenity-icon">
-                        <svg viewBox="0 0 24 24"><path d="M4 12h16M6 12V8h12v4M5 16h14M7 16v2m10-2v2" /></svg>
-                      </span>
-                    </div>
+                    
                     <div className="room-actions">
                         <Link className="room-details-link" to="/room-details">Details</Link>
                       </div>
