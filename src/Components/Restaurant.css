@@ -531,7 +531,35 @@
   .rest-menu-grid            { grid-template-columns: 1fr; }
   .rest-booking-form         { padding: 30px 20px; }
   .rest-form-row             { grid-template-columns: 1fr; }
-  .rest-intro-images         { display: none; }
+  .rest-intro-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    height: auto;
+    max-width: 520px;
+    margin: 28px auto 0;
+  }
+
+  .rest-intro-img {
+    position: relative;
+    width: 100%;
+    height: 240px;
+  }
+
+  .rest-intro-img-top {
+    width: 100%;
+    height: 260px;
+    top: auto;
+    right: auto;
+  }
+
+  .rest-intro-img-bot {
+    width: 100%;
+    height: 220px;
+    bottom: auto;
+    left: auto;
+    border-width: 0;
+  }
 }
 
 @media (max-width: 480px) {
