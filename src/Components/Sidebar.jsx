@@ -15,7 +15,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           <li><Link to="/" onClick={onClose}>HOME</Link></li>
           <li><Link to="/about" onClick={onClose}>ABOUT US</Link></li>
           <li><Link to="/restaurant" onClick={onClose}>RESTAURANT</Link></li>
-          <li><Link to="/services" onClick={onClose}>SERVICES</Link></li>
+          <li><Link to="/facilities" onClick={onClose}>FACILITIES</Link></li>
           <li><Link to="/rooms" onClick={onClose}>ROOMS</Link></li>
           <li><Link to="/reservation" onClick={onClose}>RESERVATION</Link></li>
           <li><Link to="/gallery" onClick={onClose}>GALLERY</Link></li>

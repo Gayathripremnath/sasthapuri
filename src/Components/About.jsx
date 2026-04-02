@@ -126,13 +126,23 @@ const progressWrapRef = useRef(null);
               <span className="section-subtitle">Hotel Sasthapuri</span>
               <h2 className="section-title">Enjoy a Luxury Experience</h2>
               <p>
-                Sri. C. Karunakaran Nair, a Calicut based leading businessman in Hotel industry,
-                established Sasthapuri in 1978. Hospitality is the keyword for us, because we do
-                everything with you in mind.
+               Sri. C. Karunakaran Nair, a Calicut-based leading businessman in the hotel industry,
+established Sasthapuri in 1978 with a vision to provide exceptional hospitality and
+quality service. Over the years, Sasthapuri has grown into a trusted name, known for its
+commitment to comfort, tradition, and guest satisfaction. Hospitality remains our core
+value, and everything we do is thoughtfully designed with our guests in mind.
+
               </p>
               <p>
-                Welcome to the best three-star deluxe hotel experience. From curated cuisine to refined
-                rooms and thoughtful service, we create stays filled with comfort and lasting memories.
+                Blending decades of experience with modern standards, we take pride in offering a
+warm and welcoming atmosphere for travelers, families, and business guests alike. Our
+dedication to quality is reflected in every detail—from well-maintained rooms and
+attentive service to carefully prepared cuisine that caters to diverse tastes.
+Experience the charm of a three-star deluxe hotel where comfort meets elegance. From
+curated dining experiences to refined accommodations and personalized service, we
+strive to make every stay relaxing, enjoyable, and memorable. At Sasthapuri, every guest
+is treated with care, ensuring a home-like experience with professional excellence.
+
               </p>
               <div className="about-reservation" id="reservation">
                 <div className="icon" aria-hidden="true">☎</div>
