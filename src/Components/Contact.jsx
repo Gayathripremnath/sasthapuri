@@ -22,7 +22,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     x
     const trimmedData = {
       name: formData.name.trim(),
@@ -94,12 +94,12 @@ const Contact = () => {
       </div>
 
       {/* Header Banner */}
-      <div 
-        className="contact-banner" 
+      <div
+        className="contact-banner"
         style={{ backgroundImage: `url(https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/94f465d0.jpg?impolicy=resizecrop&rw=1200&ra=fit)` }}
       >
         <div className="container">
-          <h5 style={{color:"#aa8453"}}>Get in touch</h5>
+          <h5 style={{ color: "#aa8453" }}>Get in touch</h5>
           <h1 >Contact Us</h1>
         </div>
       </div>
@@ -111,14 +111,16 @@ const Contact = () => {
           <div className="contact-info">
             <h3>Hotel Sasthapuri</h3>
             <p>
-              HOSPITALITY is the keyword for us, because we do everything with YOU in mind.
-              Our dedicated team is here to assist you with any inquiries and ensure your stay is comfortable and memorable.
+              We are conveniently located in the heart of the city, offering easy access to all major
+travel hubs and key destinations. Whether you are visiting for business or leisure,
+reaching us is quick and hassle-free.
+
             </p>
-            
+
             <div className="reservation-item">
               <div className="icon"><Phone size={32} strokeWidth={1.5} /></div>
               <div className="text-cont">
-                <p>Reservation</p> 
+                <p>Reservation</p>
                 <a href="tel:+914952723281">+91 - 495-2723281 (5 LINES)</a>
               </div>
             </div>
@@ -126,7 +128,7 @@ const Contact = () => {
             <div className="reservation-item">
               <div className="icon"><Mail size={32} strokeWidth={1.5} /></div>
               <div className="text-cont">
-                <p>Email Info</p> 
+                <p>Email Info</p>
                 <a href="mailto:sasthapuri@gmail.com">sasthapuri@gmail.com</a>
               </div>
             </div>
@@ -134,7 +136,7 @@ const Contact = () => {
             <div className="reservation-item">
               <div className="icon"><MapPin size={32} strokeWidth={1.5} /></div>
               <div className="text-cont">
-                <p>Address</p> 
+                <p>Address</p>
                 <span>M.M.Ali Road, Palayam, Calicut - 673002,<br />Kerala, South India</span>
               </div>
             </div>
@@ -143,7 +145,7 @@ const Contact = () => {
           {/* Form Side */}
           <div className="contact-form-container">
             <h3>Get in touch</h3>
-            
+
             {status.message && (
               <div className={`alert alert-${status.type}`}>
                 {status.message}
@@ -152,50 +154,50 @@ const Contact = () => {
 
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <input 
+                <input
                   name="name"
-                  type="text" 
-                  placeholder="Your Name *" 
-                  required 
+                  type="text"
+                  placeholder="Your Name *"
+                  required
                   value={formData.name}
                   onChange={handleChange}
                 />
               </div>
               <div className="form-group">
-                <input 
+                <input
                   name="email"
-                  type="email" 
-                  placeholder="Your Email *" 
-                  required 
+                  type="email"
+                  placeholder="Your Email *"
+                  required
                   value={formData.email}
                   onChange={handleChange}
                 />
               </div>
               <div className="form-group">
-                <input 
+                <input
                   name="phone"
-                  type="text" 
-                  placeholder="Your Number *" 
-                  required 
+                  type="text"
+                  placeholder="Your Number *"
+                  required
                   value={formData.phone}
                   onChange={handleChange}
                 />
               </div>
               <div className="form-group">
-                <input 
+                <input
                   name="subject"
-                  type="text" 
-                  placeholder="Subject *" 
-                  required 
+                  type="text"
+                  placeholder="Subject *"
+                  required
                   value={formData.subject}
                   onChange={handleChange}
                 />
               </div>
               <div className="form-group full-width">
-                <textarea 
+                <textarea
                   name="message"
-                  rows="4" 
-                  placeholder="Message *" 
+                  rows="4"
+                  placeholder="Message *"
                   required
                   value={formData.message}
                   onChange={handleChange}
@@ -212,11 +214,11 @@ const Contact = () => {
 
         {/* Map Section */}
         <div className="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.064506822286!2d75.78747447475962!3d11.2505230889242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6593532f50761%3A0x6d8f5aa2ee225a2e!2sHotel%20Sasthapuri!5e0!3m2!1sen!2sin!4v1710672728490!5m2!1sen!2sin" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.064506822286!2d75.78747447475962!3d11.2505230889242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6593532f50761%3A0x6d8f5aa2ee225a2e!2sHotel%20Sasthapuri!5e0!3m2!1sen!2sin!4v1710672728490!5m2!1sen!2sin"
             title="Hotel Sasthapuri Location"
-            allowFullScreen="" 
-            loading="lazy" 
+            allowFullScreen=""
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>

@@ -213,20 +213,70 @@
     border: 0;
 }
 
+@media (max-width: 991px) {
+    .contact-container {
+        gap: 40px;
+    }
+    .contact-banner {
+        height: 45vh;
+        min-height: 350px;
+    }
+}
+
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+
     .contact-form {
         grid-template-columns: 1fr;
     }
+
     .form-group.full-width {
         grid-column: span 1;
     }
+
     .submit-btn {
         grid-column: span 1;
     }
+
     .contact-banner h1 {
-        font-size: 40px;
+        font-size: 34px;
     }
+
     .map-container iframe {
-        height: 400px;
+        height: 350px;
+    }
+
+    .reservation-item .text-cont a {
+        font-size: 17px;
+    }
+
+    .connectivity-section h2.section-title {
+        font-size: 30px !important;
+    }
+
+    .travel-hubs-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-banner .container {
+        margin-left: 20px;
+    }
+
+    .contact-banner h1 {
+        font-size: 28px;
+    }
+
+    .contact-info h3, .contact-form-container h3 {
+        font-size: 20px;
+    }
+
+    .butn-dark2 {
+        width: 100%;
+        text-align: center;
     }
 }
