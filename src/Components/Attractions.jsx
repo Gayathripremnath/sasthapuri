@@ -230,7 +230,7 @@ const Attractions = () => {
       {/* ── Intro Section ── */}
       <section className="at-intro anim anim-up">
         <div className="at-container">
-          <div className="at-stars anim anim-fade">★★★★★</div>
+          <div className="at-stars anim anim-fade">★★★</div>
           <div className="at-subtitle anim anim-up anim-d1">So Many Ways to Unwind</div>
           <h2 className="at-section-title anim anim-up anim-d2"> Attractions</h2>
           <p className="at-intro-text anim anim-up anim-d3">
