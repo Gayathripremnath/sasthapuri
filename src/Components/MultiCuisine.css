@@ -1,0 +1,242 @@
+.multi-cuisine-page {
+    background: #f8f5f0;
+}
+
+/* Hero Section */
+.mc-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    background-image: url('https://sasthapuri.com/web_demo/img/rooms/7.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10%;
+}
+
+.mc-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.mc-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.mc-hero-content h5 {
+    margin-top: 60px;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 6px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #aa8453;
+}
+
+.mc-hero-content h1 {
+    font-family: 'Gilda Display', serif;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* Container */
+.mc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Grid Layout */
+.mc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.mc-text .stars {
+    color: #aa8453;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.mc-subtitle {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 6px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #aa8453;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.mc-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 42px;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.mc-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #aa8453;
+}
+
+.mc-text p {
+    font-family: 'Barlow', sans-serif;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Images Grid */
+.mc-images {
+    position: relative;
+}
+
+.mc-img-box {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mc-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.mc-img-box:hover img {
+    transform: scale(1.05);
+}
+
+.main-img {
+    width: 90%;
+    height: 380px;
+}
+
+.sub-img {
+    width: 60%;
+    height: 260px;
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    border: 8px solid white;
+}
+
+/* Progress Wrap */
+.progress-wrap {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 400ms linear;
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-wrap::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #aa8453;
+    border-right: 2px solid #aa8453;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) rotate(-45deg);
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-circle path {
+    stroke: #aa8453;
+    stroke-width: 4;
+    fill: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .mc-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mc-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .mc-title {
+        font-size: 36px;
+    }
+
+    .main-img {
+        width: 100%;
+        height: 340px;
+    }
+
+    .sub-img {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .mc-hero {
+        height: 45vh;
+        min-height: 350px;
+        padding: 0 20px;
+    }
+
+    .mc-hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    .mc-title {
+        font-size: 30px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+}

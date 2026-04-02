@@ -1,0 +1,243 @@
+.conference-hall-page {
+    background: #f8f5f0;
+}
+
+/* Hero Section */
+.ch-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    background-image: url('https://sasthapuri.com/web_demo/img/rooms/4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10%;
+}
+
+.ch-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.ch-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.ch-hero-content h5 {
+    margin-top: 60px;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 6px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #aa8453;
+}
+
+.ch-hero-content h1 {
+    font-family: 'Gilda Display', serif;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* Container */
+.ch-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Grid Layout */
+.ch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ch-text .stars {
+    color: #aa8453;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.ch-subtitle {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #aa8453;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.ch-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 42px;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.ch-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #aa8453;
+}
+
+.ch-text p {
+    font-family: 'Barlow', sans-serif;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Images Grid */
+.ch-images {
+    position: relative;
+}
+
+.ch-img-box {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ch-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.ch-img-box:hover img {
+    transform: scale(1.05);
+}
+
+.main-img {
+    width: 90%;
+    height: 380px;
+}
+
+.sub-img {
+    width: 60%;
+    height: 260px;
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    border: 8px solid white;
+}
+
+/* Progress Wrap */
+.progress-wrap {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 400ms linear;
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-wrap::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #aa8453;
+    border-right: 2px solid #aa8453;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) rotate(-45deg);
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-circle path {
+    stroke: #aa8453;
+    stroke-width: 4;
+    fill: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .ch-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .ch-hero-content h1 {
+        font-size: 48px;
+    }
+
+    .ch-title {
+        font-size: 36px;
+    }
+
+    .main-img {
+        width: 100%;
+        height: 340px;
+    }
+
+    .sub-img {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .ch-hero {
+        height: 45vh;
+        min-height: 350px;
+        padding: 0 20px;
+    }
+
+    .ch-hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 2px;
+    }
+
+    .ch-title {
+        font-size: 30px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+}

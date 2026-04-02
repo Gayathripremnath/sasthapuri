@@ -144,17 +144,24 @@ const Restaurant = () => {
       <section className="rest-intro">
         <div className="rest-container rest-intro-grid">
           <div className="rest-intro-text anim anim-left">
-            <span className="rest-subtitle">A Culinary Journey</span>
-            <h2 className="rest-section-title">Flavours Crafted<br/>with Passion</h2>
+            <span className="rest-subtitle">Sasthapuri Hotels</span>
+            <h2 className="rest-section-title">Restaurant &amp; Bar</h2>
             <p>
-              Our restaurant celebrates the vibrant culinary heritage of Kerala, elevated with
-              contemporary techniques and the finest ingredients. Whether you seek a leisurely
-              breakfast overlooking the gardens or an intimate candlelit dinner, every meal at
-              Sasthapuri is an experience to savour.
+              Experience a perfect blend of taste and relaxation at our Restaurant &amp; Bar, where great
+              food meets a refreshing ambiance. Designed to offer a delightful dining experience, our
+              restaurant serves a wide variety of multi-cuisine dishes, ranging from authentic local
+              flavors to popular Indian and international favorites.
             </p>
             <p>
-              Our chefs blend traditional spices and coastal flavours with global inspirations —
-              creating dishes that are both deeply familiar and beautifully surprising.
+              Our bar features a carefully curated selection of beverages, offering the perfect setting
+              to unwind after a long day. Whether you prefer classic drinks or refreshing mocktails,
+              our menu is crafted to complement your dining experience.
+            </p>
+            <p>
+              With a warm atmosphere, comfortable seating, and attentive service, the Restaurant &amp;
+              Bar is an ideal place for casual dining, family gatherings, and friendly get-togethers.
+              Whether you're here for a quick meal or a relaxed evening, we ensure a memorable
+              experience with quality, taste, and hospitality.
             </p>
             <div className="rest-reservation-bar">
               <FaPhone className="rest-phone-icon" />

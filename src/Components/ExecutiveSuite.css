@@ -1,0 +1,319 @@
+.executive-suite-page {
+    background: #f8f5f0;
+}
+
+/* Hero Section */
+.es-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10%;
+}
+
+.es-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.es-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.es-hero-content h5 {
+    margin-top: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 6px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #aa8453;
+}
+
+.es-hero-content h1 {
+    font-family: 'Gilda Display', serif;
+    font-size: 54px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* Container */
+.es-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Grid Layout */
+.es-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.es-text .stars {
+    color: #aa8453;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.es-subtitle {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #aa8453;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.es-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 42px;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.es-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #aa8453;
+}
+
+.es-text p {
+    font-family: 'Barlow', sans-serif;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Amenities Mini List */
+.es-amenities-mini {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e8e0d5;
+}
+
+.es-amenities-mini ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.es-amenities-mini ul li {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Images Grid */
+.es-images {
+    position: relative;
+    margin-top: 40px;
+}
+
+.es-img-box {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.es-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.es-img-box:hover img {
+    transform: scale(1.05);
+}
+
+.main-img {
+    width: 90%;
+    height: 380px;
+}
+
+.sub-img {
+    width: 60%;
+    height: 260px;
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    border: 8px solid white;
+}
+
+/* Reservation Strip */
+.es-reservation-strip {
+    background: #222;
+    padding: 40px 0;
+    color: #fff;
+}
+
+.es-res-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.es-res-text h3 {
+    font-family: 'Gilda Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.es-res-text p {
+    font-family: 'Barlow', sans-serif;
+    color: #999;
+    font-size: 15px;
+}
+
+.es-btn-gold {
+    display: inline-block;
+    padding: 15px 35px;
+    font-family: 'Barlow Condensed', sans-serif;
+    background: #aa8453;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.es-btn-gold:hover {
+    background: #8e6d44;
+}
+
+/* Progress Wrap */
+.progress-wrap {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 400ms linear;
+}
+
+.progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-wrap::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #aa8453;
+    border-right: 2px solid #aa8453;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) rotate(-45deg);
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-circle path {
+    stroke: #aa8453;
+    stroke-width: 4;
+    fill: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .es-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .es-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .es-title {
+        font-size: 34px;
+    }
+
+    .main-img {
+        width: 100%;
+        height: 340px;
+    }
+
+    .sub-img {
+        display: none;
+    }
+
+    .es-res-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .es-hero {
+        height: 45vh;
+        min-height: 350px;
+        padding: 0 20px;
+    }
+
+    .es-hero-content h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .es-title {
+        font-size: 28px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .es-amenities-mini {
+        flex-direction: column;
+        gap: 0;
+    }
+}

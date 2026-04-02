@@ -343,45 +343,6 @@ const RoomDetails = () => {
         </div>
       </section>
 
-      {/* ── Pricing / Extra Services ── */}
-      <section className="rd-pricing anim anim-up">
-        <div className="rd-container rd-pricing-grid">
-          <div className="rd-pricing-info">
-            <div className="rd-pricing-intro">
-              <div className="rd-subtitle">Best Prices</div>
-              <h2 className="rd-title">Extra Services</h2>
-              <p className="rd-desc">The best prices for your relaxing vacation. Premium amenities and personalised services crafted to make your stay unforgettable.</p>
-              <div className="rd-reservation-bar">
-                <span className="rd-res-icon">📞</span>
-                <div>
-                  <p className="rd-res-label">For Information</p>
-                  <a className="rd-res-num" href="tel:8551004444">855 100 4444</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="rd-pricing-cards">
-            {pricingCards.map((card, i) => (
-              <div className="rd-pricing-card" key={i}>
-                <img src={card.img} alt={card.name} />
-                <div className="rd-card-body">
-                  <div className="rd-card-name" dangerouslySetInnerHTML={{ __html: card.name }} />
-                  <div className="rd-card-amount">{card.amount}<span>{card.per}</span></div>
-                  <ul className="rd-card-list">
-                    {card.items.map((it, j) => (
-                      <li key={j} className={j === 2 ? 'unavail' : ''}>
-                        {j < 2 ? '✓' : '✕'} {it}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Reservation & Booking Form ── */}
       {/* <section
         className="rd-booking-section"

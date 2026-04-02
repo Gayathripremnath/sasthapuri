@@ -158,7 +158,7 @@
 
 .rm-room-price {
   font-family: var(--rm-serif);
-  font-size: 34px; font-weight: 400;
+  font-size: 19px; font-weight: 400;
   color: var(--rm-gold); margin: 0 0 6px;
 }
 .rm-room-price span {

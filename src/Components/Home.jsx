@@ -85,9 +85,10 @@ const rooms = [
   },
   {
     id: 'room2',
-    title: 'Standard Delux',
+    title: 'Standard Deluxe',
     price: '₹ 2600 + TAX NIGHT',
     image: 'https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/10478e28.jpg?impolicy=resizecrop&rw=1200&ra=fit',
+    link: '/room-standard-deluxe',
   },
   {
     id: 'room3',
@@ -105,6 +106,7 @@ const experiences = [
     description:
       'Our multi-cuisine restaurant offers a delightful selection of dishes from different cuisines. Enjoy freshly prepared meals in a warm and welcoming atmosphere.',
     image: 'https://sasthapuri.com/web_demo/img/rooms/7.jpg',
+    link: '/multi-cuisine',
   },
   {
     id: 'experience-conference',
@@ -113,6 +115,7 @@ const experiences = [
     description:
       'Our spacious conference hall is ideal for meetings, seminars, and special events. Equipped with modern facilities, it provides a comfortable and professional environment for all your business gatherings.',
     image: 'https://sasthapuri.com/web_demo/img/rooms/4.jpg',
+    link: '/conference-hall',
   },
   {
     id: 'experience-business',
@@ -121,6 +124,7 @@ const experiences = [
     description:
       'Our business center offers essential facilities for meetings, work, and communication. Guests can enjoy a comfortable space designed to support their professional needs.',
     image: 'https://sasthapuri.com/web_demo/img/rooms/15.jpg',
+    link: '/business-center',
   },
 ];
 
@@ -339,9 +343,8 @@ const Home = () => {
                   <p className="room-price">{room.price}</p>
                   <h3>{room.title}</h3>
                   <div className="room-card-footer">
-                    
                     <div className="room-actions">
-                        <Link className="room-details-link" to="/room-details">Details</Link>
+                        <Link className="room-details-link" to={room.id === 'room1' ? '/room-executive-suite' : room.id === 'room2' ? '/room-standard-deluxe' : room.id === 'room3' ? '/room-deluxe' : '/room-details'}>Details</Link>
                       </div>
                   </div>
                 </div>
@@ -372,9 +375,9 @@ const Home = () => {
                     <p className="experience-label">{item.label}</p>
                     <h3>{item.title}</h3>
                     <p className="experience-description">{item.description}</p>
-                    <button className="experience-cta" type="button">
+                    <Link className="experience-cta" to={item.link}>
                       Learn More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );

@@ -10,25 +10,29 @@ import Sidebar from './Sidebar';
 
     const testimonials = [
     {
-        quote:
-        'Hotel dapibus asue metus the nec feusiate eraten miss hendreri net ve ante the lemon sanleo nectan feugiat erat hendrerit necuis ve ante otel inilla duiman at finibus viverra.',
-        name: 'Emily Brown',
+        quote: 'Had a wonderful stay at Sasthapuri. The rooms were clean, the food was delicious, and the staff were very polite and helpful. Highly recommended for families.',
+        name: 'Rajesh Kumar',
         role: 'Guest review',
-        avatar: 'https://sasthapuri.com/web_demo/img/team/4.jpg',
     },
     {
-        quote:
-        'Inilla duiman at elit finibus viverra nec a lacus themo the nesudea seneoice missuacipit non sagle the fermen ziverra tristiqu duru the ivite dianen onen nivami accersion augue.',
-        name: 'Nolan White',
+        quote: 'The perfect place for both dining and stay. Loved the ambience and the variety of food options. The service was quick and professional.',
+        name: 'Anjali Menon',
         role: 'Guest review',
-        avatar: 'https://sasthapuri.com/web_demo/img/team/1.jpg',
     },
     {
-        quote:
-        'Fermen norttito sit space, mus nellentesque habitan. Hotel dapibus asue metus the nec feusiate eraten miss hendreri net ve ante the lemon sanleo nectan feugiat erat hendrerit.',
-        name: 'Olivia Martin',
+        quote: 'I hosted a business meeting in their conference hall, and everything was well arranged. Great facilities and excellent support from the team.',
+        name: 'Mohammed Rafi',
         role: 'Guest review',
-        avatar: 'https://sasthapuri.com/web_demo/img/team/5.jpg',
+    },
+    {
+        quote: 'A comfortable and peaceful stay experience. The location is convenient, and the hospitality is truly impressive.',
+        name: 'Suresh Babu',
+        role: 'Guest review',
+    },
+    {
+        quote: 'One of the best multi-cuisine restaurants I’ve visited. The food quality and taste were outstanding. Will definitely visit again.',
+        name: 'Priya Nair',
+        role: 'Guest review',
     },
     ];
 
@@ -194,7 +198,6 @@ is treated with care, ensuring a home-like experience with professional excellen
                     <span className="tc-quote">&#8220;</span>
                     <p>{item.quote}</p>
                     <div className="tc-author">
-                      <img src={item.avatar} alt={item.name} />
                       <div>
                         <h4>{item.name}</h4>
                         <span>{item.role}</span>

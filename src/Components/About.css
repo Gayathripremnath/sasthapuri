@@ -182,6 +182,7 @@
 .testimonials-head h6 {
   font-family: 'Barlow Condensed', sans-serif;
   letter-spacing: 6px;
+  font-weight: 400;
   text-transform: uppercase;
   color: #e3c38e;
   margin-bottom: 8px;

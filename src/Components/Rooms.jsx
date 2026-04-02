@@ -20,8 +20,8 @@ const rooms = [
   {
     id: 'room2',
     img: "https://sasthapuri.com/images/ac-suit.jpg",
-    price: '3,400/- INR + Tax',
     name: 'Executive/Suite Room',
+    price: '3,400/- INR + Tax',
     desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
     persons: '2–4 Persons',
     bed: 'King Bed',
@@ -180,10 +180,10 @@ const Rooms = () => {
                 <img src={room.img} alt={room.name} />
               </figure>
               <div className="rm-room-caption">
-                <h3 className="rm-room-price">{room.price} <span>/ Night</span></h3>
                 <h4 className="rm-room-name">
-                  <Link to="/room-details">{room.name}</Link>
+                  <Link to={room.name === 'Executive/Suite Room' ? '/room-executive-suite' : room.name === 'Standard Deluxe' ? '/room-standard-deluxe' : room.name === 'Deluxe Room' ? '/room-deluxe' : '/room-details'}>{room.name}</Link>
                 </h4>
+                <h3 className="rm-room-price">{room.price} <span>/ Night</span></h3>
                 <p className="rm-room-desc">{room.desc}</p>
 
                 <div className="rm-facilities">
@@ -207,71 +207,12 @@ const Rooms = () => {
                 <hr className="rm-divider" />
 
                 <div className="rm-room-footer">
-                  <Link className="rm-link-btn" to="/room-details">Details →</Link>
-                  <button 
-                    className="rm-book-btn" 
-                    onClick={() => openBooking(room.name)}
-                    style={{ border: 'none', cursor: 'pointer', background: 'none', padding: 0 }}
-                  >
-                    <span>Book Now</span>
-                  </button>
+                  <Link className="rm-link-btn" to={room.name === 'Executive/Suite Room' ? '/room-executive-suite' : room.name === 'Standard Deluxe' ? '/room-standard-deluxe' : room.name === 'Deluxe Room' ? '/room-deluxe' : '/room-details'}>Details →</Link>
+                 
                 </div>
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Pricing / Extra Services */}
-      <section className="rm-pricing">
-        <div className="rm-container rm-pricing-inner">
-          {/* Left intro */}
-          <div className="rm-pricing-info anim anim-left">
-            <div className="rm-subtitle">Best Prices</div>
-            <h2 className="rm-section-title">Extra Services</h2>
-            <p>The best prices for your relaxing vacation. Premium amenities crafted to make your stay unforgettable.</p>
-            <p>Orci varius natoque penatibus et magnis parturient montes nascetur ridiculus mus.</p>
-            <div className="rm-reservation-bar">
-              <span className="rm-res-icon">📞</span>
-              <div>
-                <p className="rm-res-label">For Information</p>
-                <a className="rm-res-num" href="tel:+914952723281">+91-495-2723281</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Pricing cards carousel */}
-          <div className="rm-pricing-cards anim anim-right">
-            <div className="rm-pricing-track">
-              {pricingCards.map((card, i) => (
-                <div
-                  key={i}
-                  className={`rm-pricing-card ${i === activePricing ? 'rm-pc-active' : ''}`}
-                >
-                  <img src={card.img} alt={card.name} />
-                  <div className="rm-pc-body">
-                    <div className="rm-pc-name">{card.name}</div>
-                    <div className="rm-pc-amount">{card.amount}<span>{card.per}</span></div>
-                    <ul className="rm-pc-list">
-                      <li>✓ Hotel ut nisan the duru</li>
-                      <li>✓ Orci miss natoque vasa ince</li>
-                      <li className="rm-unavail">✕ Clean sorem ipsum morbin</li>
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="rm-pc-dots">
-              {pricingCards.map((_, i) => (
-                <button
-                  key={i}
-                  className={`rm-pc-dot ${i === activePricing ? 'active' : ''}`}
-                  onClick={() => setActivePricing(i)}
-                  aria-label={`Pricing card ${i + 1}`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
