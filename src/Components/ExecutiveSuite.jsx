@@ -146,20 +146,6 @@ const ExecutiveSuite = () => {
 
 
 
-            {/* Reservation Strip */}
-            <section className="es-reservation-strip">
-                <div className="es-container">
-                    <div className="es-res-inner anim anim-up">
-                        <div className="es-res-text">
-                            <h3>Ready to Experience Luxury?</h3>
-                            <p>Book your stay in our Executive / Suite Room today for an unforgettable experience.</p>
-                        </div>
-                        <div className="es-res-action">
-                             <a href="tel:+914952723281" className="es-btn-gold">Call +91-495-2723281</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

@@ -147,20 +147,6 @@ const StandardDeluxe = () => {
 
 
 
-            {/* Reservation Strip */}
-            <section className="sd-reservation-strip">
-                <div className="sd-container">
-                    <div className="sd-res-inner anim anim-up">
-                        <div className="sd-res-text">
-                            <h3>Affordable Luxury Awaits</h3>
-                            <p>Experience the perfect combination of value and hospitality in our Standard Deluxe Room.</p>
-                        </div>
-                        <div className="sd-res-action">
-                            <a href="tel:+914952723281" className="sd-btn-gold">Call +91-495-2723281</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

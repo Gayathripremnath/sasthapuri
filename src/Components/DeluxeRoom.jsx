@@ -144,20 +144,6 @@ const DeluxeRoom = () => {
 
 
 
-            {/* Reservation Strip */}
-            <section className="dr-reservation-strip">
-                <div className="dr-container">
-                    <div className="dr-res-inner anim anim-up">
-                        <div className="dr-res-text">
-                            <h3>Ready to Experience Luxury?</h3>
-                            <p>Book your stay in our Deluxe Room today for a truly memorable experience.</p>
-                        </div>
-                        <div className="dr-res-action">
-                            <a href="tel:+914952723281" className="dr-btn-gold">Call +91-495-2723281</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };
