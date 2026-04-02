@@ -44,6 +44,13 @@ const services = [
     hours: '24 hours',
     imgLeft: false,
   },
+   {
+    img: 'https://i.pinimg.com/736x/01/b4/1f/01b41f69c406508318c567753828443c.jpg',
+    title: 'LuLu Mall',
+    desc: 'Lulu Mall Kozhikode (Calicut) is a popular shopping and entertainment destination in Kerala. It offers a wide range of branded stores, a spacious food court, restaurants, a multiplex cinema, and fun activities for families. The mall is known for its modern design and is a favorite hangout spot for shopping, dining, and leisure in Kozhikode.',
+    hours: '10:00 AM to 11:00 PM',
+    imgLeft: true,
+  },
 ];
 
 /* ── FAQ data ── */
