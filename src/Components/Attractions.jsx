@@ -10,7 +10,7 @@ import spa4 from '../assets/spa/4.jpg';
 /* ── Slider images ── */
 const slides = [
   'https://www.dtpckozhikode.com/uploads/picture_gallery/gallery_images/kappad-beach-park-kozhikodu-20230602163015499265.webp',
-  'https://images.unsplash.com/photo-1693744440108-9a0767f1c3f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://i.pinimg.com/1200x/aa/97/ad/aa97ad83efde72d925fbc39c50f5ba47.jpg',
 ];
 
 
@@ -49,28 +49,52 @@ const services = [
 /* ── FAQ data ── */
 const faqs = [
   {
-    q: 'How far is Calicut Beach from the hotel?',
-    a: 'Calicut Beach is located just a short drive from the hotel and is one of the most visited coastal spots.',
+    q: 'What are the check-in and check-out timings?',
+    a: 'Check-in and check-out timings may vary. Please contact the front desk for exact timings and early check-in or late check-out availability.',
   },
   {
-    q: 'Which attractions are ideal for family visits near the hotel?',
-    a: 'Mananchira Square and the Regional Science Centre and Planetarium are great for families and kids.',
+    q: 'Do you provide complimentary breakfast?',
+    a: 'Yes, we offer complimentary breakfast with Indian and Continental options for in-house guests.',
   },
   {
-    q: 'Are there any historical sites close to the hotel?',
-    a: 'Yes, Kappad Beach is historically important as Vasco da Gama landed there in 1498.',
+    q: 'Is free Wi-Fi available in the hotel?',
+    a: 'Yes, high-speed internet access is available for all guests during their stay.',
   },
   {
-    q: 'Can guests visit temples near the hotel?',
-    a: 'Yes, Tali Temple is a famous nearby temple known for its traditional Kerala architecture.',
+    q: 'Do you have parking facilities?',
+    a: 'Yes, we provide valet parking facilities for our guests.',
   },
   {
-    q: 'Is shopping available near the hotel?',
-    a: 'Yes, SM Street is a popular shopping destination known for sweets, snacks, and local items.',
+    q: 'Is room service available?',
+    a: 'Yes, 24-hour room service is available for your convenience.',
   },
   {
-    q: 'Why should I choose Hotel Sasthapuri for my stay?',
-    a: 'Hotel Sasthapuri is centrally located, offering easy access to major attractions, shopping areas, and cultural landmarks in Kozhikode.',
+    q: 'Do you have a restaurant in the hotel?',
+    a: 'Yes, we have a multi-cuisine restaurant offering a variety of delicious dishes.',
+  },
+  {
+    q: 'Are conference or meeting facilities available?',
+    a: 'Yes, we offer a conference hall and board room for meetings, seminars, and events.',
+  },
+  {
+    q: 'Do you provide airport or travel assistance?',
+    a: 'Yes, our travel desk can assist with transportation and travel arrangements.',
+  },
+  {
+    q: 'Are laundry services available?',
+    a: 'Yes, in-house laundry services are available on a chargeable basis.',
+  },
+  {
+    q: 'Is the hotel suitable for business travelers?',
+    a: 'Yes, with facilities like a business center, conference hall, and high-speed internet, our hotel is ideal for business travelers.',
+  },
+  {
+    q: 'Do you provide any medical assistance?',
+    a: 'Yes, doctor-on-call service is available for emergencies.',
+  },
+  {
+    q: 'Are additional facilities available on request?',
+    a: 'Yes, services like iron & ironing board, safe deposit locker, wheelchair, and wake-up calls are available upon request.',
   },
 ];
 
@@ -203,19 +227,21 @@ const Attractions = () => {
           <div className="at-subtitle anim anim-up anim-d1">So Many Ways to Unwind</div>
           <h2 className="at-section-title anim anim-up anim-d2"> Attractions</h2>
           <p className="at-intro-text anim anim-up anim-d3">
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent volutpat nibh ac sodales
-            sodales. Nunc tincidunt erat sed nisi faucibus, eget sagittis libero imperdiet. Nunc risus magna,
-            imperdiet gravida ultricies in, aliquam a tortor. Vestibulum tristique posuere magna, quis
-            elementum neque luctus non. Aenean sed arcu efficitur, commodo justo ut, accumsan massa. Vivamus
-            ac risus in felis imperdiet mollis id sit amet odio.
+            Discover a range of attractions around our property that offer a perfect blend of
+relaxation, culture, and local experiences. Whether you are looking to unwind or
+explore, there is something for everyone nearby.
+Enjoy the natural beauty of the region with serene backwaters, peaceful surroundings,
+and refreshing coastal views. Guests can visit nearby beaches to relax, take in scenic
+sunsets, and enjoy the calming sea breeze.
+For those interested in culture and tradition, the area is home to well-known temples
+and heritage sites that reflect the rich history and spiritual essence of the region. Local
+markets and shopping areas provide an opportunity to explore traditional products,
+handicrafts, and souvenirs.
+From leisure outings to cultural exploration, these attractions make your stay more
+enjoyable and memorable, offering a complete experience of comfort, discovery, and
+relaxation.
           </p>
-          <div className="at-reservation anim anim-up anim-d4">
-            <span className="at-res-icon">📞</span>
-            <div>
-              <p className="at-res-label">Reservations</p>
-              <a className="at-res-num" href="tel:8551004444">855 100 4444</a>
-            </div>
-          </div>
+         
         </div>
       </section>
 
@@ -263,7 +289,7 @@ const Attractions = () => {
                   onClick={() => toggleFaq(i)}
                   aria-expanded={openFaqs.includes(i)}
                 >
-                  <span className="at-acc-num">0{i + 1}</span>
+                  <span className="at-acc-num">{i < 9 ? `0${i + 1}` : i + 1}</span>
                   <span className="at-acc-title">{faq.q}</span>
                   <span className="at-acc-arrow">+</span>
                 </button>
