@@ -65,7 +65,6 @@ const DeluxeRoom = () => {
             <header className="dr-hero" style={{ backgroundImage: `url('https://sasthapuri.com/images/delux-room.jpg')` }}>
                 <div className="dr-hero-overlay" />
                 <div className="dr-hero-content anim anim-up">
-                    <div className="rd-hero-stars" style={{ color: '#aa8453', marginBottom: '10px' }}>★★★</div>
                     <h5>Refined Elegance</h5>
                     <h1>Deluxe Room</h1>
                 </div>

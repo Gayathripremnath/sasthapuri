@@ -65,7 +65,6 @@ const ExecutiveSuite = () => {
             <header className="es-hero" style={{ backgroundImage: `url('https://sasthapuri.com/images/ac-suit.jpg')` }}>
                 <div className="es-hero-overlay" />
                 <div className="es-hero-content anim anim-up">
-                    <div className="rd-hero-stars" style={{ color: '#aa8453', marginBottom: '10px' }}>★★★</div>
                     <h5>Refined Elegance</h5>
                     <h1>Executive / Suite Room</h1>
                 </div>

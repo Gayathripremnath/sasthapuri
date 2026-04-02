@@ -65,7 +65,6 @@ const StandardDeluxe = () => {
             <header className="sd-hero" style={{ backgroundImage: `url('https://sasthapuri.com/images/delux.jpg')` }}>
                 <div className="sd-hero-overlay" />
                 <div className="sd-hero-content anim anim-up">
-                    <div className="rd-hero-stars" style={{ color: '#aa8453', marginBottom: '10px' }}>★★★</div>
                     <h5>Essential Comfort</h5>
                     <h1>Standard Deluxe Room</h1>
                 </div>
