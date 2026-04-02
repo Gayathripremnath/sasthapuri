@@ -227,7 +227,8 @@
   gap: 16px;
   margin-top: 35px;
   padding: 18px 25px;
-  background: var(--dark);
+  /* background: var(--dark); */
+  border: 1px solid var(--gold);
   border-radius: var(--rad);
   width: fit-content;
 }
@@ -254,7 +255,6 @@
   text-decoration: none;
   letter-spacing: 1px;
 }
-.rest-res-number:hover { color: #fff; }
 
 /* Intro Images */
 .rest-intro-images {

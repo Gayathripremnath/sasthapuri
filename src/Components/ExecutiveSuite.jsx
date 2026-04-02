@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Check } from 'lucide-react';
 import './ExecutiveSuite.css';
 import '../animations.css';
 
@@ -97,7 +98,7 @@ const ExecutiveSuite = () => {
 
                             <div className="es-amenities-mini">
                                 <ul>
-                                    <li>📶 Free High-Speed Wi-Fi</li>
+                                    <li>📶 High-Speed Wi-Fi</li>
                                     <li>❄️ Air Conditioning</li>
                                     <li>📺 Multi-Channel TV</li>
                                     <li>🧊 Mini Fridge</li>
@@ -107,6 +108,27 @@ const ExecutiveSuite = () => {
                                     <li>🚿 Quality Toiletries</li>
                                     <li>☕ Coffee / Tea Maker</li>
                                     <li>🧹 Daily Housekeeping</li>
+                                </ul>
+                            </div>
+
+                            <div className="es-policies-integrated" style={{ marginTop: '40px', paddingTop: '30px', borderTop: '1px solid #e8e0d5' }}>
+                                <h4 style={{ fontFamily: "'Gilda Display', serif", fontSize: '24px', color: '#222', marginBottom: '20px' }}>Hotel Policies</h4>
+                                <ul className="es-policy-list" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px', fontSize: '15px', color: '#666' }}>
+                                        <Check size={18} style={{ color: '#aa8453' }} /> <span>Check-in: After 02:00 PM</span>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px', fontSize: '15px', color: '#666' }}>
+                                        <Check size={18} style={{ color: '#aa8453' }} /> <span>Check-out: Before 12:00 PM</span>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px', fontSize: '15px', color: '#666' }}>
+                                        <Check size={18} style={{ color: '#aa8453' }} /> <span>Late check-out available on request</span>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px', fontSize: '15px', color: '#666' }}>
+                                        <Check size={18} style={{ color: '#aa8453' }} /> <span>Free cancellation up to 48 hours before arrival</span>
+                                    </li>
+                                    <li style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px', fontSize: '15px', color: '#666' }}>
+                                        <Check size={18} style={{ color: '#aa8453' }} /> <span>Valid ID proof required at check-in</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -121,6 +143,8 @@ const ExecutiveSuite = () => {
                     </div>
                 </div>
             </section>
+
+
 
             {/* Reservation Strip */}
             <section className="es-reservation-strip">

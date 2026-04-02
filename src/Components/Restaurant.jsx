@@ -23,13 +23,6 @@ import food6     from '../assets/rooms/6.jpg';
 //   { img: food6, title: 'Mango Pannacotta',       category: 'Dessert',    price: '₹400',  desc: 'Silky smooth panna cotta with fresh Alphonso mango coulis and mint.' },
 // ];
 
-const features = [
-  { icon: <FaUtensils />, title: 'Fine Dining',      desc: 'An elegant ambiance curated for a truly memorable dining experience.' },
-  { icon: <FaLeaf     />, title: 'Farm Fresh',       desc: 'Ingredients sourced directly from local farms and coastal waters.' },
-  { icon: <FaWineGlassAlt />, title: 'Premium Bar', desc: 'Handcrafted cocktails and an extensive selection of world wines.' },
-  { icon: <FaClock    />, title: 'Open All Day',     desc: 'Serving breakfast, lunch, and dinner from 7 AM to 11 PM.' },
-];
-
 const Restaurant = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
@@ -125,21 +118,6 @@ const Restaurant = () => {
         </div>
       </div>
 
-      {/* ── Feature Highlights ── */}
-      <section className="rest-features">
-        <div className="rest-container">
-          <div className="rest-features-grid">
-            {features.map((f, i) => (
-              <div className={`rest-feature-card anim anim-up anim-d${i + 1}`} key={i}>
-                <div className="rest-feature-icon">{f.icon}</div>
-                <h4>{f.title}</h4>
-                <p>{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Intro / About Section ── */}
       <section className="rest-intro">
         <div className="rest-container rest-intro-grid">
@@ -167,7 +145,7 @@ const Restaurant = () => {
               <FaPhone className="rest-phone-icon" />
               <div>
                 <span className="rest-res-label">Reservations</span>
-                <a href="tel:8551004444" className="rest-res-number">855 100 4444</a>
+                <a href="tel:8551004444" className="rest-res-number">+91 - 495-2723281 (5 LINES)</a>
               </div>
             </div>
           </div>

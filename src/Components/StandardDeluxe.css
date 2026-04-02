@@ -292,6 +292,41 @@
     }
 }
 
+/* Hotel Policies */
+.sd-policies-section {
+    background: #fff;
+    border-top: 1px solid #f2eee8;
+}
+
+.sd-policies-title {
+    font-family: 'Gilda Display', serif;
+    font-size: 32px;
+    color: #2c1f12;
+    margin-bottom: 30px;
+}
+
+.sd-policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sd-policy-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    color: #666;
+}
+
+.sd-policy-icon {
+    color: #aa8453;
+    flex-shrink: 0;
+}
+
+
 @media (max-width: 767px) {
     .sd-hero {
         height: 45vh;

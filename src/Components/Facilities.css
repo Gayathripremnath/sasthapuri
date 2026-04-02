@@ -7,10 +7,10 @@
     position: relative;
     height: 60vh;
     min-height: 400px;
-    background-image: url('https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/75c489f9.jpg?impolicy=resizecrop&rw=1200&ra=fit');
+    background-image: url('https://www.sasthapuri.com/images/gallery/b-1.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
