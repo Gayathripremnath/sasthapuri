@@ -25,8 +25,8 @@
 }
 
 .navbar-logo {
-    width: 200px;
-    height: 65px !important;
+    width: 250px;
+    height: 120px !important;
     cursor: pointer;
     transition: height 0.3s ease;
 }

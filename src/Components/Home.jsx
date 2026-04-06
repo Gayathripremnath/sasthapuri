@@ -8,6 +8,7 @@ import room1 from "../assets/rooms/1.jpg";
 import room12 from "../assets/rooms/12.jpg";
 import worldIcon from '../assets/world.png';
 import bedIcon from '../assets/bed.png';
+import hall from '../assets/hall.JPG';
 import foodIcon from '../assets/food-serving.png';
 // import bgMusic from '../assets/music.mp3';
 import BookingModal from './BookingModal';
@@ -114,7 +115,7 @@ const experiences = [
     title: 'Conference Hall',
     description:
       'Our spacious conference hall is ideal for meetings, seminars, and special events. Equipped with modern facilities, it provides a comfortable and professional environment for all your business gatherings.',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/4.jpg',
+    image: hall,
     link: '/conference-hall',
   },
   {

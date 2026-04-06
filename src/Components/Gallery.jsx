@@ -10,6 +10,7 @@ import img4 from  "../assets/slider/4.jpg";
 import img2 from  "../assets/slider/2.jpg";
 import img8 from  "../assets/rooms/8.jpg";
 import imgr5 from  "../assets/rooms/5.jpg";
+import imgt from "../assets/toil.JPG";
 import imgr10 from  "../assets/rooms/10.jpg";
 
 const Gallery = () => {
@@ -153,7 +154,7 @@ const Gallery = () => {
                 <div className="col-md-4 gallery-item">
                     <a href={'https://sasthapuri.com/images/gallery/b-7.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-7.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={imgt} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
