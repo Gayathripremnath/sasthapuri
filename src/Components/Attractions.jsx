@@ -235,18 +235,18 @@ const Attractions = () => {
           <h2 className="at-section-title anim anim-up anim-d2"> Attractions</h2>
           <p className="at-intro-text anim anim-up anim-d3">
             Discover a range of attractions around our property that offer a perfect blend of
-relaxation, culture, and local experiences. Whether you are looking to unwind or
-explore, there is something for everyone nearby.
-Enjoy the natural beauty of the region with serene backwaters, peaceful surroundings,
-and refreshing coastal views. Guests can visit nearby beaches to relax, take in scenic
-sunsets, and enjoy the calming sea breeze.
-For those interested in culture and tradition, the area is home to well-known temples
-and heritage sites that reflect the rich history and spiritual essence of the region. Local
-markets and shopping areas provide an opportunity to explore traditional products,
-handicrafts, and souvenirs.
-From leisure outings to cultural exploration, these attractions make your stay more
-enjoyable and memorable, offering a complete experience of comfort, discovery, and
-relaxation.
+            relaxation, culture, and local experiences. Whether you are looking to unwind or
+            explore, there is something for everyone nearby.
+            Enjoy the natural beauty of the region with serene backwaters, peaceful surroundings,
+            and refreshing coastal views. Guests can visit nearby beaches to relax, take in scenic
+            sunsets, and enjoy the calming sea breeze.
+            For those interested in culture and tradition, the area is home to well-known temples
+            and heritage sites that reflect the rich history and spiritual essence of the region. Local
+            markets and shopping areas provide an opportunity to explore traditional products,
+            handicrafts, and souvenirs.
+            From leisure outings to cultural exploration, these attractions make your stay more
+            enjoyable and memorable, offering a complete experience of comfort, discovery, and
+            relaxation.
           </p>
          
         </div>

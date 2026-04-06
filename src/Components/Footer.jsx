@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
+import { Instagram, Youtube, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -34,7 +34,6 @@ const Footer = () => {
           <div className="footer-social" aria-label="Social links">
             
           <a href="#"><Instagram size={20} /></a>  
-          <a href="#"><Twitter size={20} /></a>
           <a href="#"><Youtube size={20} /></a>
           <a href="#"><Facebook size={20} /></a>
           </div>
