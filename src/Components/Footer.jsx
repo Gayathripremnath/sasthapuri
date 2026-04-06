@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import { Instagram, Youtube, Facebook } from "lucide-react";
+import { Instagram, Youtube} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -35,7 +35,6 @@ const Footer = () => {
             
           <a href="#"><Instagram size={20} /></a>  
           <a href="#"><Youtube size={20} /></a>
-          <a href="#"><Facebook size={20} /></a>
           </div>
         </div>
       </div>
