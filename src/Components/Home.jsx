@@ -11,6 +11,8 @@ import bedIcon from '../assets/bed.png';
 import hall from '../assets/hall.JPG';
 import foodIcon from '../assets/food-serving.png';
 // import bgMusic from '../assets/music.mp3';
+import imgs from '../assets/sasthas1.JPG';
+import imgc from '../assets/contact.JPG';
 import BookingModal from './BookingModal';
 
 const services = [
@@ -231,7 +233,7 @@ const Home = () => {
         <div className="home">
           <div className="slideshow-container">
             <div className="slide" style={{ backgroundImage: `url(${imgh1})` }}></div>
-            <div className="slide" style={{ backgroundImage: `url(${imgh2})` }}></div>
+            <div className="slide" style={{ backgroundImage: `url(${imgs})` }}></div>
             <div className="slide" style={{ backgroundImage: `url(${imgh3})` }}></div>
           </div>
 
