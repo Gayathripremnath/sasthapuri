@@ -5550,3 +5550,10 @@ select {
         text-align: center;
     }
 }
+ / *   J u s t i f y   a l l   t e x t   c o n t e n t   i n   m o b i l e   m e d i a   q u e r i e s   * / 
+ @ m e d i a   s c r e e n   a n d   ( m a x - w i d t h :   7 6 8 p x )   { 
+         b o d y ,   p ,   s p a n ,   h 1 ,   h 2 ,   h 3 ,   h 4 ,   h 5 ,   h 6 ,   . c a p t i o n ,   . s e c t i o n - t i t l e ,   . s e c t i o n - s u b t i t l e ,   . l i g h t - p   { 
+                 t e x t - a l i g n :   j u s t i f y   ! i m p o r t a n t ; 
+         } 
+ }  
+ 

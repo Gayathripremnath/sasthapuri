@@ -1206,10 +1206,12 @@
     .promo-content h1 {
         font-size: 40px;
         letter-spacing: 5px;
+        text-align: justify;
     }
 
     .promo-content p {
         font-size: 15px;
+        text-align: justify;
     }
 
     .progress-wrap {
@@ -1222,21 +1224,25 @@
     .promo-content h1 {
         font-size: 32px;
         letter-spacing: 3px;
+        text-align: justify;
     }
 
     .promo-content h6 {
         font-size: 13px;
         letter-spacing: 4px;
+        text-align: justify;
     }
 
     .banner-slide__content h1 {
         font-size: 42px;
         letter-spacing: 6px;
+        text-align: justify;
     }
 
     .banner-slide__content h5 {
         font-size: 13px;
         letter-spacing: 4px;
+        text-align: justify;
     }
 
     .section-padding {
@@ -1248,6 +1254,14 @@
         right: 20px;
         height: 40px;
         width: 40px;
+    }
+    
+    .services-title {
+        text-align: justify;
+    }
+    
+    .service-card h3, .service-card p {
+        text-align: justify;
     }
 }
 

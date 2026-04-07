@@ -504,7 +504,7 @@
   
   .at-svc-content { 
     order: 1 !important; 
-    text-align: center; 
+    text-align: justify; 
     padding: 50px 30px; 
     align-items: center; /* Center-align flex items */
     background: var(--at-white);
@@ -515,11 +515,12 @@
     max-width: 600px; 
     margin-left: auto; 
     margin-right: auto; 
+    text-align: justify;
   }
   
   .at-intro { 
     padding: 60px 0; 
-    text-align: center; 
+    text-align: justify; 
   }
   
   .at-intro-text {
@@ -537,15 +538,15 @@
 
 @media (max-width: 768px) {
   .at-hero { height: 320px; }
-  .at-hero-title { font-size: 42px; letter-spacing: 3px; }
-  .at-hero-sub { font-size: 12px; letter-spacing: 4px; }
+  .at-hero-title { font-size: 42px; letter-spacing: 3px; text-align: justify; }
+  .at-hero-sub { font-size: 12px; letter-spacing: 4px; text-align: justify; }
   
   .at-svc-img { height: 280px; }
-  .at-svc-content { padding: 40px 20px; }
-  .at-svc-title { font-size: 28px; }
+  .at-svc-content { padding: 40px 20px; text-align: justify; }
+  .at-svc-title { font-size: 28px; text-align: justify; }
   
-  .at-section-title { font-size: 32px; }
-  .at-intro-text { font-size: 14px; }
+  .at-section-title { font-size: 32px; text-align: justify; }
+  .at-intro-text { font-size: 14px; text-align: justify; }
   
   .at-accordion { border-radius: 0; box-shadow: none; border-left: none; border-right: none; margin-top: 40px; }
   .at-acc-btn { padding: 20px; gap: 15px; }

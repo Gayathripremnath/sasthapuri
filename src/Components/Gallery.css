@@ -390,7 +390,7 @@
 @media (max-width: 1024px) {
   .rest-booking-inner {
     grid-template-columns: 1fr;
-    text-align: justify;
+    text-align: justify ;
     max-width: 760px;
   }
   .rest-reservation-bar.dark-bg {
