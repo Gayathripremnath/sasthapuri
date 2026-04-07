@@ -215,7 +215,7 @@ const Rooms = () => {
           ))}
         </div>
       </section>
-x
+
     </>
   );
 };
