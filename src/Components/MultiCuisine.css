@@ -229,10 +229,16 @@
     .mc-hero-content h1 {
         font-size: 34px;
         letter-spacing: 2px;
+        text-align: justify;
     }
 
     .mc-title {
         font-size: 30px;
+        text-align: justify;
+    }
+
+    .mc-text p {
+        text-align: justify;
     }
 
     .section-padding {

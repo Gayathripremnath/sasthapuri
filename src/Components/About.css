@@ -367,7 +367,7 @@
 @media (max-width: 991px) {
   .about-grid {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: justify;
   }
   .about-reservation {
     justify-content: center;
@@ -380,7 +380,7 @@
 }
 
 @media (max-width: 768px) {
-  .about-banner h1 { font-size: 42px; letter-spacing: 5px; }
+  .about-banner h1 { font-size: 42px; letter-spacing: 5px; text-align: justify; }
   .about-section,
   .testimonials-section {
     padding: 70px 20px;
@@ -388,8 +388,8 @@
   .about-images {
     grid-template-columns: 1fr;
   }
-  .about-copy .section-title { font-size: 32px; }
-  .tc-card { padding: 30px 20px; }
+  .about-copy .section-title { font-size: 32px; text-align: justify; }
+  .tc-card { padding: 30px 20px; text-align: justify; }
 }
 
 @media (max-width: 480px) {
