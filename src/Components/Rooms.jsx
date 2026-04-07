@@ -13,6 +13,7 @@ import price1 from '../assets/pricing/1.jpg';
 import price2 from '../assets/pricing/2.jpg';
 import price3 from '../assets/pricing/3.jpg';
 import price4 from '../assets/pricing/4.jpg';
+import room1 from '../assets/sastha-room.JPG';
 
 /* ── Room data ── */
 const rooms = [
@@ -157,11 +158,10 @@ const Rooms = () => {
       {/* Hero Banner */}
       <div
         className="rm-hero"
-        style={{ backgroundImage: `url(${slide1})` }}
+        style={{ backgroundImage: `url(${room1})` }}
       >
         <div className="rm-hero-overlay" />
         <div className="rm-hero-content anim anim-up">
-          <div className="rm-hero-stars">★★★</div>
           <p className="rm-hero-kicker">Sasthapuri Hotel</p>
           <h1 className="rm-hero-title">Rooms &amp; Suites</h1>
         </div>
@@ -215,63 +215,7 @@ const Rooms = () => {
           ))}
         </div>
       </section>
-
-      {/* Booking / Reservation Section */}
-      {/* <section
-        className="rm-booking"
-        style={{ backgroundImage: `url(${slide2})` }}
-      >
-        <div className="rm-booking-overlay" />
-        <div className="rm-container rm-booking-inner">
-          <div className="rm-booking-info anim anim-left">
-            <div className="rm-booking-stars">★★★★★</div>
-            <h5>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h5>
-            <div className="rm-res-strip">
-              <span className="rm-res-big-icon">📞</span>
-              <div>
-                <p className="rm-res-label gold">Reservation</p>
-                <a className="rm-res-call" href="tel:+914952723281">+91-495-2723281</a>
-              </div>
-            </div>
-            <p className="rm-toll">✓ <small>Call us, it's toll-free.</small></p>
-          </div>
-
-        
-          <div className="rm-booking-form anim anim-right">
-            <div className="rm-form-head">
-              <h6>Rooms &amp; Suites</h6>
-              <h4>Hotel Booking Form</h4>
-            </div>
-            <form>
-              <div className="rm-form-group">
-                <label>Check In</label>
-                <input type="date" />
-              </div>
-              <div className="rm-form-group">
-                <label>Check Out</label>
-                <input type="date" />
-              </div>
-              <div className="rm-form-row">
-                <div className="rm-form-group">
-                  <label>Adults</label>
-                  <select>
-                    <option>1</option><option>2</option>
-                    <option>3</option><option>4</option>
-                  </select>
-                </div>
-                <div className="rm-form-group">
-                  <label>Children</label>
-                  <select>
-                    <option>0</option><option>1</option>
-                    <option>2</option><option>3</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="rm-form-submit">Check Availability</button>
-            </form>
-          </div>
-        </div>
-      </section> */}
+x
     </>
   );
 };

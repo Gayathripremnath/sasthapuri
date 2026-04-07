@@ -7,7 +7,7 @@
     position: relative;
     height: 60vh;
     min-height: 400px;
-    background-image: url('https://www.sasthapuri.com/images/gallery/b-1.jpg');
+    background-image: url('../assets/sastha-room.JPG');
     background-size: cover;
     background-position: center;
     /* background-attachment: fixed; */
