@@ -12,6 +12,7 @@ import img8 from  "../assets/rooms/8.jpg";
 import imgr5 from  "../assets/rooms/5.jpg";
 import imgt from "../assets/toil.JPG";
 import imgr10 from  "../assets/rooms/10.jpg";
+import imgr from "../assets/sastha-room.JPG";
 
 const Gallery = () => {
   const progressPathRef = useRef(null);
@@ -143,9 +144,9 @@ const Gallery = () => {
                 </div>
               
                 <div className="col-md-6 gallery-item">
-                    <a href={img1} title="" className="img-zoom">
+                    <a href={imgr} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={img1} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={imgr} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
