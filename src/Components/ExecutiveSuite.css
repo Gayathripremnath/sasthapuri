@@ -108,6 +108,7 @@
     color: #666;
     font-size: 16px;
     line-height: 1.8;
+    text-align: justify;
     margin-bottom: 20px;
 }
 
@@ -345,6 +346,11 @@
 
     .section-padding {
         padding: 60px 0;
+    }
+
+    /* Keep copy blocks easy to read on small screens */
+    .es-text p {
+        text-align: justify;
     }
 
     .es-amenities-mini {
