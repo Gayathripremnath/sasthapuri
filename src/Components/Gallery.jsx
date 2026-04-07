@@ -13,6 +13,7 @@ import imgr5 from  "../assets/rooms/5.jpg";
 import imgt from "../assets/toil.JPG";
 import imgr10 from  "../assets/rooms/10.jpg";
 import imgr from "../assets/sastha-room.JPG";
+import imgr1 from "../assets/sasthas1.JPG";
 
 const Gallery = () => {
   const progressPathRef = useRef(null);
@@ -212,7 +213,7 @@ const Gallery = () => {
              <div className="video2">
                 <div className="col-md-4">
                     <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={'https://sasthapuri.com/images/gallery/b-11.jpg'} className="img-fluid" alt="YouTube"/>
+                        <div className="vid-icon"> <img src={imgr1} className="img-fluid" alt="YouTube"/>
                             <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
                               <span className="video-gallery-polygon">
                                 <span className="play-arrow"></span>

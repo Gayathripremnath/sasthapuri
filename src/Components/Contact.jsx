@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 import bannerImg from '../assets/slider/5.jpg';
+import imgc from '../assets/contact.JPG';
 
 const Contact = () => {
   const progressPathRef = useRef(null);
@@ -96,7 +97,7 @@ const Contact = () => {
       {/* Header Banner */}
       <div
         className="contact-banner"
-        style={{ backgroundImage: `url(https://images.trvl-media.com/lodging/112000000/111120000/111118900/111118831/94f465d0.jpg?impolicy=resizecrop&rw=1200&ra=fit)` }}
+        style={{ backgroundImage: `url(${imgc})` }}
       >
         <div className="container">
           <h5 style={{ color: "#aa8453" }}>Get in touch</h5>
