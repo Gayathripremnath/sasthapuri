@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
 import './ExecutiveSuite.css';
 import '../animations.css';
+import room1 from '../assets/room1.JPG';
 
 const ExecutiveSuite = () => {
     const progressPathRef = useRef(null);
@@ -63,7 +64,7 @@ const ExecutiveSuite = () => {
             </div>
 
             {/* Hero Section */}
-            <header className="es-hero" style={{ backgroundImage: `url('https://sasthapuri.com/images/ac-suit.jpg')` }}>
+            <header className="es-hero" style={{ backgroundImage: `url(${stand})` }}>
                 <div className="es-hero-overlay" />
                 <div className="es-hero-content anim anim-up">
                     <h5>Refined Elegance</h5>
@@ -134,10 +135,10 @@ const ExecutiveSuite = () => {
                         </div>
                         <div className="es-images anim anim-right">
                             <div className="es-img-box main-img">
-                                <img src="https://sasthapuri.com/images/ac-suit.jpg" alt="Executive Suite Interior" />
+                                <img src={stand} alt="Executive Suite Interior" />
                             </div>
                             <div className="es-img-box sub-img">
-                                <img src="https://sasthapuri.com/images/gallery/b-3.jpg" alt="Room View" />
+                                <img src={stand} alt="Room View" />
                             </div>
                         </div>
                     </div>

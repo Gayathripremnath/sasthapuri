@@ -13,6 +13,7 @@ import price1 from '../assets/pricing/1.jpg';
 import price2 from '../assets/pricing/2.jpg';
 import price3 from '../assets/pricing/3.jpg';
 import price4 from '../assets/pricing/4.jpg';
+import stand from '../assets/stand.jpg';
 import room1 from '../assets/sastha-room.JPG';
 
 /* ── Room data ── */
@@ -20,7 +21,7 @@ const rooms = [
 
   {
     id: 'room2',
-    img: "https://sasthapuri.com/images/ac-suit.jpg",
+    img: slide2,
     name: 'Executive/Suite Room',
     price: '3,400/- INR + Tax',
     desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
@@ -29,13 +30,13 @@ const rooms = [
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
-    tv: 'Cable TV',            
+    tv: 'Cable TV',
     ac: 'Air Conditioning',
     imgLeft: true,
   },
   {
     id: 'room3',
-    img: 'https://sasthapuri.com/images/delux.jpg',
+    img: stand,
     price: '2,500/- + Tax',
     name: 'Standard Deluxe',
     desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
@@ -44,7 +45,7 @@ const rooms = [
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
-    tv: 'Cable TV',            
+    tv: 'Cable TV',
     ac: 'Air Conditioning',
     imgLeft: false,
   },
@@ -59,17 +60,17 @@ const rooms = [
     wifi: 'Free Wifi',
     breakfast: 'Breakfast',
     pool: 'Swimming Pool',
-    tv: 'Cable TV',            
+    tv: 'Cable TV',
     ac: 'Air Conditioning',
     imgLeft: true,
   },
 ];
 
 const pricingCards = [
-  { img: price1, name: 'Room Cleaning',   amount: '₹500', per: '/ month' },
+  { img: price1, name: 'Room Cleaning', amount: '₹500', per: '/ month' },
   { img: price2, name: 'Drinks Included', amount: '₹350', per: '/ daily' },
-  { img: price3, name: 'Room Breakfast',  amount: '₹300', per: '/ daily' },
-  { img: price4, name: 'Safe & Secure',   amount: '₹150', per: '/ daily' },
+  { img: price3, name: 'Room Breakfast', amount: '₹300', per: '/ daily' },
+  { img: price4, name: 'Safe & Secure', amount: '₹150', per: '/ daily' },
 ];
 
 const Rooms = () => {
@@ -148,10 +149,10 @@ const Rooms = () => {
         </svg>
       </div>
 
-      <BookingModal 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-        initialRoom={selectedRoom} 
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        initialRoom={selectedRoom}
       />
 
 
@@ -196,19 +197,19 @@ const Rooms = () => {
                     <li>🍳 {room.breakfast}</li>
                   </ul>
                   <ul>
-                      <li>🪟 {room.ac}</li>
+                    <li>🪟 {room.ac}</li>
                     <li>🏊 {room.pool}</li>
                   </ul>
-               
-                    
-                  
+
+
+
                 </div>
 
                 <hr className="rm-divider" />
 
                 <div className="rm-room-footer">
                   <Link className="rm-link-btn" to={room.name === 'Executive/Suite Room' ? '/room-executive-suite' : room.name === 'Standard Deluxe' ? '/room-standard-deluxe' : room.name === 'Deluxe Room' ? '/room-deluxe' : '/room-details'}>Details →</Link>
-                 
+
                 </div>
               </div>
             </div>

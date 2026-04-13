@@ -14,6 +14,7 @@ import foodIcon from '../assets/food-serving.png';
 import imgs from '../assets/sasthas1.JPG';
 import imgc from '../assets/contact.JPG';
 import BookingModal from './BookingModal';
+import stand from '../assets/stand.JPG';
 
 const services = [
   {
@@ -97,7 +98,7 @@ const rooms = [
     id: 'room3',
     title: 'Standard Room',
     price: '₹ 1800 + TAX NIGHT',
-    image: 'https://sasthapuri.com/images/delux-room.jpg',
+    image: stand,
   },
 ];
 

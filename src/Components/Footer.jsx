@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p >© Copyright 2026 by  </p>
-        <a href="/">Genova Technology Pvt Ltd</a>
+        <a href="/">Genova Technologies Pvt Ltd</a>
       </div>
     </footer>
   );

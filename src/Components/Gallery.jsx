@@ -14,6 +14,14 @@ import imgt from "../assets/toil.JPG";
 import imgr10 from  "../assets/rooms/10.jpg";
 import imgr from "../assets/sastha-room.JPG";
 import imgr1 from "../assets/sasthas1.JPG";
+import stand from "../assets/stand.JPG";
+import room1 from "../assets/room1.JPG";
+import gal1 from "../assets/gal1.JPG";
+import gal2 from "../assets/gal2.JPG";
+import gal3 from "../assets/gal3.JPG";
+import gal4 from "../assets/gal4.JPG";
+import gal5 from "../assets/gal5.JPG";
+import gal6 from "../assets/gal6.JPG";
 
 const Gallery = () => {
   const progressPathRef = useRef(null);
@@ -115,7 +123,7 @@ const Gallery = () => {
                 <div className="col-md-4 gallery-item anim anim-up anim-d1">
                     <a href={'https://sasthapuri.com/images/gallery/b-1.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-img">
+                            <div className="gallery-imgs">
                                  <img src={'https://sasthapuri.com/images/gallery/b-1.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
@@ -123,14 +131,14 @@ const Gallery = () => {
                 <div className="col-md-4 gallery-item anim anim-up anim-d2">
                     <a href={'https://sasthapuri.com/images/gallery/b-6.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-img"> <img src={'https://sasthapuri.com/images/gallery/b-6.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={'https://sasthapuri.com/images/gallery/b-6.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item anim anim-up anim-d3">
-                    <a href={'https://sasthapuri.com/images/gallery/b-3.jpg'} title="" className="img-zoom">
+                    <a href={stand} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-img"> <img src={'https://sasthapuri.com/images/gallery/b-3.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={stand} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
@@ -168,13 +176,79 @@ const Gallery = () => {
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
-                    <a href={'https://sasthapuri.com/images/gallery/b-10.jpg'} title="" className="img-zoom">
+                    <a href={gal1} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-10.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal1} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
                         </div>
                     </a>
                 </div>
             </div>
+            
+            <div className="fourth-sec">
+                <div className="col-md-4 gallery-item">
+                    <a href={gal2} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={gal2} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+                <div className="col-md-4 gallery-item">
+                    <a href={gal3} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={gal3} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+                <div className="col-md-4 gallery-item">
+                    <a href={gal4} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={gal4} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div className="fifth-sec">
+                <div className="col-md-4 gallery-item">
+                    <a href={gal5} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={gal5} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+                <div className="col-md-4 gallery-item">
+                    <a href={gal6} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={gal6} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+                <div className="col-md-4 gallery-item">
+                    <a href={imgr1} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs1"> <img src={imgr1} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div className="sixth-sec">
+                <div className="col-md-6 gallery-item">
+                    <a href={room1} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs"> <img src={room1} className="img-fluid mx-auto d-block" alt="Executive Room"/> </div>
+                        </div>
+                    </a>
+                </div>
+                <div className="col-md-6 gallery-item">
+                    <a href={stand} title="" className="img-zoom">
+                        <div className="gallery-box">
+                            <div className="gallery-imgs"> <img src={stand} className="img-fluid mx-auto d-block" alt="Standard Deluxe Room"/> </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+                
             </div>
         </div>
     </section>
@@ -198,119 +272,14 @@ const Gallery = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-6">
-                    <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={img3} alt="Vimeo"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
-                              <span className="video-gallery-polygon">
-                                <span className="play-arrow"></span>
-                              </span> 
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              
              </div>
-             <div className="video2">
-                <div className="col-md-4">
-                    <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={imgr1} className="img-fluid" alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
-                              <span className="video-gallery-polygon">
-                                <span className="play-arrow"></span>
-                              </span> 
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={'https://sasthapuri.com/images/delux.jpg'} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
-                              <span className="video-gallery-polygon">
-                                <span className="play-arrow"></span>
-                              </span> 
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={img1} alt="YouTube"/>
-                            <a className="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> 
-                              <span className="video-gallery-polygon">
-                                <span className="play-arrow"></span>
-                              </span> 
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                </div>
+           
             </div>
         </div>
     </section>
-
-      {/* Reservation Section */}
-      {/* <section
-        className="rest-booking bg-img bg-fixed"
-        style={{ backgroundImage: `url(${img2})` }}
-      >
-        <div className="rest-booking-overlay"></div>
-        <div className="rest-container rest-booking-inner">
-          <div className="rest-booking-text anim anim-left">
-            <span className="rest-subtitle light">Make a Reservation</span>
-            <h2 className="rest-section-title light">Reserve Your<br/>Stay Today</h2>
-            <p className="light-p">
-              Each of our guest rooms feature a private bath, wi-fi,
-              cable television and include full breakfast. Experience luxury
-              in every detail.
-            </p>
-            <div className="rest-reservation-bar dark-bg">
-              <FaPhone className="rest-phone-icon gold" />
-              <div>
-                <span className="rest-res-label gold">Call Us</span>
-                <a href="tel:8551004444" className="rest-res-number gold">855 100 4444</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="rest-booking-form anim anim-right">
-            <h4>Hotel Booking Form</h4>
-            <form onSubmit={handleSubmit}>
-              <div className="rest-form-group">
-                <label>Check in</label>
-                <input type="date" />
-              </div>
-              <div className="rest-form-group">
-                <label>Check out</label>
-                <input type="date" />
-              </div>
-              <div className="rest-form-row">
-                <div className="rest-form-group">
-                  <label>Adults</label>
-                  <select>
-                    <option value="0">Adults</option>
-                    <option value="1">1 Adult</option>
-                    <option value="2">2 Adults</option>
-                    <option value="3">3 Adults</option>
-                    <option value="4">4 Adults</option>
-                  </select>
-                </div>
-                <div className="rest-form-group">
-                  <label>Children</label>
-                  <select>
-                    <option value="0">0 Children</option>
-                    <option value="1">1 Child</option>
-                    <option value="2">2 Children</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="rest-btn-submit">Check Availability</button>
-            </form>
-          </div>
-        </div>
-      </section> */}
     </>
-  );
+  );  
 };
 
 export default Gallery;
