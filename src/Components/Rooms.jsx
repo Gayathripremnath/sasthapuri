@@ -163,8 +163,11 @@ const Rooms = () => {
         style={{ backgroundImage: `url(${room1})` }}
       >
         <div className="rm-hero-overlay" />
-        <div className="rm-hero-content anim anim-up">
-          <h1 className="rm-hero-title">Rooms &amp; Suites</h1>
+        <div className="rm-container">
+          <div className="rm-hero-content anim anim-up">
+            <p className="rm-hero-kicker">Sasthapuri Hotel</p>
+            <h1 className="rm-hero-title">Rooms &amp; Suites</h1>
+          </div>
         </div>
       </div>
 

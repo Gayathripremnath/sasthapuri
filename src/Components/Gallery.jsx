@@ -65,12 +65,18 @@ const Gallery = () => {
     const els = document.querySelectorAll('.anim');
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('anim-show'); obs.unobserve(e.target); }
+        if (e.isIntersecting) {
+          e.target.classList.add('anim-show');
+          obs.unobserve(e.target);
+        }
       }),
-      { threshold: 0.10 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
     els.forEach(el => obs.observe(el));
-    return () => obs.disconnect();
+    return () => {
+      els.forEach(el => obs.unobserve(el));
+      obs.disconnect();
+    };
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -124,21 +130,21 @@ const Gallery = () => {
                     <a href={'https://sasthapuri.com/images/gallery/b-1.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
                             <div className="gallery-imgs">
-                                 <img src={'https://sasthapuri.com/images/gallery/b-1.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                                 <img src={'https://sasthapuri.com/images/gallery/b-1.jpg'} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item anim anim-up anim-d2">
                     <a href={'https://sasthapuri.com/images/gallery/b-6.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={'https://sasthapuri.com/images/gallery/b-6.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={'https://sasthapuri.com/images/gallery/b-6.jpg'} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item anim anim-up anim-d3">
                     <a href={stand} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={stand} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={stand} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -147,7 +153,7 @@ const Gallery = () => {
                 <div className="col-md-6 gallery-item">
                     <a href={img2} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={img2} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={img2} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -155,7 +161,7 @@ const Gallery = () => {
                 <div className="col-md-6 gallery-item">
                     <a href={imgr} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={imgr} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs"> <img src={imgr} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -164,21 +170,21 @@ const Gallery = () => {
                 <div className="col-md-4 gallery-item">
                     <a href={'https://sasthapuri.com/images/gallery/b-7.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={imgt} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={imgt} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
                     <a href={'https://sasthapuri.com/images/gallery/b-8.jpg'} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-8.jpg'} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-8.jpg'} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
                     <a href={gal1} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={gal1} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal1} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -188,21 +194,21 @@ const Gallery = () => {
                 <div className="col-md-4 gallery-item">
                     <a href={gal2} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={gal2} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal2} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
                     <a href={gal3} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={gal3} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal3} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
                     <a href={gal4} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={gal4} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal4} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -212,21 +218,21 @@ const Gallery = () => {
                 <div className="col-md-4 gallery-item">
                     <a href={gal5} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={gal5} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal5} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
                     <a href={gal6} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={gal6} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={gal6} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
                     <a href={imgr1} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={imgr1} className="img-fluid mx-auto d-block" alt="work-img"/> </div>
+                            <div className="gallery-imgs1"> <img src={imgr1} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -236,14 +242,14 @@ const Gallery = () => {
                 <div className="col-md-6 gallery-item">
                     <a href={room1} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={room1} className="img-fluid mx-auto d-block" alt="Executive Room"/> </div>
+                            <div className="gallery-imgs"> <img src={room1} className="img-fluid mx-auto d-block" alt="Executive Room"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-6 gallery-item">
                     <a href={stand} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={stand} className="img-fluid mx-auto d-block" alt="Standard Deluxe Room"/> </div>
+                            <div className="gallery-imgs"> <img src={stand} className="img-fluid mx-auto d-block" alt="Standard Deluxe Room"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -263,7 +269,7 @@ const Gallery = () => {
                <div className="video1">
                 <div className="col-md-6">
                     <div className="vid-area mb-30">
-                        <div className="vid-icon"> <img src={img2} alt="YouTube"/>
+                        <div className="vid-icon"> <img src={img2} alt="YouTube" loading="lazy" />
                             <a className="video-gallery-button vid" href="https://youtu.be/iuKUzm2YVqc?si=-UlINrmtMcmmfOkW"> 
                               <span className="video-gallery-polygon">
                                 <span className="play-arrow"></span>
