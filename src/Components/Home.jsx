@@ -14,7 +14,7 @@ import foodIcon from '../assets/food-serving.png';
 import imgs from '../assets/sasthas1.JPG';
 import imgc from '../assets/contact.JPG';
 import BookingModal from './BookingModal';
-import stand from '../assets/stand.JPG';
+import gal1 from '../assets/gal1.JPG';
 
 const services = [
   {
@@ -98,7 +98,7 @@ const rooms = [
     id: 'room3',
     title: 'Standard Room',
     price: '₹ 1800 + TAX NIGHT',
-    image: stand,
+    image: gal1,
   },
 ];
 
@@ -359,7 +359,7 @@ const Home = () => {
             <h2 className="promo-title">Promotional Video</h2>
             <a
               className="promo-play anim anim-scale"
-              href="#"
+              href="https://youtu.be/iuKUzm2YVqc?si=-UlINrmtMcmmfOkW" target="_blank" rel="noopener noreferrer"
             >
               <span className="play-icon" aria-hidden="true" />
             </a>

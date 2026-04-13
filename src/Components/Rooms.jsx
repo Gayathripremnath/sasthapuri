@@ -13,7 +13,8 @@ import price1 from '../assets/pricing/1.jpg';
 import price2 from '../assets/pricing/2.jpg';
 import price3 from '../assets/pricing/3.jpg';
 import price4 from '../assets/pricing/4.jpg';
-import stand from '../assets/stand.jpg';
+import stand from '../assets/stand.JPG';
+import gal5 from '../assets/gal5.JPG';
 import room1 from '../assets/sastha-room.JPG';
 
 /* ── Room data ── */
@@ -51,7 +52,7 @@ const rooms = [
   },
   {
     id: 'room4',
-    img: slide2,
+    img: gal5,
     price: '1,800/- INR + Tax',
     name: 'Deluxe Room',
     desc: 'Our well- designed A/C & NON A/C Rooms and their comfort will evoke a feeling of home sickness in you because they will very much remind you of your home indeed.',
@@ -163,7 +164,6 @@ const Rooms = () => {
       >
         <div className="rm-hero-overlay" />
         <div className="rm-hero-content anim anim-up">
-          <p className="rm-hero-kicker">Sasthapuri Hotel</p>
           <h1 className="rm-hero-title">Rooms &amp; Suites</h1>
         </div>
       </div>
