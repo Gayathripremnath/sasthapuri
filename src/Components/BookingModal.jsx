@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { FaTimes, FaCalendarAlt, FaUserFriends, FaBed } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+
 import './BookingModal.css';
 
 const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
   const [formData, setFormData] = useState({
     checkIn: '',
     checkOut: '',
-    adults: '1',
-    children: '0',
+    adults: '1 Adult',
+    children: '0 Children',
     roomType: initialRoom,
     name: '',
     email: '',
     phone: '',
     specialRequests: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   useEffect(() => {
     if (isOpen) {
@@ -32,22 +36,45 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Final validation check for whitespace-only strings
-    const nameValid = formData.name.trim().length > 0;
-    const emailValid = formData.email.trim().length > 0;
-    const phoneValid = formData.phone.trim().length > 0;
-
-    if (!nameValid || !emailValid || !phoneValid) {
-      alert('Please fill out all fields with valid information (no empty spaces).');
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim()) {
+      alert('Please fill out your name, email, and phone number.');
       return;
     }
 
-    alert('Thank you! Your reservation request has been submitted. Our team will contact you shortly.');
-    console.log('Reservation Data:', formData);
-    onClose();
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_muyn2kp',
+        'template_vuf39xg',
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          checkIn: formData.checkIn,
+          checkOut: formData.checkOut,
+          roomType: formData.roomType,
+          adults: formData.adults,
+          children: formData.children,
+          specialRequests: formData.specialRequests || 'None'
+        },
+        'Krp6svQx84hVuJPAu'
+      );
+
+      if (result.status === 200) {
+        alert('Thank you! Your reservation request has been submitted. Our team will contact you shortly.');
+        onClose();
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      alert('Sorry, there was an error submitting your request. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -75,8 +102,6 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
                 name="name"
                 placeholder="Enter your name"
                 required
-                pattern=".*\S+.*"
-                title="Input cannot be only spaces"
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -101,8 +126,6 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
                 name="phone"
                 placeholder="Enter phone number"
                 required
-                pattern=".*\S+.*"
-                title="Input cannot be only spaces"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -145,16 +168,15 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
               <label><FaUserFriends /> Guests</label>
               <div className="bm-select-row">
                 <select name="adults" value={formData.adults} onChange={handleChange}>
-                  <option value="1">Select</option>
-                  <option value="2">1 Adult</option>
-                  <option value="3">2 Adults</option>
-                  <option value="4">3 Adults</option>
-                  <option value="5">4 Adults</option>
+                  <option value="1 Adult">1 Adult</option>
+                  <option value="2 Adults">2 Adults</option>
+                  <option value="3 Adults">3 Adults</option>
+                  <option value="4 Adults">4 Adults</option>
                 </select>
                 <select name="children" value={formData.children} onChange={handleChange}>
-                  <option value="0">0 Children</option>
-                  <option value="1">1 Child</option>
-                  <option value="2">2 Children</option>
+                  <option value="0 Children">0 Children</option>
+                  <option value="1 Child">1 Child</option>
+                  <option value="2 Children">2 Children</option>
                 </select>
               </div>
             </div>
@@ -171,8 +193,8 @@ const BookingModal = ({ isOpen, onClose, initialRoom = 'Junior Suite' }) => {
             </div>
           </div>
 
-          <button type="submit" className="bm-submit">
-            Confirm Booking
+          <button type="submit" className="bm-submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Confirming...' : 'Confirm Booking'}
           </button>
         </form>
 

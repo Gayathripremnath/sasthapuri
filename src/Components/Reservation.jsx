@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+
 import './Reservation.css';
 import '../animations.css';
 
@@ -9,14 +11,16 @@ const Reservation = () => {
     const [formData, setFormData] = useState({
         checkIn: '',
         checkOut: '',
-        adults: '1',
-        children: '0',
+        adults: '1 Adult',
+        children: '0 Children',
         roomType: 'Junior Suite',
         name: '',
         email: '',
         phone: '',
         specialRequests: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
 
 
 
@@ -68,21 +72,56 @@ const Reservation = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
-        // Final validation check for whitespace-only strings
-        const nameValid = formData.name.trim().length > 0;
-        const emailValid = formData.email.trim().length > 0;
-        const phoneValid = formData.phone.trim().length > 0;
-
-        if (!nameValid || !emailValid || !phoneValid) {
-            alert('Please fill out all fields with valid information (no empty spaces).');
+        // Basic validation
+        if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim()) {
+            alert('Please fill out your name, email, and phone number.');
             return;
         }
 
-        alert('Thank you! Your reservation request has been submitted. Our team will contact you shortly.');
-        console.log('Reservation Data:', formData);
+        setIsSubmitting(true);
+
+        try {
+            const result = await emailjs.send(
+                'service_muyn2kp',
+                'template_vuf39xg',
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    checkIn: formData.checkIn,
+                    checkOut: formData.checkOut,
+                    roomType: formData.roomType,
+                    adults: formData.adults,
+                    children: formData.children,
+                    specialRequests: formData.specialRequests || 'None'
+                },
+                'Krp6svQx84hVuJPAu'
+            );
+
+            if (result.status === 200) {
+                alert('Thank you! Your reservation request has been submitted. Our team will contact you shortly.');
+                setFormData({
+                    checkIn: '',
+                    checkOut: '',
+                    adults: '1 Adult',
+                    children: '0 Children',
+                    roomType: 'Junior Suite',
+                    name: '',
+                    email: '',
+                    phone: '',
+                    specialRequests: ''
+                });
+                e.target.reset();
+            }
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            alert('Sorry, there was an error submitting your request. Please try again later or call us directly.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -122,14 +161,12 @@ const Reservation = () => {
                                 <div className="res-form-row">
                                     <div className="rest-form-group">
                                         <label>Full Name</label>
-                                        <input 
-                                            type="text" 
-                                            name="name" 
-                                            placeholder="Your Name" 
-                                            required 
-                                            pattern=".*\S+.*"
-                                            title="Input cannot be only spaces"
-                                            onChange={handleChange} 
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Your Name"
+                                            required
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <div className="rest-form-group">
@@ -140,23 +177,21 @@ const Reservation = () => {
                                 <div className="res-form-row">
                                     <div className="rest-form-group">
                                         <label>Phone Number</label>
-                                        <input 
-                                            type="tel" 
-                                            name="phone" 
-                                            placeholder="Your Phone" 
-                                            required 
-                                            pattern=".*\S+.*"
-                                            title="Input cannot be only spaces"
-                                            onChange={handleChange} 
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            placeholder="Your Phone"
+                                            required
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <div className="rest-form-group">
                                         <label>Select Room</label>
-                                        <select name="roomType" onChange={handleChange}>
-                                            <option>Junior Suite</option>
-                                            <option>Family Room</option>
-                                            <option>Double Room</option>
-                                            <option>Executive Room</option>
+                                        <select name="roomType" value={formData.roomType} onChange={handleChange}>
+                                            <option value="Junior Suite">Junior Suite</option>
+                                            <option value="Family Room">Family Room</option>
+                                            <option value="Double Room">Double Room</option>
+                                            <option value="Executive Room">Executive Room</option>
                                         </select>
                                     </div>
                                 </div>
@@ -173,21 +208,20 @@ const Reservation = () => {
                                 <div className="res-form-row">
                                     <div className="rest-form-group">
                                         <label>Adults</label>
-                                        <select name="adults" onChange={handleChange}>
-                                            <option>Adults</option>
-                                            <option>1 Adult</option>
-                                            <option>2 Adults</option>
-                                            <option>3 Adults</option>
-                                            <option>4 Adults</option>
+                                        <select name="adults" value={formData.adults} onChange={handleChange}>
+                                            <option value="1 Adult">1 Adult</option>
+                                            <option value="2 Adults">2 Adults</option>
+                                            <option value="3 Adults">3 Adults</option>
+                                            <option value="4 Adults">4 Adults</option>
                                         </select>
                                     </div>
                                     <div className="rest-form-group">
                                         <label>Children</label>
-                                        <select name="children" onChange={handleChange}>
-                                            <option>0 Children</option>
-                                            <option>1 Child</option>
-                                            <option>2 Children</option>
-                                            <option>3 Children</option>
+                                        <select name="children" value={formData.children} onChange={handleChange}>
+                                            <option value="0 Children">0 Children</option>
+                                            <option value="1 Child">1 Child</option>
+                                            <option value="2 Children">2 Children</option>
+                                            <option value="3 Children">3 Children</option>
                                         </select>
                                     </div>
                                 </div>
@@ -195,7 +229,9 @@ const Reservation = () => {
                                     <label>Special Requests</label>
                                     <textarea name="specialRequests" rows="3" placeholder="Tell us anything else..." onChange={handleChange}></textarea>
                                 </div>
-                                <button type="submit" className="rest-btn-submit">Check Availability</button>
+                                <button type="submit" className="rest-btn-submit" disabled={isSubmitting}>
+                                    {isSubmitting ? 'Sending...' : 'Check Availability'}
+                                </button>
                             </form>
                         </div>
                     </section>

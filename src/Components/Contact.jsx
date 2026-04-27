@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 import bannerImg from '../assets/slider/5.jpg';
 import imgc from '../assets/contact.JPG';
@@ -15,16 +16,16 @@ const Contact = () => {
     message: ''
   });
   const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    x
     const trimmedData = {
       name: formData.name.trim(),
       email: formData.email.trim(),
@@ -38,17 +39,33 @@ const Contact = () => {
       return;
     }
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(trimmedData.email)) {
-      setStatus({ type: 'error', message: 'Please enter a valid email address.' });
-      return;
-    }
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
 
-    // Success simulation
-    console.log('Form Submitted:', trimmedData);
-    setStatus({ type: 'success', message: 'Your message was sent successfully. We will get back to you soon!' });
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    try {
+      const result = await emailjs.send(
+        'service_muyn2kp',
+        'template_0ez5tmr',
+        {
+          name: trimmedData.name,
+          email: trimmedData.email,
+          phone: trimmedData.phone,
+          subject: trimmedData.subject,
+          message: trimmedData.message
+        },
+        'Krp6svQx84hVuJPAu'
+      );
+
+      if (result.status === 200) {
+        setStatus({ type: 'success', message: 'Your message was sent successfully. We will get back to you soon!' });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus({ type: 'error', message: 'Sorry, there was an error sending your message. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -113,8 +130,8 @@ const Contact = () => {
             <h3>Hotel Sasthapuri</h3>
             <p>
               We are conveniently located in the heart of the city, offering easy access to all major
-travel hubs and key destinations. Whether you are visiting for business or leisure,
-reaching us is quick and hassle-free.
+              travel hubs and key destinations. Whether you are visiting for business or leisure,
+              reaching us is quick and hassle-free.
 
             </p>
 
@@ -205,8 +222,8 @@ reaching us is quick and hassle-free.
                 ></textarea>
               </div>
               <div className="submit-btn">
-                <button type="submit" className="butn-dark2">
-                  <span>Send Message</span>
+                <button type="submit" className="butn-dark2" disabled={isSubmitting}>
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 </button>
               </div>
             </form>
