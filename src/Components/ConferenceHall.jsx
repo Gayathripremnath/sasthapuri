@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './ConferenceHall.css';
 import '../animations.css';
 
+import hall from '../assets/hall.JPG'
 const ConferenceHall = () => {
   const progressPathRef = useRef(null);
   const progressWrapRef = useRef(null);
@@ -100,7 +101,7 @@ const ConferenceHall = () => {
             </div>
             <div className="ch-images anim anim-right">
               <div className="ch-img-box main-img">
-                <img src="https://sasthapuri.com/web_demo/img/rooms/4.jpg" alt="Conference Hall Interior" />
+                <img src={hall} alt="Conference Hall Interior" />
               </div>
             </div>
           </div>

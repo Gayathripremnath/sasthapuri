@@ -7,7 +7,7 @@
     position: relative;
     height: 60vh;
     min-height: 400px;
-    background-image: url('https://sasthapuri.com/web_demo/img/rooms/4.jpg');
+    background-image: url('../assets/hall.JPG');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
