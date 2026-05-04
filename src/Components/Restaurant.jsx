@@ -5,6 +5,8 @@ import '../animations.css';
 
 
 
+import resto1 from '../assets/resto1.png';
+import resto2 from '../assets/resto2.png';
 import ambiImg1  from '../assets/restaurant/2.jpg';
 import ambiImg2  from '../assets/restaurant/3.jpg';
 import food1     from '../assets/rooms/1.jpg';
@@ -150,8 +152,8 @@ const Restaurant = () => {
             </div>
           </div>
           <div className="rest-intro-images anim anim-right">
-            <img src="https://sasthapuri.com/images/gallery/b-10.jpg" alt="Restaurant ambiance" className="rest-intro-img rest-intro-img-top" />
-            <img src="https://sasthapuri.com/images/gallery/b-8.jpg" alt="Restaurant interior"  className="rest-intro-img rest-intro-img-bot" />
+            <img src={resto1} alt="Restaurant ambiance" className="rest-intro-img rest-intro-img-top" />
+            <img src={resto2} alt="Restaurant interior"  className="rest-intro-img rest-intro-img-bot" />
           </div>
         </div>
       </section>

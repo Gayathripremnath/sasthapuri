@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './MultiCuisine.css';
 import '../animations.css';
+import multi from '../assets/multi.png';
 
 const MultiCuisine = () => {
   const progressPathRef = useRef(null);
@@ -98,10 +99,10 @@ const MultiCuisine = () => {
             </div>
             <div className="mc-images anim anim-right">
               <div className="mc-img-box main-img">
-                <img src="https://sasthapuri.com/web_demo/img/rooms/7.jpg" alt="Restaurant Interior" />
+                <img src={multi} alt="Restaurant Interior" />
               </div>
               <div className="mc-img-box sub-img">
-                <img src="https://sasthapuri.com/images/gallery/b-8.jpg" alt="Delicious Food" />
+                <img src={multi} alt="Delicious Food" />
               </div>
             </div>
           </div>

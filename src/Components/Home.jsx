@@ -15,6 +15,8 @@ import imgs from '../assets/sasthas1.JPG';
 import imgc from '../assets/contact.JPG';
 import BookingModal from './BookingModal';
 import gal1 from '../assets/gal1.JPG';
+import hall1 from '../assets/hall2.jpeg';
+import multi from '../assets/multi.png';
 
 const services = [
   {
@@ -109,7 +111,7 @@ const experiences = [
     title: 'Multi Cuisine Restaurant',
     description:
       'Our multi-cuisine restaurant offers a delightful selection of dishes from different cuisines. Enjoy freshly prepared meals in a warm and welcoming atmosphere.',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/7.jpg',
+    image: multi,
     link: '/multi-cuisine',
   },
   {
@@ -127,7 +129,7 @@ const experiences = [
     title: 'Business Center',
     description:
       'Our business center offers essential facilities for meetings, work, and communication. Guests can enjoy a comfortable space designed to support their professional needs.',
-    image: 'https://sasthapuri.com/web_demo/img/rooms/15.jpg',
+    image: hall1,
     link: '/business-center',
   },
 ];
@@ -351,7 +353,7 @@ const Home = () => {
             className="promo-overlay"
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 100%), url('https://sasthapuri.com/web_demo/img/rooms/1.jpg')"
+                `linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 100%), url(${imgh2})`
             }}
           >
             <div className="promo-stars">★★★</div>

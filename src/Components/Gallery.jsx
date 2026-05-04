@@ -22,6 +22,8 @@ import gal3 from "../assets/gal3.JPG";
 import gal4 from "../assets/gal4.JPG";
 import gal5 from "../assets/gal5.JPG";
 import gal6 from "../assets/gal6.JPG";
+import resto1 from "../assets/resto1.png";
+import resto2 from "../assets/resto2.png";
 
 const Gallery = () => {
   const progressPathRef = useRef(null);
@@ -38,21 +40,28 @@ const Gallery = () => {
     progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
     progressPath.style.strokeDashoffset = `${pathLength}`;
 
+    let isTicking = false;
     const updateProgress = () => {
-      const scrollTop = window.pageYOffset;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
-      progressPath.style.strokeDashoffset = `${progress}`;
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          const scrollTop = window.pageYOffset;
+          const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const progress = docHeight > 0 ? pathLength - (scrollTop * pathLength) / docHeight : pathLength;
+          progressPath.style.strokeDashoffset = `${progress}`;
 
-      if (scrollTop > 120) {
-        progressWrap.classList.add('active-progress');
-      } else {
-        progressWrap.classList.remove('active-progress');
+          if (scrollTop > 120) {
+            progressWrap.classList.add('active-progress');
+          } else {
+            progressWrap.classList.remove('active-progress');
+          }
+          isTicking = false;
+        });
+        isTicking = true;
       }
     };
 
     updateProgress();
-    window.addEventListener('scroll', updateProgress);
+    window.addEventListener('scroll', updateProgress, { passive: true });
     return () => window.removeEventListener('scroll', updateProgress);
   }, []);
 
@@ -127,17 +136,17 @@ const Gallery = () => {
                 </div>
                 <div className="first-sec">
                 <div className="col-md-4 gallery-item anim anim-up anim-d1">
-                    <a href={'https://sasthapuri.com/images/gallery/b-1.jpg'} title="" className="img-zoom">
+                    <a href={img1} title="" className="img-zoom">
                         <div className="gallery-box">
                             <div className="gallery-imgs">
-                                 <img src={'https://sasthapuri.com/images/gallery/b-1.jpg'} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
+                                 <img src={img1} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item anim anim-up anim-d2">
-                    <a href={'https://sasthapuri.com/images/gallery/b-6.jpg'} title="" className="img-zoom">
+                    <a href={resto1} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs"> <img src={'https://sasthapuri.com/images/gallery/b-6.jpg'} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
+                            <div className="gallery-imgs"> <img src={resto1} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
@@ -168,16 +177,16 @@ const Gallery = () => {
                 </div>
                 <div className="third-sec">
                 <div className="col-md-4 gallery-item">
-                    <a href={'https://sasthapuri.com/images/gallery/b-7.jpg'} title="" className="img-zoom">
+                    <a href={imgt} title="" className="img-zoom">
                         <div className="gallery-box">
                             <div className="gallery-imgs1"> <img src={imgt} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>
                 <div className="col-md-4 gallery-item">
-                    <a href={'https://sasthapuri.com/images/gallery/b-8.jpg'} title="" className="img-zoom">
+                    <a href={resto2} title="" className="img-zoom">
                         <div className="gallery-box">
-                            <div className="gallery-imgs1"> <img src={'https://sasthapuri.com/images/gallery/b-8.jpg'} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
+                            <div className="gallery-imgs1"> <img src={resto2} className="img-fluid mx-auto d-block" alt="work-img"loading="lazy" /> </div>
                         </div>
                     </a>
                 </div>

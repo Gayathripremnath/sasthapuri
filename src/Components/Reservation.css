@@ -11,7 +11,7 @@
     position: relative;
     height: 50vh;
     min-height: 350px;
-    background-image: url('https://sasthapuri.com/web_demo/img/slider/1.jpg');
+    background-image: url('../assets/slider/2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

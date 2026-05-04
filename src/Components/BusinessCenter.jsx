@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './BusinessCenter.css';
 import '../animations.css';
+import hall2 from '../assets/hall2.jpeg';
+import hall from '../assets/hall.JPG';
 
 const BusinessCenter = () => {
   const progressPathRef = useRef(null);
@@ -98,10 +100,10 @@ const BusinessCenter = () => {
             </div>
             <div className="bc-images anim anim-right">
               <div className="bc-img-box main-img">
-                <img src="https://sasthapuri.com/web_demo/img/rooms/15.jpg" alt="Business Center Interior" />
+                <img src={hall2} alt="Business Center Interior" />
               </div>
               <div className="bc-img-box sub-img">
-                <img src="https://sasthapuri.com/images/gallery/b-11.jpg" alt="Workstation" />
+                <img src={hall} alt="Workstation" />
               </div>
             </div>
           </div>

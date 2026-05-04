@@ -3,6 +3,7 @@ import './About.css';
 import '../../src/animations.css';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import lobby from '../assets/slider/1.jpg'
 
 
 
@@ -158,8 +159,7 @@ is treated with care, ensuring a home-like experience with professional excellen
             </div>
 
             <div className="about-images anim anim-right">
-              <img src="https://sasthapuri.com/images/gallery/b-2.jpg" alt="Lobby"  style={{width:"100%",height:"330px"}}/>
-              <img src="https://sasthapuri.com/images/gallery/b-1.jpg" alt="Premium room" style={{width:"100%",height:"290px"}}/>
+              <img src={lobby} alt="Lobby"  style={{width:"100%",height:"330px"}}/>
             </div>
           </div>
         </section>
