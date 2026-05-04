@@ -9,7 +9,6 @@ import img5 from  "../assets/slider/5.jpg";
 import img4 from  "../assets/slider/4.jpg";
 import img2 from  "../assets/slider/2.jpg";
 import img8 from  "../assets/rooms/8.jpg";
-import imgr5 from  "../assets/rooms/5.jpg";
 import imgt from "../assets/toil.JPG";
 import imgr10 from  "../assets/rooms/10.jpg";
 import imgr from "../assets/sastha-room.JPG";
