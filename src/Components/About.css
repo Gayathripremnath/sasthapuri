@@ -1,15 +1,3 @@
-/* Helper & plugin styles from the static template */
-@import url("../plugins/bootstrap.min.css");
-@import url("../plugins/owl.carousel.min.css");
-@import url("../plugins/owl.theme.default.min.css");
-@import url("../plugins/animate.min.css");
-@import url("../plugins/themify-icons.css");
-@import url("../plugins/flaticon.css");
-@import url("../plugins/magnific-popup.css");
-@import url("../plugins/YouTubePopUp.css");
-@import url("../plugins/select2.css");
-@import url("../plugins/datepicker.css");
-@import url("../plugins/vegas.slider.min.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600&family=Gilda+Display&display=swap');
 
