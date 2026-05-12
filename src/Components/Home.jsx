@@ -142,13 +142,7 @@ const Home = () => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const audioRef = useRef(null);
 
-  useEffect(() => {
-    const t = setTimeout(() => {
-      document.getElementById('preloader')?.style && (document.getElementById('preloader').style.display = 'none');
-      document.querySelector('.preloader-bg')?.style && (document.querySelector('.preloader-bg').style.display = 'none');
-    }, 1200);
-    return () => clearTimeout(t);
-  }, []);
+
 
 
   const openBooking = (roomTitle = '') => {
@@ -225,12 +219,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="preloader-bg"></div>
-      <div id="preloader">
-        <div id="preloader-status">
-          <div className="preloader-position loader"><span></span></div>
-        </div>
-      </div>
+
       <div className="home-wrapper">
 
         <div className="home">
